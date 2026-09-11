@@ -1,0 +1,16 @@
+{
+  "name": "builtbystephen-design-system",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:docs": "node build_docs.mjs",
+    "build:site": "npm run build:docs && node build_site.mjs",
+    "build:jadeite": "node build_jadeite.mjs",
+    "deploy": "npm run build:site && npx wrangler pages deploy dist --project-name=builtbystephen-design-system --commit-dirty=true",
+    "deploy:jadeite": "npm run build:jadeite && npx wrangler pages deploy dist-jadeite --project-name=jadeite --commit-dirty=true"
+  },
+  "devDependencies": {
+    "marked": "^18.0.0",
+    "wrangler": "^3.0.0"
+  }
+}

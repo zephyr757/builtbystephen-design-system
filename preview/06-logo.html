@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Preview — Logo Usage" subtitle="Lockups, clear space, minimums, misuse, app icons, signature" viewport="1280x3750" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo Usage — Built by Stephen</title>
+<link rel="stylesheet" href="../styles.css">
+<script src="./image-slot.js"></script>
+<style>
+  body { padding: clamp(40px, 5vw, 72px); min-height: 100vh; }
+  h1 { font-size: var(--bbs-fs-2xl); font-weight: var(--bbs-weight-title); letter-spacing: var(--bbs-tracking-tight); margin: 0 0 8px; }
+  .lede { color: var(--bbs-text-secondary); max-width: 60ch; margin-bottom: 48px; }
+  section { margin-bottom: 48px; }
+  h2 { font-size: var(--bbs-fs-md); font-weight: var(--bbs-weight-medium); text-transform: uppercase; letter-spacing: var(--bbs-tracking-caps); color: var(--bbs-text-muted); margin: 0 0 16px; }
+
+  .lock-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .lock { padding: 40px 28px; background: var(--bbs-surface); border: 1px solid var(--bbs-border-soft); border-radius: var(--bbs-radius-xl); backdrop-filter: blur(var(--bbs-blur-soft)); display: grid; gap: 20px; justify-items: center; text-align: center; min-height: 220px; align-content: center; }
+  .lock .cap { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: var(--bbs-text-muted); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); }
+  /* Lockups are composed .bbs-lockup elements; colour is set on the wrapper. */
+  .lock.tinted { color: var(--bbs-text); }
+  .lock.heart { color: var(--bbs-heart); }
+  .lock.mono-light { background: #ffffff; color: #1a1a2e; }
+  .lock.mono-dark { background: #0b0b1e; color: #ffffff; }
+
+  .favicons { display: flex; gap: 20px; align-items: flex-end; justify-content: center; }
+  .fv { display: grid; gap: 8px; justify-items: center; }
+  .fv em { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); font-style: normal; color: var(--bbs-text-muted); }
+
+  .heart-hierarchy { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .hh { padding: 28px 20px; border-radius: var(--bbs-radius-lg); background: var(--bbs-surface); border: 1px solid var(--bbs-border-soft); text-align: center; backdrop-filter: blur(var(--bbs-blur-soft)); display: grid; gap: 10px; }
+  .hh .rank { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); color: var(--bbs-text-muted); }
+  .hh .big { font-size: 3.5rem; line-height: 1; height: 96px; display: grid; place-items: center; }
+  .hh .big .bbs-heart--display { width: 84px; height: 84px; }
+  .hh .jad { color: var(--bbs-heart); filter: drop-shadow(0 0 20px var(--bbs-heart)); }
+  .hh .name { font-weight: var(--bbs-weight-subheading); }
+  .hh .use { font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); }
+  .hh.fallback { opacity: 0.7; }
+
+  .donts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .dont { padding: 22px; border-radius: var(--bbs-radius-lg); background: var(--bbs-surface-soft); border: 1px dashed var(--bbs-border-soft); text-align: center; display: grid; gap: 8px; position: relative; opacity: 0.85; }
+  .dont::before { content: '✕'; position: absolute; top: 10px; right: 14px; font-family: var(--bbs-font-mono); color: var(--bbs-text-muted); }
+  .dont .heart { font-size: 2.5rem; line-height: 1; height: 34px; display: grid; place-items: center; }
+  .dont .why { font-size: var(--bbs-fs-2xs); color: var(--bbs-text-muted); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); }
+
+  .sig-demo { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  @media (max-width: 720px) { .sig-demo { grid-template-columns: 1fr; } }
+  .sig-card { padding: 32px; border-radius: var(--bbs-radius-xl); backdrop-filter: blur(var(--bbs-blur-strong)); }
+  .sig-card.labra { background: var(--labradorite-surface); border: 1px solid var(--labradorite-border); color: var(--glass-clear); }
+  .sig-card.opal { background: var(--opalite-surface); border: 1px solid var(--opalite-border); color: var(--ink-well); }
+  .sig-card.jade { background: var(--jadeite-surface); border: 1px solid var(--jadeite-border); color: var(--mint-bright); }
+  .sig-card a { text-decoration: none; color: inherit; font-weight: var(--bbs-weight-light); font-size: var(--bbs-fs-md); display: inline-flex; gap: 6px; align-items: center; }
+  .sig-card small { display: block; margin-top: 14px; font-size: var(--bbs-fs-xs); opacity: 0.7; }
+
+  /* Clear space */
+  .clear-demo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: stretch; }
+  /* --cs-size is the lockup cap height; the heart is 0.95 of it, and the
+     clear-space gutter IS that heart height. Change --cs-size and the
+     diagram stays true to the rule. */
+  .cs { --cs-size: 34px; --cs-gutter: calc(0.95 * var(--cs-size)); padding: 30px; border-radius: var(--bbs-radius-xl); background: var(--bbs-surface); border: 1px solid var(--bbs-border-soft); display: grid; gap: 14px; justify-items: center; align-content: center; }
+  .cs .frame { position: relative; padding: var(--cs-gutter); outline: 1px dashed color-mix(in oklab, var(--bbs-glow) 55%, transparent); outline-offset: -1px; display: grid; place-items: center; }
+  .cs .frame::before { content: ''; position: absolute; inset: var(--cs-gutter); outline: 1px solid color-mix(in oklab, var(--bbs-text) 22%, transparent); }
+  .cs .unit { position: absolute; font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: var(--bbs-glow); }
+  .cs .unit.t { top: 14px; left: 50%; transform: translateX(-50%); }
+  .cs .unit.l { left: 8px; top: 50%; transform: translateY(-50%); }
+  .cs .rule { font-size: var(--bbs-fs-sm); color: var(--bbs-text-secondary); text-align: center; max-width: 34ch; }
+
+  /* Minimum sizes */
+  .minsize { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .ms { padding: 26px 20px; border-radius: var(--bbs-radius-lg); background: var(--bbs-surface); border: 1px solid var(--bbs-border-soft); display: grid; gap: 14px; justify-items: center; text-align: center; align-content: center; min-height: 150px; }
+  .ms .n { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: var(--bbs-text-muted); }
+  .ms .n b { color: var(--bbs-glow); font-weight: var(--bbs-weight-emphasis); }
+
+  /* App icons */
+  .icons { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-end; }
+  .ic { display: grid; gap: 8px; justify-items: center; }
+  .ic .tile { display: grid; place-items: center; background: linear-gradient(145deg, #0d2a22, #04150f); border: 1px solid var(--jadeite-border); }
+  .ic .tile.sq { width: 96px; height: 96px; border-radius: 22px; }
+  .ic .tile.circle { width: 96px; height: 96px; border-radius: 50%; }
+  .ic .tile.tiny { width: 48px; height: 48px; border-radius: 12px; }
+  .ic .tile.pink { background: linear-gradient(145deg, #2a0a1e, #120227); border-color: var(--bbs-border); }
+  .ic em { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); font-style: normal; color: var(--bbs-text-muted); }
+
+  /* Misuse */
+  .misuse { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+  .mu { padding: 20px; border-radius: var(--bbs-radius-lg); background: var(--bbs-surface-soft); border: 1px dashed var(--bbs-border-soft); display: grid; gap: 12px; justify-items: center; text-align: center; position: relative; overflow: hidden; }
+  .mu::before { content: '\2715'; position: absolute; top: 8px; right: 12px; font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); color: var(--bbs-status-danger); }
+  .mu .stage { height: 54px; display: grid; place-items: center; width: 100%; }
+  .mu .why { font-size: var(--bbs-fs-2xs); color: var(--bbs-text-muted); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); }
+
+  /* Photography */
+  .photo-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  .ph { position: relative; height: 220px; border-radius: var(--bbs-radius-xl); overflow: hidden; border: 1px solid var(--bbs-border-soft); }
+  .ph image-slot { position: absolute; inset: 0; }
+  .ph .scrim { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(5,1,18,0) 30%, rgba(5,1,18,0.72)); }
+  .ph .plate { position: absolute; left: 20px; bottom: 18px; pointer-events: none; display: grid; gap: 4px; }
+  /* The "don't" card must actually BE a jadeite lockup for the demo to hold. */
+  .ph.bad .bbs-lockup { color: var(--bbs-heart); }
+  .ph .tagline { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: #fff; align-self: start; padding: 3px 8px; border-radius: var(--bbs-radius-sm); background: rgba(5,1,18,0.72); }
+  .ph.bad .scrim { background: none; }
+  .ph .flag { position: absolute; top: 12px; left: 14px; font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); padding: 4px 10px; border-radius: var(--bbs-radius-pill); }
+  .ph .flag.ok { background: color-mix(in oklab, var(--bbs-glow) 26%, #000); color: #fff; }
+  .ph .flag.no { background: color-mix(in oklab, var(--bbs-status-danger) 40%, #000); color: #fff; }
+
+  .toggle-ui { position: fixed; top: 24px; right: 24px; padding: 8px 14px; border-radius: var(--bbs-radius-pill); background: var(--bbs-surface); border: 1px solid var(--bbs-border); font-family: var(--bbs-font-body); font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); cursor: pointer; backdrop-filter: blur(var(--bbs-blur-soft)); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); }
+</style>
+</head>
+<body class="bbs theme-labradorite">
+  <button class="toggle-ui" id="toggle">switch theme</button>
+  <h1>Logo & signature</h1>
+  <p class="lede">The heart is the signature. Every BBS artifact ends with a jadeite heart linking home — that's the whole rule. Lockups are composed from the parts — two wordmarks and one heart — never saved as flattened artwork, so the heart is current everywhere by construction.</p>
+
+  <section>
+    <h2>The marks</h2>
+    <div class="lock-grid">
+      <div class="lock tinted"><span class="bbs-lockup" style="--bbs-lockup-size:23px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="cap">horizontal · theme-tinted</span></div>
+      <div class="lock tinted"><span class="bbs-lockup bbs-lockup--stacked" style="--bbs-lockup-size:30px"><i class="lk-builtby"></i><span class="lk-row"><i class="lk-heart"></i><i class="lk-stephen"></i></span></span><span class="cap">stacked</span></div>
+      <div class="lock tinted"><span class="bbs-lockup bbs-lockup--stacked bbs-lockup--mono" style="--bbs-lockup-size:30px;color:var(--bbs-heart);filter:drop-shadow(0 0 12px var(--bbs-heart))"><i class="lk-builtby"></i><span class="lk-row"><i class="lk-heart"></i><i class="lk-stephen"></i></span></span><span class="cap">stacked · all-jadeite</span></div>
+      <div class="lock heart"><div class="favicons"><span class="fv"><span class="bbs-heart" style="font-size:48px"></span><em>48</em></span><span class="fv"><span class="bbs-heart" style="font-size:32px"></span><em>32</em></span><span class="fv"><span class="bbs-heart" style="font-size:16px"></span><em>16</em></span></div><span class="cap">heart · favicon scale</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Monochrome · for print and single-color contexts</h2>
+    <div class="lock-grid">
+      <div class="lock mono-light"><span class="bbs-lockup bbs-lockup--mono" style="--bbs-lockup-size:34px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="cap" style="color: #6b5a80">light bg · ink fill</span></div>
+      <div class="lock mono-dark"><span class="bbs-lockup bbs-lockup--mono" style="--bbs-lockup-size:34px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="cap" style="color: rgba(255,255,255,0.6)">dark bg · white fill</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Clear space</h2>
+    <p class="lede" style="margin-bottom:18px">Clear space is one heart-height on every side. Nothing — type, edges, other marks — enters the inner box.</p>
+    <div class="clear-demo">
+      <div class="cs">
+        <div class="frame"><span class="unit t">1 ♥</span><span class="unit l">1 ♥</span><span class="bbs-lockup" style="--bbs-lockup-size:var(--cs-size)"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span></div>
+        <div class="rule">Horizontal lockup · clear space equals the height of the heart in the mark.</div>
+      </div>
+      <div class="cs">
+        <div class="frame"><span class="unit t">1 ♥</span><span class="unit l">1 ♥</span><span class="bbs-lockup bbs-lockup--stacked" style="--bbs-lockup-size:var(--cs-size)"><i class="lk-builtby"></i><span class="lk-row"><i class="lk-heart"></i><i class="lk-stephen"></i></span></span></div>
+        <div class="rule">Stacked lockup · same rule. When in doubt, add more, never less.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Minimum sizes</h2>
+    <p class="lede" style="margin-bottom:18px">Below these widths the heart closes up and the wordmark stops being legible. Each specimen below is drawn at its true minimum. Total width is a fixed multiple of the cap height — <b>8.427×</b> horizontal, <b>4.927×</b> stacked — so divide the width you need by that to get <code>--bbs-lockup-size</code>.</p>
+    <div class="minsize">
+      <div class="ms"><span class="bbs-lockup" style="--bbs-lockup-size:14.24px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="n">horizontal · min <b>120px</b></span></div>
+      <div class="ms"><span class="bbs-lockup bbs-lockup--stacked" style="--bbs-lockup-size:17.86px"><i class="lk-builtby"></i><span class="lk-row"><i class="lk-heart"></i><i class="lk-stephen"></i></span></span><span class="n">stacked · min <b>88px</b></span></div>
+      <div class="ms"><span class="bbs-heart" style="font-size:16px"></span><span class="n">heart · min <b>16px</b></span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>App icon &amp; avatar crops</h2>
+    <p class="lede" style="margin-bottom:18px">At icon sizes the heart stands alone — never the wordmark. Centred, with the heart at roughly 55% of the tile.</p>
+    <div class="icons">
+      <div class="ic"><span class="tile sq"><span class="bbs-heart" style="font-size:52px"></span></span><em>rounded square · 96</em></div>
+      <div class="ic"><span class="tile circle"><span class="bbs-heart" style="font-size:52px"></span></span><em>circle avatar · 96</em></div>
+      <div class="ic"><span class="tile sq pink"><span class="bbs-heart" style="font-size:52px"></span></span><em>on midnight · 96</em></div>
+      <div class="ic"><span class="tile tiny"><span class="bbs-heart" style="font-size:26px"></span></span><em>small · 48</em></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Heart hierarchy · use in order</h2>
+    <div class="heart-hierarchy">
+      <div class="hh">
+        <span class="rank">01 · default</span>
+        <div class="big jad"><span class="bbs-heart bbs-heart--display"></span></div>
+        <div class="name">Solid jadeite</div>
+        <div class="use">Every BBS artifact. Hero moments, inline text, footers — the signature that says Stephen made it. Always wrapped in <code style="font-family:var(--bbs-font-mono);font-size:0.85em;color:var(--bbs-text);">&lt;a href="https://builtbystephen.me"&gt;</code>.</div>
+      </div>
+      <div class="hh fallback">
+        <span class="rank">02 · fallback only</span>
+        <div class="big" style="font-family: var(--bbs-font-mono); color: var(--bbs-text-secondary);">♡</div>
+        <div class="name">Mono heart</div>
+        <div class="use">Print, single-color contexts — only if jadeite unavailable.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Never</h2>
+    <div class="donts" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px;">
+      <div class="dont" style="padding: 14px;"><div class="heart"><span class="bbs-heart" style="font-size:30px;--bbs-heart:#ff3b5c;filter:none"></span></div><div class="why">Red — generic</div></div>
+      <div class="dont" style="padding: 14px;"><div class="heart"><span class="bbs-heart" style="font-size:30px;--bbs-heart:#5b8bff;filter:none"></span></div><div class="why">Blue — fights theme</div></div>
+      <div class="dont" style="padding: 14px;"><div class="heart"><span class="bbs-heart" style="font-size:30px;--bbs-heart:#a855f7;filter:none"></span></div><div class="why">Purple — not brand</div></div>
+      <div class="dont" style="padding: 14px;"><div class="heart" style="font-size:1.75rem;line-height:1">🧡</div><div class="why">Any emoji heart</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lockup misuse</h2>
+    <p class="lede" style="margin-bottom:18px">The lockup is fixed artwork. Scale it, and nothing else.</p>
+    <div class="misuse">
+      <div class="mu"><div class="stage" style="transform:scaleX(1.4)"><span class="bbs-lockup" style="--bbs-lockup-size:14px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span></div><span class="why">Stretched</span></div>
+      <div class="mu"><div class="stage" style="transform:rotate(-8deg)"><span class="bbs-lockup" style="--bbs-lockup-size:14px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span></div><span class="why">Rotated</span></div>
+      <div class="mu"><div class="stage"><span class="bbs-lockup bbs-lockup--mono" style="--bbs-lockup-size:14px;color:#ffb454"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span></div><span class="why">Recoloured</span></div>
+      <div class="mu"><div class="stage" style="filter:drop-shadow(3px 4px 0 #ff0080)"><span class="bbs-lockup" style="--bbs-lockup-size:14px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span></div><span class="why">Effects added</span></div>
+      <div class="mu"><div class="stage" style="opacity:0.35"><span class="bbs-lockup" style="--bbs-lockup-size:14px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span></div><span class="why">Faded out</span></div>
+      <div class="mu"><div class="stage"><span class="bbs-lockup" style="--bbs-lockup-size:14px"><i class="lk-stephen"></i><i class="lk-heart"></i><i class="lk-builtby"></i></span></div><span class="why">Parts reordered</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>On photography &amp; busy backgrounds</h2>
+    <p class="lede" style="margin-bottom:18px">Use the white monochrome lockup over imagery, and always lay a scrim under it. Drop your own photos into these slots to test a real one.</p>
+    <div class="photo-row">
+      <div class="ph">
+        <image-slot id="logo-photo-ok" shape="rect" placeholder="Drop a photo — dark or busy"></image-slot>
+        <div class="scrim"></div>
+        <div class="plate"><span class="bbs-lockup bbs-lockup--mono" style="--bbs-lockup-size:20px;color:#fff"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="tagline">white lockup · scrim underneath</span></div>
+        <span class="flag ok">Do</span>
+      </div>
+      <div class="ph bad">
+        <image-slot id="logo-photo-bad" shape="rect" placeholder="Drop the same photo here"></image-slot>
+        <div class="plate"><span class="bbs-lockup bbs-lockup--mono" style="--bbs-lockup-size:20px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="tagline">jadeite lockup · no scrim</span></div>
+        <span class="flag no">Don't</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Signature in context</h2>
+    <div class="sig-demo">
+      <div class="sig-card labra">
+        <a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a>
+        <small>labradorite · electric glow</small>
+      </div>
+      <div class="sig-card opal">
+        <a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a>
+        <small>opalite · static anchor</small>
+      </div>
+      <div class="sig-card jade">
+        <a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a>
+        <small>jadeite · single-hue glow</small>
+      </div>
+    </div>
+  </section>
+
+<script>
+  const body = document.body, t = document.getElementById('toggle');
+  const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
+  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+</script>
+</body>
+</html>

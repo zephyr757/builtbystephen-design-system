@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Type" name="Preview — Typography" subtitle="Poppins 300–600, scale, weights" viewport="1280x1600" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typography — Built by Stephen</title>
+<link rel="stylesheet" href="../tokens/bbs-tokens.css">
+<style>
+  body { padding: clamp(40px, 5vw, 72px); min-height: 100vh; }
+  h1.page { font-size: var(--bbs-fs-2xl); font-weight: var(--bbs-weight-title); letter-spacing: var(--bbs-tracking-tight); margin: 0 0 8px; color: var(--bbs-lockup-name); }
+  .lede { color: var(--bbs-text-secondary); max-width: 60ch; margin-bottom: 48px; }
+  section { margin-bottom: 56px; }
+  h2.label {
+    font-size: var(--bbs-fs-md);
+    font-weight: var(--bbs-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--bbs-tracking-caps);
+    color: var(--bbs-text-muted);
+    margin: 0 0 16px;
+  }
+
+  .specimen {
+    padding: 28px 32px;
+    border-radius: var(--bbs-radius-xl);
+    background: var(--bbs-surface);
+    border: 1px solid var(--bbs-border-soft);
+    backdrop-filter: blur(var(--bbs-blur-soft));
+  }
+  .specimen-lockup {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    column-gap: clamp(16px, 2.2vw, 32px);
+    align-items: center;
+  }
+  .specimen-lockup .byline { grid-column: 2; grid-row: 1; justify-self: start; }
+  .specimen-lockup .heart-cell { grid-column: 1; grid-row: 2; display: flex; align-items: center; justify-content: flex-end; }
+  .specimen-lockup .heart-cell .bbs-heart { --_bbs-heart-size: clamp(3.5rem, 9vw, 8rem); }
+  .specimen-lockup .name { grid-column: 2; grid-row: 2; justify-self: start; }
+  .big {
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: var(--bbs-weight-display);
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin: 0;
+  }
+  .big em { font-style: normal; color: var(--bbs-heart); filter: drop-shadow(0 0 24px var(--bbs-heart)); }
+  .big.byline { color: var(--bbs-lockup-byline); }
+  .big.name { color: var(--bbs-lockup-name); }
+
+  .scale { display: grid; gap: 14px; }
+  .row {
+    display: grid;
+    grid-template-columns: 92px 120px 1fr;
+    gap: 24px;
+    padding: 14px 18px;
+    align-items: baseline;
+    border-radius: var(--bbs-radius-md);
+    background: var(--bbs-surface-soft);
+    border: 1px solid var(--bbs-border-soft);
+  }
+  .row .tag {
+    font-family: var(--bbs-font-mono);
+    font-size: var(--bbs-fs-xs);
+    color: var(--bbs-text-muted);
+  }
+  .row .px { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); color: var(--bbs-text-muted); }
+  .row .sample { color: var(--bbs-text); }
+
+  .tokens { display: grid; gap: 10px; }
+  .tokens .row { grid-template-columns: 200px 1fr; }
+  .tokens .name { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); }
+
+  .toggle {
+    position: fixed; top: 24px; right: 24px;
+    padding: 8px 14px; border-radius: var(--bbs-radius-pill);
+    background: var(--bbs-surface); border: 1px solid var(--bbs-border);
+    font-family: var(--bbs-font-body); font-size: var(--bbs-fs-xs);
+    color: var(--bbs-text-secondary); cursor: pointer;
+    backdrop-filter: blur(var(--bbs-blur-soft));
+    text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide);
+  }
+</style>
+</head>
+<body class="bbs theme-labradorite">
+  <button class="toggle" id="toggle">switch theme</button>
+
+  <h1 class="page">Typography</h1>
+  <p class="lede">Poppins, self-hosted. Weights 300–600. The ladder is the contract — use the token, not the number.</p>
+
+  <section>
+    <h2 class="label">Display specimen</h2>
+    <div class="specimen">
+      <div class="specimen-lockup">
+        <p class="big byline">built by</p>
+        <div class="heart-cell"><span class="bbs-heart bbs-heart--display"></span></div>
+        <p class="big name">stephen</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="label">Type scale</h2>
+    <div class="scale">
+      <div class="row"><span class="tag">display</span><span class="px">clamp 2.8–4.2rem</span><span class="sample" style="font-size: var(--bbs-fs-display); font-weight: var(--bbs-weight-display); letter-spacing: var(--bbs-tracking-tight); line-height: var(--bbs-lh-tight);">Hero titles</span></div>
+      <div class="row"><span class="tag">3xl</span><span class="px">~50px · 3.157rem</span><span class="sample" style="font-size: var(--bbs-fs-3xl); font-weight: var(--bbs-weight-display); line-height: var(--bbs-lh-tight);">Section display</span></div>
+      <div class="row"><span class="tag">2xl</span><span class="px">~38px · 2.369rem</span><span class="sample" style="font-size: var(--bbs-fs-2xl); font-weight: var(--bbs-weight-title); line-height: var(--bbs-lh-snug);">Page heading</span></div>
+      <div class="row"><span class="tag">xl</span><span class="px">~28px · 1.777rem</span><span class="sample" style="font-size: var(--bbs-fs-xl); font-weight: var(--bbs-weight-heading); line-height: var(--bbs-lh-snug);">Section heading</span></div>
+      <div class="row"><span class="tag">lg</span><span class="px">~21px · 1.333rem</span><span class="sample" style="font-size: var(--bbs-fs-lg); font-weight: var(--bbs-weight-subheading); line-height: var(--bbs-lh-snug);">Subheading / large body</span></div>
+      <div class="row"><span class="tag">md</span><span class="px">18px · 1.125rem</span><span class="sample" style="font-size: var(--bbs-fs-md); font-weight: var(--bbs-weight-regular);">Lead paragraph. Comfortable reading size for intro copy and lists.</span></div>
+      <div class="row"><span class="tag">base</span><span class="px">16px · 1rem</span><span class="sample" style="font-size: var(--bbs-fs-base); font-weight: var(--bbs-weight-body);">Default body text. Poppins 300 is the workhorse weight for longer reading.</span></div>
+      <div class="row"><span class="tag">sm</span><span class="px">14px · 0.875rem</span><span class="sample" style="font-size: var(--bbs-fs-sm); font-weight: var(--bbs-weight-regular);">Small body, captions, tertiary info.</span></div>
+      <div class="row"><span class="tag">xs</span><span class="px">~12.5px · 0.78rem</span><span class="sample" style="font-size: var(--bbs-fs-xs); text-transform: uppercase; letter-spacing: var(--bbs-tracking-caps); font-weight: var(--bbs-weight-emphasis); color: var(--bbs-text-muted);">meta · labels · eyebrows</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="label">Weight ladder · the contract</h2>
+    <div class="scale">
+      <div class="row"><span class="tag">display</span><span class="px">weight 300</span><span class="sample" style="font-size: var(--bbs-fs-xl); font-weight: var(--bbs-weight-display); letter-spacing: -0.02em;">stephen — hero lockup, oversized</span></div>
+      <div class="row"><span class="tag">title</span><span class="px">weight 400</span><span class="sample" style="font-size: var(--bbs-fs-xl); font-weight: var(--bbs-weight-title);">Page titles sit here</span></div>
+      <div class="row"><span class="tag">heading</span><span class="px">weight 500</span><span class="sample" style="font-size: var(--bbs-fs-lg); font-weight: var(--bbs-weight-heading);">Section headings</span></div>
+      <div class="row"><span class="tag">subheading</span><span class="px">weight 500</span><span class="sample" style="font-size: var(--bbs-fs-md); font-weight: var(--bbs-weight-subheading);">Subheadings / kickers</span></div>
+      <div class="row"><span class="tag">emphasis</span><span class="px">weight 500</span><span class="sample" style="font-size: var(--bbs-fs-sm); font-weight: var(--bbs-weight-emphasis); text-transform: uppercase; letter-spacing: var(--bbs-tracking-caps);">labels &amp; meta</span></div>
+      <div class="row"><span class="tag">medium</span><span class="px">weight 500</span><span class="sample" style="font-size: var(--bbs-fs-base); font-weight: var(--bbs-weight-medium);">UI labels, buttons, controls</span></div>
+      <div class="row"><span class="tag">regular</span><span class="px">weight 400</span><span class="sample" style="font-size: var(--bbs-fs-base); font-weight: var(--bbs-weight-regular);">Standard UI text.</span></div>
+      <div class="row"><span class="tag">body</span><span class="px">weight 300</span><span class="sample" style="font-size: var(--bbs-fs-base); font-weight: var(--bbs-weight-body);">Long-form paragraphs live here — the light workhorse.</span></div>
+    </div>
+    <p style="font-size: var(--bbs-fs-sm); color: var(--bbs-text-muted); margin-top: 16px;">Weights 100, 200, 700, 800, 900 and italics ship with the system but are off-limits for brand use. Don't reach for them without a reason.</p>
+  </section>
+
+  <section>
+    <h2 class="label">Tokens</h2>
+    <div class="tokens">
+      <div class="row"><span class="name">--bbs-font-body</span><span class="sample">Poppins (self-hosted), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif</span></div>
+      <div class="row"><span class="name">--bbs-lh-body</span><span class="sample" style="line-height: var(--bbs-lh-body);">1.55 — comfortable reading line-height for paragraphs.</span></div>
+      <div class="row"><span class="name">--bbs-lh-snug</span><span class="sample" style="line-height: var(--bbs-lh-snug);">1.35 — headings and short blocks.</span></div>
+      <div class="row"><span class="name">--bbs-lh-tight</span><span class="sample" style="line-height: var(--bbs-lh-tight);">1.08 — display and hero lockups.</span></div>
+      <div class="row"><span class="name">--bbs-tracking-caps</span><span class="sample" style="letter-spacing: var(--bbs-tracking-caps); text-transform: uppercase; font-size: var(--bbs-fs-sm);">eyebrows · kickers · meta</span></div>
+    </div>
+  </section>
+
+<script>
+  const body = document.body, t = document.getElementById('toggle');
+  const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
+  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+</script>
+</body>
+</html>

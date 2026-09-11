@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Spacing" name="Preview — Foundations" subtitle="Spacing, radii, elevation, blur, surfaces, focus, motion" viewport="1280x3300" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foundations — Built by Stephen</title>
+<link rel="stylesheet" href="../tokens/bbs-tokens.css">
+<style>
+  html{background:#04150f}
+  html:has(body.theme-labradorite){background:#120227}
+  html:has(body.theme-opalite){background:#ffe2ee}
+  html:has(body.theme-jadeite){background:#020c09}
+  body { padding: clamp(40px, 5vw, 72px); min-height: 100vh; }
+  h1 { font-size: var(--bbs-fs-2xl); font-weight: var(--bbs-weight-title); letter-spacing: var(--bbs-tracking-tight); margin: 0 0 8px; }
+  .lede { color: var(--bbs-text-secondary); max-width: 60ch; margin-bottom: 48px; }
+  section { margin-bottom: 56px; }
+  h2 { font-size: var(--bbs-fs-md); font-weight: var(--bbs-weight-medium); text-transform: uppercase; letter-spacing: var(--bbs-tracking-caps); color: var(--bbs-text-muted); margin: 0 0 6px; }
+  h2 + .note { color: var(--bbs-text-muted); font-size: var(--bbs-fs-xs); margin: 0 0 18px; max-width: 64ch; }
+  .mono { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); }
+  .tag { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); color: var(--bbs-text-muted); }
+
+  .space-rows { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 10px; }
+  .space-row { display: grid; grid-template-columns: 128px 108px auto; gap: 14px; align-items: center; padding: 10px 16px; background: var(--bbs-surface-soft); border-radius: var(--bbs-radius-md); border: 1px solid var(--bbs-border-soft); }
+  .space-row .name { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); }
+  .space-row .px { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); color: var(--bbs-text-muted); text-align: right; }
+  .space-row .track { height: 16px; border-radius: 999px; background: color-mix(in oklab, var(--bbs-text) 8%, transparent); }
+  .space-row .bar { display: block; height: 100%; min-width: 2px; border-radius: 999px; background: linear-gradient(90deg, var(--bbs-glow), color-mix(in oklab, var(--bbs-glow) 40%, transparent)); }
+
+  /* Spacing in use */
+  .use-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; align-items: start; }
+  .anat { position: relative; border-radius: var(--bbs-radius-xl); border: 1px solid var(--bbs-border); background: var(--bbs-surface); padding: var(--bbs-space-7); display: grid; gap: var(--bbs-space-5); outline: 1px dashed color-mix(in oklab, var(--bbs-glow) 45%, transparent); outline-offset: -32px; }
+  .anat h4 { margin: 0; font-size: var(--bbs-fs-lg); font-weight: var(--bbs-weight-subheading); }
+  .anat p { margin: 0; font-size: var(--bbs-fs-sm); color: var(--bbs-text-secondary); }
+  .anat .pill-row { display: flex; gap: var(--bbs-space-4); }
+  .anat .pill { padding: 6px 14px; border-radius: var(--bbs-radius-pill); background: var(--bbs-surface-soft); border: 1px solid var(--bbs-border-soft); font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); }
+  .dim { position: absolute; font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: var(--bbs-glow); background: var(--bbs-surface); padding: 1px 6px; border-radius: 4px; }
+  .dim.inset { top: 6px; left: 14px; }
+  .dim.gapdim { bottom: 6px; right: 14px; }
+
+  .density { display: grid; gap: 14px; }
+  .dcard { border-radius: var(--bbs-radius-md); border: 1px solid var(--bbs-border-soft); background: var(--bbs-surface-soft); display: grid; }
+  .dcard.tight { padding: var(--bbs-space-4); gap: var(--bbs-space-3); }
+  .dcard.default { padding: var(--bbs-space-6); gap: var(--bbs-space-5); }
+  .dcard.loose { padding: var(--bbs-space-8); gap: var(--bbs-space-7); }
+  .dcard strong { font-size: var(--bbs-fs-sm); font-weight: var(--bbs-weight-subheading); }
+  .dcard span { font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); }
+
+  .rhythm { border-left: 2px solid color-mix(in oklab, var(--bbs-glow) 40%, transparent); padding-left: 20px; display: grid; }
+  .rhythm > * { margin: 0; }
+  .rhythm .eyebrow { font-size: var(--bbs-fs-2xs); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); color: var(--bbs-text-muted); margin-bottom: var(--bbs-space-3); }
+  .rhythm h4 { font-size: var(--bbs-fs-lg); font-weight: var(--bbs-weight-subheading); margin-bottom: var(--bbs-space-5); }
+  .rhythm p { font-size: var(--bbs-fs-sm); color: var(--bbs-text-secondary); margin-bottom: var(--bbs-space-8); }
+  .rhythm .foot { font-size: var(--bbs-fs-xs); color: var(--bbs-text-muted); }
+
+  .radii { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .rad { padding: 24px; background: var(--bbs-surface); border: 1px solid var(--bbs-border-soft); backdrop-filter: blur(var(--bbs-blur-soft)); display: grid; gap: 12px; }
+  .rad .box { height: 80px; background: var(--bbs-surface-soft); border: 1px solid var(--bbs-border); }
+  .rad .name { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); white-space: nowrap; }
+  .rad .val { font-size: var(--bbs-fs-2xs); color: var(--bbs-text-muted); }
+
+  /* Elevation ladder */
+  .elev { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 26px; }
+  .el { padding: 30px 22px; border-radius: var(--bbs-radius-xl); background: var(--bbs-surface); border: 1px solid var(--bbs-border-soft); display: grid; gap: 6px; text-align: center; transition: box-shadow var(--bbs-transition-fast), transform var(--bbs-transition-fast); }
+  .el .n { font-weight: var(--bbs-weight-subheading); font-size: var(--bbs-fs-sm); }
+  .el .u { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: var(--bbs-text-muted); }
+  .el.flat { box-shadow: var(--bbs-elev-flat); }
+  .el.raised { box-shadow: var(--bbs-elev-raised); }
+  .el.floating { box-shadow: var(--bbs-elev-floating); }
+  .el.glow { box-shadow: var(--bbs-elev-glow); }
+  .el.hoverable:hover { box-shadow: var(--bbs-elev-floating); transform: translateY(-4px); }
+
+  /* Blur */
+  .blur-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+  .bl { position: relative; height: 150px; border-radius: var(--bbs-radius-xl); overflow: hidden; border: 1px solid var(--bbs-border-soft); }
+  .bl .under { position: absolute; inset: 0; background: linear-gradient(120deg, var(--bbs-primary), var(--bbs-heart) 55%, var(--bbs-accent)); }
+  .bl .over { position: absolute; inset: 22px; border-radius: var(--bbs-radius-md); border: 1px solid var(--bbs-border); background: color-mix(in oklab, var(--bbs-surface) 42%, transparent); display: grid; place-items: center; gap: 2px; text-align: center; padding: 10px; }
+  .bl .over .n { font-size: var(--bbs-fs-sm); font-weight: var(--bbs-weight-subheading); }
+
+  /* Surfaces & borders */
+  .surf { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+  .sf { padding: 22px; border-radius: var(--bbs-radius-md); display: grid; gap: 6px; min-height: 96px; align-content: center; }
+  .sf .n { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: var(--bbs-text); }
+  .sf .d { font-size: var(--bbs-fs-2xs); color: var(--bbs-text-muted); }
+
+  /* Focus */
+  .focus-row { display: flex; gap: 34px; flex-wrap: wrap; align-items: center; }
+  .fbtn { font-family: var(--bbs-font-body); font-size: var(--bbs-fs-sm); font-weight: var(--bbs-weight-emphasis); padding: 12px 22px; border-radius: var(--bbs-radius-pill); border: 1px solid var(--bbs-border); background: var(--bbs-surface); color: var(--bbs-text); cursor: pointer; }
+  .fbtn.shown { box-shadow: var(--bbs-focus-ring); }
+  .finput { font-family: var(--bbs-font-body); font-size: var(--bbs-fs-base); padding: 12px 16px; border-radius: var(--bbs-radius-md); background: var(--bbs-surface-soft); border: 1px solid var(--bbs-border-soft); color: var(--bbs-text); width: 230px; }
+  .finput.shown { box-shadow: var(--bbs-focus-ring); border-color: var(--bbs-glow); }
+
+  /* Motion */
+  .motion { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .mo { padding: 20px; border-radius: var(--bbs-radius-md); background: var(--bbs-surface-soft); border: 1px solid var(--bbs-border-soft); display: grid; gap: 12px; }
+  .mo .rail { height: 34px; border-radius: 999px; background: color-mix(in oklab, var(--bbs-text) 8%, transparent); position: relative; overflow: hidden; }
+  .mo .dot { position: absolute; top: 5px; left: 5px; width: 24px; height: 24px; border-radius: 50%; background: var(--bbs-glow); box-shadow: 0 0 14px var(--bbs-glow); }
+  .mo .rail { --travel: calc(100% - 34px); }
+  .mo.fast .dot { transition: left var(--bbs-transition-fast); }
+  .mo.base .dot { transition: left var(--bbs-transition-base); }
+  .mo.linear .dot { transition: left 0.6s linear; }
+  .motion.go .dot { left: calc(100% - 29px); }
+
+  .glass-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .g { padding: 24px; border-radius: var(--bbs-radius-xl); display: grid; gap: 8px; }
+  .g.labra { background: var(--labradorite-surface); border: 1px solid var(--labradorite-border); color: var(--glass-clear); backdrop-filter: blur(var(--bbs-blur-strong)); box-shadow: var(--labradorite-glow-card); }
+  .g.opal { background: var(--opalite-surface); border: 1px solid var(--opalite-border); color: var(--ink-well); backdrop-filter: blur(var(--bbs-blur-soft)); box-shadow: var(--opalite-shadow-card); }
+  .g.jade { background: var(--jadeite-surface); border: 1px solid var(--jadeite-border); color: var(--mint-bright); backdrop-filter: blur(var(--bbs-blur-strong)); box-shadow: var(--jadeite-glow-card); }
+  .g h3 { font-size: var(--bbs-fs-lg); font-weight: var(--bbs-weight-subheading); margin: 0; }
+  .g p { margin: 0; font-size: var(--bbs-fs-sm); }
+  .g code { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); }
+  .g.labra p, .g.labra code { color: var(--fluorite); }
+  .g.opal p, .g.opal code { color: var(--ink-well); }
+  .g.jade p, .g.jade code { color: var(--jadeite-haze); }
+
+  .toggle { position: fixed; top: 24px; right: 24px; z-index: 40; padding: 8px 14px; border-radius: var(--bbs-radius-pill); background: var(--bbs-surface); border: 1px solid var(--bbs-border); font-family: var(--bbs-font-body); font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); cursor: pointer; backdrop-filter: blur(var(--bbs-blur-soft)); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); }
+  a { color: var(--bbs-glow); }
+  a:hover { color: var(--bbs-text); }
+</style>
+</head>
+<body class="bbs theme-labradorite">
+  <button class="toggle" id="toggle">switch theme</button>
+  <h1>Foundations</h1>
+  <p class="lede">The measurements everything else is built on: spacing, radii, elevation, blur, surfaces, focus, and motion. 8pt grid keeps the rhythm; soft radii keep it feeling like glass; elevation is a neon bloom in labradorite and a pastel drop shadow in opalite.</p>
+
+  <section>
+    <h2>Spacing scale (8pt)</h2>
+    <p class="note">Ten steps. Each bar is drawn at its true pixel width against a full-scale rail.</p>
+    <div class="space-rows">
+      <div class="space-row"><span class="name">--bbs-space-1</span><span class="track"><span class="bar" style="width:2px"></span></span><span class="px">2px</span></div>
+      <div class="space-row"><span class="name">--bbs-space-2</span><span class="track"><span class="bar" style="width:4px"></span></span><span class="px">4px</span></div>
+      <div class="space-row"><span class="name">--bbs-space-3</span><span class="track"><span class="bar" style="width:8px"></span></span><span class="px">8px</span></div>
+      <div class="space-row"><span class="name">--bbs-space-4</span><span class="track"><span class="bar" style="width:12px"></span></span><span class="px">12px</span></div>
+      <div class="space-row"><span class="name">--bbs-space-5</span><span class="track"><span class="bar" style="width:16px"></span></span><span class="px">16px</span></div>
+      <div class="space-row"><span class="name">--bbs-space-6</span><span class="track"><span class="bar" style="width:24px"></span></span><span class="px">24px</span></div>
+      <div class="space-row"><span class="name">--bbs-space-7</span><span class="track"><span class="bar" style="width:32px"></span></span><span class="px">32px</span></div>
+      <div class="space-row"><span class="name">--bbs-space-8</span><span class="track"><span class="bar" style="width:48px"></span></span><span class="px">48px</span></div>
+      <div class="space-row"><span class="name">--bbs-space-9</span><span class="track"><span class="bar" style="width:64px"></span></span><span class="px">64px</span></div>
+      <div class="space-row"><span class="name">--bbs-space-10</span><span class="track"><span class="bar" style="width:96px"></span></span><span class="px">96px</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Spacing in use</h2>
+    <p class="note">The scale applied three ways: dimensioned on a real component, compared across densities, and read down a page as vertical rhythm.</p>
+    <div class="use-grid">
+      <div style="display:grid;gap:10px">
+        <span class="tag">anatomy</span>
+        <div class="anat">
+          <span class="dim inset">inset 32 · space-7</span>
+          <h4>ghostwriter</h4>
+          <p>Inset is space-7. The gap between every child is space-5.</p>
+          <div class="pill-row"><span class="pill">labradorite</span><span class="pill">opalite</span></div>
+          <span class="dim gapdim">gap 16 · space-5</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:10px">
+        <span class="tag">density</span>
+        <div class="density">
+          <div class="dcard tight"><strong>Tight</strong><span>space-4 inset · space-3 gap</span></div>
+          <div class="dcard default"><strong>Default</strong><span>space-6 inset · space-5 gap</span></div>
+          <div class="dcard loose"><strong>Loose</strong><span>space-8 inset · space-7 gap</span></div>
+        </div>
+      </div>
+      <div style="display:grid;gap:10px">
+        <span class="tag">vertical rhythm</span>
+        <div class="rhythm">
+          <div class="eyebrow">Section label</div>
+          <h4>The heading sits close to its eyebrow</h4>
+          <p>Body copy takes the larger step below the heading, then the biggest step before the next section starts. Steps get bigger as the relationship gets weaker.</p>
+          <div class="foot">space-3 → space-5 → space-8</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Radii</h2>
+    <div class="radii">
+      <div class="rad"><div class="box" style="border-radius: var(--bbs-radius-xs)"></div><span class="name">--bbs-radius-xs</span><span class="val">6px · hairline details</span></div>
+      <div class="rad"><div class="box" style="border-radius: var(--bbs-radius-sm)"></div><span class="name">--bbs-radius-sm</span><span class="val">10px · chips, tags</span></div>
+      <div class="rad"><div class="box" style="border-radius: var(--bbs-radius-md)"></div><span class="name">--bbs-radius-md</span><span class="val">14px · inputs, small cards</span></div>
+      <div class="rad"><div class="box" style="border-radius: var(--bbs-radius-lg)"></div><span class="name">--bbs-radius-lg</span><span class="val">20px · secondary surfaces</span></div>
+      <div class="rad"><div class="box" style="border-radius: var(--bbs-radius-xl)"></div><span class="name">--bbs-radius-xl</span><span class="val">28px · panels, cards (default)</span></div>
+      <div class="rad"><div class="box" style="border-radius: var(--bbs-radius-2xl)"></div><span class="name">--bbs-radius-2xl</span><span class="val">36px · feature surfaces</span></div>
+      <div class="rad"><div class="box" style="border-radius: var(--bbs-radius-pill)"></div><span class="name">--bbs-radius-pill</span><span class="val">999px · buttons, chips</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Elevation</h2>
+    <p class="note">Four named levels, rebound per theme — neon bloom in labradorite and jadeite, pastel drop shadow in opalite. The last card lifts on hover.</p>
+    <div class="elev">
+      <div class="el flat"><span class="n">Flat</span><span class="u">--bbs-elev-flat</span></div>
+      <div class="el raised"><span class="n">Raised</span><span class="u">--bbs-elev-raised</span></div>
+      <div class="el floating"><span class="n">Floating</span><span class="u">--bbs-elev-floating</span></div>
+      <div class="el glow"><span class="n">Glow</span><span class="u">--bbs-elev-glow</span></div>
+      <div class="el raised hoverable"><span class="n">Hover me</span><span class="u">raised → floating</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Blur</h2>
+    <p class="note">Two steps, both over the same gradient so the difference is readable.</p>
+    <div class="blur-row">
+      <div class="bl"><div class="under"></div><div class="over" style="backdrop-filter:blur(0px)"><span class="n">None</span><span class="mono">0px</span></div></div>
+      <div class="bl"><div class="under"></div><div class="over" style="backdrop-filter:blur(var(--bbs-blur-soft))"><span class="n">Soft</span><span class="mono">--bbs-blur-soft · 16px</span></div></div>
+      <div class="bl"><div class="under"></div><div class="over" style="backdrop-filter:blur(var(--bbs-blur-strong))"><span class="n">Strong</span><span class="mono">--bbs-blur-strong · 32px</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Surfaces &amp; borders</h2>
+    <p class="note">Three surface tints and two border weights. Every card below sits on the page background with no blur, so the tint is the only difference.</p>
+    <div class="surf">
+      <div class="sf" style="background:var(--bbs-surface);border:1px solid var(--bbs-border)"><span class="n">--bbs-surface</span><span class="d">Cards, panels, nav</span></div>
+      <div class="sf" style="background:var(--bbs-surface-soft);border:1px solid var(--bbs-border-soft)"><span class="n">--bbs-surface-soft</span><span class="d">Inputs, wells, rows</span></div>
+      <div class="sf" style="background:var(--bbs-surface-hover);border:1px solid var(--bbs-border)"><span class="n">--bbs-surface-hover</span><span class="d">Hover and active rows</span></div>
+      <div class="sf" style="background:transparent;border:1px solid var(--bbs-border)"><span class="n">--bbs-border</span><span class="d">Primary stroke</span></div>
+      <div class="sf" style="background:transparent;border:1px solid var(--bbs-border-soft)"><span class="n">--bbs-border-soft</span><span class="d">Dividers, quiet edges</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Focus ring</h2>
+    <p class="note">One ring token for everything. Shown forced on the left pair; tab into the right pair to see it fire for real.</p>
+    <div class="focus-row">
+      <div style="display:grid;gap:8px"><span class="tag">forced</span><button class="fbtn shown">Focused button</button></div>
+      <div style="display:grid;gap:8px"><span class="tag">forced</span><input class="finput shown" value="Focused input"/></div>
+      <div style="display:grid;gap:8px"><span class="tag">real — tab to it</span><button class="fbtn">Button</button></div>
+      <div style="display:grid;gap:8px"><span class="tag">real — tab to it</span><input class="finput" placeholder="Input"/></div>
+      <div style="display:grid;gap:8px"><span class="tag">token</span><span class="mono">--bbs-focus-ring</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Motion</h2>
+    <p class="note">One easing curve, two durations. Everything in the system uses <span class="mono">--bbs-ease</span> — a long tail that settles rather than stops.</p>
+    <div class="motion" id="motion">
+      <div class="mo fast"><span class="tag">--bbs-transition-fast · 0.35s</span><div class="rail"><span class="dot"></span></div><span class="mono">Hovers, toggles, small state</span></div>
+      <div class="mo base"><span class="tag">--bbs-transition-base · 0.6s</span><div class="rail"><span class="dot"></span></div><span class="mono">Panels, modals, page-level</span></div>
+      <div class="mo linear"><span class="tag">linear 0.6s — for contrast</span><div class="rail"><span class="dot"></span></div><span class="mono">Not a token. Note the dead stop.</span></div>
+    </div>
+    <button class="fbtn" id="play" style="margin-top:16px">Play again</button>
+  </section>
+
+  <section>
+    <h2>Glass recipes</h2>
+    <div class="glass-row">
+      <div class="g labra">
+        <h3>Labradorite glass</h3>
+        <p>Low opacity, strong blur, neon border. Dramatic.</p>
+        <code>bg 0.82 · blur 32px · border jadeite 0.40</code>
+      </div>
+      <div class="g opal">
+        <h3>Opalite glass</h3>
+        <p>Higher opacity, softer blur, pastel border. Dreamy.</p>
+        <code>bg 0.78 · blur 16px · border pink 0.35</code>
+      </div>
+      <div class="g jade">
+        <h3>Jadeite glass</h3>
+        <p>Single hue, strong blur, jadeite border. All the way up.</p>
+        <code>bg 0.82 · blur 32px · border jadeite 0.38</code>
+      </div>
+    </div>
+  </section>
+
+<script>
+  const body = document.body, t = document.getElementById('toggle');
+  const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
+  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  const m = document.getElementById('motion');
+  const run = () => { m.classList.remove('go'); void m.offsetWidth; m.classList.add('go'); setTimeout(() => m.classList.remove('go'), 1600); };
+  document.getElementById('play').addEventListener('click', run);
+  setTimeout(run, 600);
+</script>
+</body>
+</html>

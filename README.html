@@ -1,0 +1,227 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>README · Built by Stephen</title><link rel="stylesheet" href="tokens/bbs-tokens.css"><style>
+html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background:var(--bbs-bg-overlay);mix-blend-mode:screen;opacity:.4}.page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px clamp(20px,5vw,56px);border-bottom:1px solid var(--bbs-border-soft);backdrop-filter:blur(var(--bbs-blur-soft))}.page-nav a,.theme-toggle{min-height:44px;display:inline-flex;align-items:center;padding:8px 14px;border:1px solid var(--bbs-border);border-radius:var(--bbs-radius-pill);background:var(--bbs-surface);color:var(--bbs-text-secondary);font:inherit;text-decoration:none;cursor:pointer}article{width:min(70ch,calc(100% - 40px));margin:64px auto 96px;color:var(--bbs-text);font-size:var(--bbs-fs-md);line-height:var(--bbs-lh-body)}article h1{color:var(--bbs-lockup-name);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:var(--bbs-weight-display);line-height:1.05}article h2{margin-top:56px;color:var(--bbs-text);font-size:var(--bbs-fs-xl);font-weight:var(--bbs-weight-heading)}article h3{margin-top:36px;color:var(--bbs-heart);font-size:var(--bbs-fs-lg);font-weight:var(--bbs-weight-subheading)}article a{color:var(--bbs-primary)}article code,article pre{font-family:var(--bbs-font-mono)}article code{padding:2px 6px;border:1px solid var(--bbs-border-soft);border-radius:var(--bbs-radius-xs);color:var(--bbs-heart);background:var(--bbs-surface-soft)}article pre{overflow-x:auto;padding:20px;border:1px solid var(--bbs-border-soft);border-radius:var(--bbs-radius-lg);background:var(--bbs-surface)}article table{width:100%;border-collapse:collapse;font-size:var(--bbs-fs-sm)}article th,article td{padding:10px 12px;border-bottom:1px solid var(--bbs-border-soft);text-align:left;vertical-align:top}.glass-footer{padding:24px;border-top:1px solid var(--bbs-border-soft);background:var(--bbs-surface-soft);text-align:center}.glass-footer a{color:var(--bbs-text-secondary);text-decoration:none}
+</style></head><body class="bbs theme-labradorite"><nav class="page-nav"><a href="index.html">← design system</a><button class="theme-toggle" id="theme-toggle" type="button">◐ switch theme</button></nav><article><h1>Built by Stephen — Design System</h1>
+<p>A three-theme glassmorphism design system. <strong>Labradorite</strong> (dark, neon, cyberpunk), <strong>Opalite</strong> (light, pastel, dreamy), and <strong>Jadeite</strong> (deep green, monochrome), unified by the <strong>jadeite</strong> signature color — the non-negotiable thread that identifies Built by Stephen&#39;s work.</p>
+<blockquote>
+<p><strong>Brand DNA in one line</strong>: Solid glass objects stacked with light distortion, always signed in jadeite.</p>
+</blockquote>
+<blockquote>
+<p><strong>Voice &amp; color names</strong>: See <a href="./JADEITE-FIELD-NOTES.html"><code>Jadeite Field Notes</code></a>. Read it before writing copy or naming a new token.</p>
+</blockquote>
+<hr>
+<h2>Start here (for Claude)</h2>
+<p>When asked to design anything for Built by Stephen:</p>
+<ol>
+<li><strong>Read this file, <code>SKILL.md</code>, and <code>JADEITE-FIELD-NOTES.md</code> first.</strong> The design system is not optional — every artifact must conform. The field notes are the voice + color-name reference.</li>
+<li><strong>Import <code>tokens/bbs-tokens.css</code></strong> into your HTML and apply <code>class=&quot;bbs theme-labradorite&quot;</code> (or <code>theme-opalite</code>, or <code>theme-jadeite</code>) to the body.</li>
+<li><strong>Use semantic tokens</strong> (<code>var(--bbs-text)</code>, <code>var(--bbs-surface)</code>, <code>var(--bbs-primary)</code>) rather than raw hex — they swap with the theme.</li>
+<li><strong>Brand-sign it.</strong> Every finished artifact ends with <code>built by &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt; stephen</code> — the heart is the neon jadeite mark rendered via the <code>.bbs-heart</code> utility (imports with <code>tokens/bbs-tokens.css</code>), and the lockup MUST link to <code>https://builtbystephen.me</code>.</li>
+<li><strong>Preview your work</strong> against the gallery in <code>preview/</code> to sanity-check colors, spacing, and glass levels.</li>
+</ol>
+<p>If a request would break one of these rules (e.g. &quot;use a red heart&quot;), push back politely and recommend the on-brand alternative.</p>
+<hr>
+<h2>Files</h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>README.md</code></td>
+<td>This file — overview, principles, how to use</td>
+</tr>
+<tr>
+<td><code>JADEITE-FIELD-NOTES.md</code></td>
+<td><strong>The voice + color-name reference.</strong> Read before writing copy or naming tokens</td>
+</tr>
+<tr>
+<td><code>SKILL.md</code></td>
+<td>Short invocation pattern for Claude — quickest path to on-brand output</td>
+</tr>
+<tr>
+<td><code>tokens/bbs-tokens.css</code></td>
+<td><strong>Single source of truth.</strong> All CSS variables — colors, type, spacing, radii, shadows, themes</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>project-jadeite.html</code></td>
+<td>Full-page Project Jadeite mission statement, based on the shipped Ghostwriter page.</td>
+</tr>
+<tr>
+<td><code>assets/</code></td>
+<td>Logo SVGs (stacked, horizontal, heart, mark, wordmarks)</td>
+</tr>
+<tr>
+<td><code>preview/</code></td>
+<td>Visual gallery — type specimen, palette, components, logo usage</td>
+</tr>
+<tr>
+<td><code>ui-kit/</code></td>
+<td>Worked examples — <code>splash.html</code> is the reference implementation</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Core principles</h2>
+<h3>1. Jadeite is non-negotiable</h3>
+<p>The jadeite heart is the signature. Think of it like a craftsman&#39;s stamp. It&#39;s what says &quot;Stephen made this.&quot;</p>
+<ul>
+<li><strong>Jadeite <code>#3bc3a6</code></strong> — logo hearts, static brand marks, opalite accents. Timeless, coastal, trustworthy.</li>
+<li><strong>Electric Jadeite <code>#04ffb2</code></strong> — labradorite glows, active states, hover energy. Neon, tech-forward.</li>
+</ul>
+<p><strong>Rule of thumb:</strong> Logo = Jadeite. Glow = Electric Jadeite.</p>
+<p><strong>Never</strong> ship a BBS artifact without the jadeite heart in the signature. Never use a red, blue, or purple heart.</p>
+<h3>2. Glassmorphism, not flat</h3>
+<p>Surfaces are glass — translucent, blurred, layered over a rich background. Solid fills are rare and feel wrong in this system.</p>
+<ul>
+<li><strong>Labradorite glass</strong>: low opacity (<code>0.03–0.08</code>), strong blur (32px), neon border.</li>
+<li><strong>Opalite glass</strong>: higher opacity (<code>0.40–0.78</code>), softer blur (16px), pastel border.</li>
+</ul>
+<h3>3. 8pt grid, soft radii</h3>
+<p>Spacing: <code>2 · 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96</code>. Radii: <code>6 · 10 · 14 · 20 · 28 · 36</code> plus pill (<code>999px</code>). Nothing should have a razor-sharp corner.</p>
+<h3>4. Poppins 300–600 only</h3>
+<p><strong>Do not use weight 100, 200, or 700+.</strong> Ultra-thin floats away on glass; ultra-bold fights the aesthetic. The approved range (300 Light → 600 Semibold) is what keeps things readable AND on-brand.</p>
+<p><strong>Use semantic weight tokens, not numeric ones.</strong> The system ships a prescribed weight ladder that leans light for display and firms up for UI chrome:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Use</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--bbs-weight-display</code></td>
+<td>hero, 3xl — airy authored feel</td>
+<td>300</td>
+</tr>
+<tr>
+<td><code>--bbs-weight-title</code></td>
+<td>2xl page headings</td>
+<td>400</td>
+</tr>
+<tr>
+<td><code>--bbs-weight-heading</code></td>
+<td>xl section headings</td>
+<td>500</td>
+</tr>
+<tr>
+<td><code>--bbs-weight-subheading</code></td>
+<td>lg, card titles, strong labels</td>
+<td>500</td>
+</tr>
+<tr>
+<td><code>--bbs-weight-body</code></td>
+<td>default reading weight</td>
+<td>300</td>
+</tr>
+<tr>
+<td><code>--bbs-weight-emphasis</code></td>
+<td>buttons, chips, badges, UI labels</td>
+<td>500</td>
+</tr>
+<tr>
+<td><code>--bbs-weight-strong</code></td>
+<td>reserved: rare CTAs, numeric callouts</td>
+<td>600</td>
+</tr>
+</tbody></table>
+<p>Reach for the numeric aliases (<code>--bbs-weight-light</code> etc.) only when you&#39;re writing the ladder itself, or when the semantic tokens genuinely don&#39;t fit (rare).</p>
+<h3>5. Motion has easing</h3>
+<p>Every transition uses <code>cubic-bezier(0.23, 1, 0.32, 1)</code> (easeOutQuint). Fast interactions: <code>0.35s</code>. Theme changes and big moves: <code>0.6s</code>. Standard hover lift: <code>translateY(-4px) scale(1.02)</code>.</p>
+<h3>6. Voice: down-to-earth, bestie energy</h3>
+<p>Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you&#39;re explaining something to a friend at a kitchen table. Lowercase is fine when it suits the vibe — the lockup itself is <code>built by 💚 stephen</code>, all lowercase.</p>
+<hr>
+<h2>Using the system</h2>
+<h3>Minimum viable setup</h3>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;Your page · Built by Stephen&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;tokens/bbs-tokens.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bbs theme-labradorite&quot;&gt;
+  &lt;!-- your content, using var(--bbs-*) tokens --&gt;
+  &lt;footer&gt;
+    &lt;a href=&quot;https://builtbystephen.me&quot; class=&quot;bbs-signature&quot;&gt;
+      built by &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt; stephen
+    &lt;/a&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3>Theme switching</h3>
+<p>Cycle the three themes by swapping the <code>theme-labradorite</code> / <code>theme-opalite</code> / <code>theme-jadeite</code> class on <code>&lt;body&gt;</code>. Persist to <code>localStorage</code>. Keyboard shortcut: <code>Cmd/Ctrl + Shift + T</code>. See <code>ui-kit/splash.html</code> for a copy-pasteable implementation.</p>
+<h3>Picking a theme</h3>
+<ul>
+<li><strong>Labradorite</strong> → dev tools, code interfaces, evening/night apps, tech-forward products.</li>
+<li><strong>Opalite</strong> → marketing, client presentations, daytime tools, creative/approachable products.</li>
+<li><strong>Jadeite</strong> → monochrome single-hue moments — focus modes, brand-forward splash/hero surfaces, anywhere the system turns all the way up.</li>
+<li><strong>All three</strong> → every shipping product should support the cycle and let the user choose.</li>
+</ul>
+<hr>
+<h2>Token cheatsheet</h2>
+<p>All tokens live on <code>:root</code> as raw values, then get bound to semantic names inside <code>.theme-labradorite</code> / <code>.theme-opalite</code> / <code>.theme-jadeite</code>. Use the <strong>semantic</strong> names in your designs.</p>
+<pre><code class="language-css">/* Backgrounds &amp; surfaces */
+--bbs-bg              /* page background (layered gradients) */
+--bbs-surface         /* card / panel surface */
+--bbs-surface-soft    /* subtle glass — chips, inset fields */
+--bbs-surface-hover   /* hover-state tint */
+--bbs-border          /* primary border */
+--bbs-border-soft     /* secondary border */
+
+/* Text */
+--bbs-text            /* body copy */
+--bbs-text-secondary  /* muted body */
+--bbs-text-muted      /* captions, meta */
+
+/* Brand + accent */
+--bbs-primary         /* CTA fill */
+--bbs-primary-ink     /* text ON the primary fill */
+--bbs-accent          /* secondary accent */
+--bbs-glow            /* glow / active / wildcard — always a jadeite variant */
+--bbs-heart           /* the one and only color for the signature heart */
+
+/* Shape &amp; motion */
+--bbs-radius-{xs,sm,md,lg,xl,2xl,pill}
+--bbs-space-{1..10}
+--bbs-shadow-card     /* card elevation (glow in dark, soft shadow in light) */
+--bbs-shadow-cta      /* CTA elevation */
+--bbs-transition-fast /* 0.35s easeOutQuint */
+--bbs-transition-base /* 0.6s easeOutQuint */
+</code></pre>
+<hr>
+<h2>Accessibility</h2>
+<ul>
+<li><strong>WCAG 2.2 AA minimum</strong> on all text. The approved palettes have been contrast-checked.</li>
+<li><strong>Focus rings are visible</strong> — use <code>var(--bbs-focus-ring)</code> on interactive elements. Don&#39;t remove outlines without replacing them.</li>
+<li><strong><code>prefers-reduced-motion</code> is respected</strong> — <code>bbs-tokens.css</code> already kills transitions for users who ask for it.</li>
+<li><strong>44px minimum</strong> touch targets on mobile.</li>
+<li><strong>Keyboard nav</strong> always works. Tab order matches visual order.</li>
+</ul>
+<hr>
+<h2>The heart hierarchy</h2>
+<p>When picking which heart to use:</p>
+<ol>
+<li><strong><code>bbs-heart--hero</code></strong> — 1.5× inline scale, heavier glow — for hero lockups like &quot;built by [heart] stephen&quot; in page titles</li>
+<li><strong><code>bbs-heart</code></strong> — inline-sized neon jadeite (1em) for footers, signatures ← <strong>default</strong></li>
+<li><strong><code>bbs-heart--display</code></strong> — 3× scale, standalone specimen (use alone, not next to running text)</li>
+<li>🖤 / 🤍 <strong>Black or white heart</strong> — fallback <strong>only</strong> when jadeite is truly unavailable (e.g. single-color print)</li>
+</ol>
+<p>Never red. Never blue/purple. Never a generic icon-font heart without the jadeite color treatment.</p>
+<hr>
+<h2>Version</h2>
+<p>v2026.09 — released 2026-09-11. Canonical three-theme system: Labradorite, Opalite, and Jadeite. Based on production implementations at <code>builtbystephen.me</code> and <code>ghostwriter.systems</code>.</p>
+</article><footer class="glass-footer"><a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a></footer><script>(() => { const themes=['theme-labradorite','theme-opalite','theme-jadeite']; const body=document.body; const apply=t=>{body.classList.remove(...themes);body.classList.add(t);try{localStorage.setItem('bbs-theme',t)}catch{}};let saved=null;try{saved=localStorage.getItem('bbs-theme')}catch{};apply(themes.includes(saved)?saved:'theme-labradorite');document.getElementById('theme-toggle')?.addEventListener('click',()=>{const i=themes.findIndex(t=>body.classList.contains(t));apply(themes[(i+1)%themes.length])}) })();</script></body></html>

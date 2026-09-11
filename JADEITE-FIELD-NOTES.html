@@ -1,0 +1,207 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jadeite Field Notes · Built by Stephen</title><link rel="stylesheet" href="tokens/bbs-tokens.css"><style>
+html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background:var(--bbs-bg-overlay);mix-blend-mode:screen;opacity:.4}.page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px clamp(20px,5vw,56px);border-bottom:1px solid var(--bbs-border-soft);backdrop-filter:blur(var(--bbs-blur-soft))}.page-nav a,.theme-toggle{min-height:44px;display:inline-flex;align-items:center;padding:8px 14px;border:1px solid var(--bbs-border);border-radius:var(--bbs-radius-pill);background:var(--bbs-surface);color:var(--bbs-text-secondary);font:inherit;text-decoration:none;cursor:pointer}article{width:min(70ch,calc(100% - 40px));margin:64px auto 96px;color:var(--bbs-text);font-size:var(--bbs-fs-md);line-height:var(--bbs-lh-body)}article h1{color:var(--bbs-lockup-name);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:var(--bbs-weight-display);line-height:1.05}article h2{margin-top:56px;color:var(--bbs-text);font-size:var(--bbs-fs-xl);font-weight:var(--bbs-weight-heading)}article h3{margin-top:36px;color:var(--bbs-heart);font-size:var(--bbs-fs-lg);font-weight:var(--bbs-weight-subheading)}article a{color:var(--bbs-primary)}article code,article pre{font-family:var(--bbs-font-mono)}article code{padding:2px 6px;border:1px solid var(--bbs-border-soft);border-radius:var(--bbs-radius-xs);color:var(--bbs-heart);background:var(--bbs-surface-soft)}article pre{overflow-x:auto;padding:20px;border:1px solid var(--bbs-border-soft);border-radius:var(--bbs-radius-lg);background:var(--bbs-surface)}article table{width:100%;border-collapse:collapse;font-size:var(--bbs-fs-sm)}article th,article td{padding:10px 12px;border-bottom:1px solid var(--bbs-border-soft);text-align:left;vertical-align:top}.glass-footer{padding:24px;border-top:1px solid var(--bbs-border-soft);background:var(--bbs-surface-soft);text-align:center}.glass-footer a{color:var(--bbs-text-secondary);text-decoration:none}
+</style></head><body class="bbs theme-labradorite"><nav class="page-nav"><a href="index.html">← design system</a><button class="theme-toggle" id="theme-toggle" type="button">◐ switch theme</button></nav><article><h1>The Jadeite Field Notes</h1>
+<p><em>This is Built by Stephen&#39;s constitution. Every design decision in this system should pass through it.</em></p>
+<hr>
+<h2>1 — What this brand actually is</h2>
+<p>Built by Stephen is a neurodivergent-first system. Not a studio, not an agency, not a portfolio. It&#39;s a set of tools built by someone who learned late what his own brain was doing, and is now making the things he wishes he&#39;d had.</p>
+<p>The brand metaphor is <strong>glass and mineral</strong>. Jadeite is the anchor: green, quiet, load-bearing, a little magical. Everything else is the light moving through it.</p>
+<p>The voice is <strong>tender, precise, and late-night honest</strong>. We don&#39;t do corporate polish. We don&#39;t do chest-thumping swagger. We sound like someone who has been through it and is trying to tell you the truth without making it weird.</p>
+<hr>
+<h2>2 — The three operating principles</h2>
+<h3>Mint-bright</h3>
+<p>Jadeite is the constant. Not a logo decoration — the <em>anchor</em>. Every page has it somewhere, even if it&#39;s just the heart in the footer. If a design can&#39;t make room for the heart, the design is wrong.</p>
+<h3>Glass-clear</h3>
+<p>We don&#39;t hide the machinery. The tokens are named. The weights are labeled. The reasoning is written down. A reader should be able to look at any component and see how it was made — that&#39;s the neurodivergent-first part. Opacity is cruelty.</p>
+<h3>Finally true</h3>
+<p>Nothing on the page fights the reader. No dark patterns, no fake urgency, no attention hijacks. The design&#39;s job is to let the person arrive at what they came for and feel a little more seen on the way.</p>
+<hr>
+<h2>3 — The named palette</h2>
+<p>Colors have names because they carry meaning, and meaning carries further than hex codes. The names come from the mineral world — the same glass-and-mineral the brand is built on. A few of the descriptions still carry lines that were playing during the late-night aha-moment hours; they&#39;re kept as examples of the voice, not as the names.</p>
+<h3>The anchor (sacred — do not rename)</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Hex</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--bbs-jadeite</code></td>
+<td><code>#3bc3a6</code></td>
+<td>Jadeite. Logo hearts, static brand marks, opalite accent.</td>
+</tr>
+<tr>
+<td><code>--bbs-electric-jadeite</code></td>
+<td><code>#04ffb2</code></td>
+<td>The neon version. Labradorite glow, hover energy, the states where it clicks.</td>
+</tr>
+</tbody></table>
+<p>Jadeite has two forms because the brand has two moods. Same mineral, different light.</p>
+<h3>Labradorite — the late-night brain</h3>
+<p>For dark surfaces. High contrast. The brain when it&#39;s running.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Hex</th>
+<th>Use it when...</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--obsidian</code></td>
+<td><code>#120227</code> (bg anchor)</td>
+<td>You need the deep-indigo backdrop. &quot;It would&#39;ve been fun, if you would&#39;ve been the one.&quot;</td>
+</tr>
+<tr>
+<td><code>--fluorite</code></td>
+<td><code>rgba(224, 224, 255, 0.85)</code></td>
+<td>Secondary text and the hazy mid-tones. The color of thinking at 2am.</td>
+</tr>
+<tr>
+<td><code>--neon-kiss</code></td>
+<td><code>#ff0080</code></td>
+<td>Primary CTA. Hot pink, no apology.</td>
+</tr>
+<tr>
+<td><code>--spinel</code></td>
+<td><code>#ff00a0</code> / magenta</td>
+<td>State changes, &quot;shimmer back to life&quot; moments, the feedback for the moment it lands.</td>
+</tr>
+<tr>
+<td><code>--amethyst</code></td>
+<td><code>#8000ff</code> (purple)</td>
+<td>Softer violet support. Reach for it when neon kiss is too loud.</td>
+</tr>
+<tr>
+<td><code>--apatite</code></td>
+<td><code>#00ffff</code></td>
+<td>Electric cyan accent. Sparingly.</td>
+</tr>
+</tbody></table>
+<h3>Opalite — the glass-clear, soft-morning brain</h3>
+<p>For light surfaces. Lower contrast. The brain when it&#39;s at peace.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Hex</th>
+<th>Use it when...</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--rose-quartz</code></td>
+<td><code>#ffe2ee</code> / pale blush</td>
+<td>Background warmth. Cream-pink. Quiet, tender, unprecedented.</td>
+</tr>
+<tr>
+<td><code>--celestite</code></td>
+<td><code>#9ac1ff</code> (powder blue)</td>
+<td>The self-aware morning color. &quot;It&#39;s me, hi, I&#39;m the problem it&#39;s me.&quot;</td>
+</tr>
+<tr>
+<td><code>--lepidolite</code></td>
+<td><code>#d4a5ff</code> (lavender)</td>
+<td>Muted violet ground. &quot;Uh oh, I&#39;m falling in love again.&quot; The slow-reveal color.</td>
+</tr>
+<tr>
+<td><code>--sunwash</code></td>
+<td><code>#ffb5a5</code> (peach)</td>
+<td>Warm highlight. Morning light on a kitchen counter.</td>
+</tr>
+<tr>
+<td><code>--moonstone</code></td>
+<td>reserved</td>
+<td>Tender emphasis. Earnest, unpretentious. Use sparingly for &quot;I&#39;d marry you&quot; moments in copy — small joyful highlights.</td>
+</tr>
+</tbody></table>
+<h3>Neutrals and text</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Hex</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--glass-clear</code></td>
+<td><code>#ffffff</code></td>
+<td>Labradorite primary text. Near-white, slightly warmed.</td>
+</tr>
+<tr>
+<td><code>--console-whisper</code></td>
+<td><code>rgba(224, 224, 255, 0.60)</code></td>
+<td>Muted UI text on dark. The monitor glow of an idle terminal.</td>
+</tr>
+<tr>
+<td><code>--ink-well</code></td>
+<td><code>#2d1b3d</code></td>
+<td>Opalite primary text. Deep plum-ink. Never flat black — the ink itself is already branded.</td>
+</tr>
+<tr>
+<td><code>--mint-bright</code></td>
+<td><code>#eafff7</code></td>
+<td>Jadeite-tinted off-white. Used for display lockup names so they sit in the brand even when they&#39;re &quot;light.&quot;</td>
+</tr>
+</tbody></table>
+<h3>Gotchas — tokens that aren&#39;t what they look like</h3>
+<p>Two tokens will silently break a rule if you use them where a plain color belongs. CSS drops an invalid declaration without a word, so nothing errors — it just doesn&#39;t paint.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>It&#39;s actually</th>
+<th>What breaks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--bbs-bg</code></td>
+<td>a <strong>gradient</strong>, not a color</td>
+<td>Any property that wants a color: <code>border</code>, <code>outline</code>, <code>box-shadow</code>, <code>color</code>, <code>fill</code>. The whole declaration dies. Works fine in <code>background</code>.</td>
+</tr>
+<tr>
+<td><code>--bbs-bg-overlay</code></td>
+<td>a gradient too</td>
+<td>Same deal. It&#39;s a <code>background</code> layer, nothing else.</td>
+</tr>
+</tbody></table>
+<p>The trap: <code>var(--bbs-bg, #000)</code> looks safe, but the fallback <strong>never fires</strong> — the variable <em>is</em> defined, it&#39;s just the wrong type. Silent failure either way.</p>
+<p>When you need a solid color that matches the theme&#39;s ground, use <code>--bbs-primary-ink</code>. It&#39;s a real color in all three themes.</p>
+<pre><code class="language-css">/* wrong — declaration is dropped, no warning */
+border: 2px solid var(--bbs-bg);
+
+/* right */
+border: 2px solid var(--bbs-primary-ink);
+</code></pre>
+<h3>Floats — not colors, but words that carry color</h3>
+<p>Some things aren&#39;t a hex code; they&#39;re a posture. These live in the voice, not the tokens.</p>
+<ul>
+<li><strong>Milk Opal</strong> — the tender, protective register. Used in copy about family, mom&#39;s line, the &quot;I&#39;d do anything for you&quot; moments. Never put this in a swatch. Let it float.</li>
+<li><strong>The Aha Moment</strong> — the feeling the whole system is built to produce: something lands for a brain that doesn&#39;t usually get that feeling. It conjugates, so use the form the sentence needs: <em>it clicks</em> / <em>it computes</em> (verb), <em>the aha moment</em> (noun), <em>the moment it lands</em> (modifier). Don&#39;t hyphenate it into an adjective. Headers and product copy, never a color name.</li>
+<li><strong>Hummingbird</strong> — the gradient/glow emblem reserved for Project Jadeite&#39;s most precious moments. Small, fast, almost-missed. If you&#39;re tempted to use it for decoration, don&#39;t.</li>
+</ul>
+<hr>
+<h2>4 — Voice rules</h2>
+<ol>
+<li><strong>Down-to-earth, bestie energy.</strong> Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you&#39;re explaining something to a friend at a kitchen table. Lowercase is fine when it suits the vibe — the lockup itself is built by 💚 stephen, all lowercase.</li>
+<li><strong>Lowercase-first.</strong> Headings, labels, lockups. Capital letters feel corporate-loud. Save caps for the eyebrow ALL-CAPS treatment where the letterspacing does the work.</li>
+<li><strong>Specific over general.</strong> &quot;It clicks&quot; over &quot;intuitive.&quot; &quot;Late-night&quot; over &quot;dark mode.&quot; The specificity <em>is</em> the voice.</li>
+<li><strong>Name colors for the mineral, not the look.</strong> Obsidian, fluorite, celestite — the material the color behaves like, not a description of it. &quot;Deep indigo&quot; is what the hex already says. If you can&#39;t name the mineral, you don&#39;t need the color.</li>
+<li><strong>No em-dashes-as-drama.</strong> Em dashes are for breath, not for punchlines.</li>
+<li><strong>Never &quot;simply,&quot; &quot;effortlessly,&quot; &quot;seamlessly.&quot;</strong> Those are the filler words of a brand that hasn&#39;t decided what it actually thinks.</li>
+<li><strong>When in doubt, ask: would this make someone newly-diagnosed feel less alone, or more alone?</strong> That&#39;s the test.</li>
+</ol>
+<hr>
+<h2>5 — When Claude (or anyone) is working in this system</h2>
+<ul>
+<li>Read this file first. Every time.</li>
+<li>Use the named tokens, not the hex codes. If you reach for a hex, stop and ask which token you meant.</li>
+<li>If you invent a new color, give it a named reason. If you can&#39;t name it, you don&#39;t need it.</li>
+<li>The jadeite heart goes in the lockup. Always. If the design can&#39;t hold it, redesign the container, not the lockup.</li>
+<li><code>preview/</code> pages are the review surface. <code>tokens/bbs-tokens.css</code> is the source of truth. Everything else is downstream.</li>
+</ul>
+<hr>
+<p><em>Built for the aha moment.</em></p>
+</article><footer class="glass-footer"><a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a></footer><script>(() => { const themes=['theme-labradorite','theme-opalite','theme-jadeite']; const body=document.body; const apply=t=>{body.classList.remove(...themes);body.classList.add(t);try{localStorage.setItem('bbs-theme',t)}catch{}};let saved=null;try{saved=localStorage.getItem('bbs-theme')}catch{};apply(themes.includes(saved)?saved:'theme-labradorite');document.getElementById('theme-toggle')?.addEventListener('click',()=>{const i=themes.findIndex(t=>body.classList.contains(t));apply(themes[(i+1)%themes.length])}) })();</script></body></html>

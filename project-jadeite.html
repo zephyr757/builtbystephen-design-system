@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Project Jadeite — showing up with the brain Stephen actually has.">
+  <title>Project Jadeite · Built by Stephen</title>
+  <link rel="stylesheet" href="tokens/bbs-tokens.css">
+  <style>
+    html, body { margin: 0; min-height: 100%; }
+    body { display: grid; grid-template-rows: auto 1fr auto; }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: var(--bbs-bg-overlay); mix-blend-mode: screen; opacity: .42; }
+    .page-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px clamp(20px, 5vw, 56px); border-bottom: 1px solid var(--bbs-border-soft); backdrop-filter: blur(var(--bbs-blur-soft)); background: color-mix(in oklab, var(--bbs-primary-ink) 35%, transparent); }
+    .nav-button, .theme-toggle { min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--bbs-border); border-radius: var(--bbs-radius-pill); background: var(--bbs-surface); color: var(--bbs-text-secondary); font: inherit; font-size: var(--bbs-fs-xs); text-decoration: none; cursor: pointer; }
+    .nav-button:hover, .theme-toggle:hover { border-color: var(--bbs-glow); transform: translateY(-1px); }
+    main { width: min(70ch, calc(100% - 40px)); margin: 64px auto 96px; }
+    .eyebrow { color: var(--bbs-text-muted); font-size: var(--bbs-fs-xs); font-weight: var(--bbs-weight-emphasis); letter-spacing: var(--bbs-tracking-caps); text-transform: uppercase; }
+    h1 { display: flex; align-items: center; gap: 18px; margin: 10px 0 28px; color: var(--bbs-lockup-name); font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: var(--bbs-weight-display); letter-spacing: var(--bbs-tracking-tight); line-height: 1; }
+    h1 .bbs-heart { --_bbs-heart-size: .72em; filter: drop-shadow(0 0 20px var(--bbs-heart)); }
+    .lede { margin: 0 0 48px; color: var(--bbs-text-secondary); font-size: var(--bbs-fs-lg); font-style: italic; line-height: var(--bbs-lh-snug); }
+    article { color: var(--bbs-text); font-size: var(--bbs-fs-md); line-height: var(--bbs-lh-body); }
+    article p { margin: 0 0 22px; }
+    .reframe { margin: 36px 0; padding: 24px; border: 1px solid var(--bbs-border); border-radius: var(--bbs-radius-xl); background: var(--bbs-surface); box-shadow: var(--bbs-shadow-card); backdrop-filter: blur(var(--bbs-blur-strong)); }
+    .reframe p:first-child, .closing strong { color: var(--bbs-glow); font-weight: var(--bbs-weight-emphasis); }
+    .closing { margin-top: 52px; padding-top: 32px; border-top: 1px solid var(--bbs-border-soft); }
+    .closing strong { display: block; margin-bottom: 12px; font-size: var(--bbs-fs-xl); }
+    .signature { display: grid; justify-items: center; gap: 8px; margin-top: 52px; padding-top: 28px; border-top: 1px solid var(--bbs-border-soft); color: var(--bbs-text-secondary); text-align: center; }
+    .signature a { color: var(--bbs-text-secondary); text-decoration: none; }
+    .signature a:hover { color: var(--bbs-heart); }
+    .glass-footer { padding: 24px; border-top: 1px solid var(--bbs-border-soft); background: var(--bbs-surface-soft); text-align: center; }
+    .glass-footer a { color: var(--bbs-text-secondary); text-decoration: none; }
+    @media (max-width: 560px) { .page-nav { padding: 16px 20px; } main { margin-top: 44px; } h1 { align-items: flex-start; flex-direction: column; gap: 12px; } }
+  </style>
+</head>
+<body class="bbs theme-labradorite">
+  <nav class="page-nav" aria-label="Page navigation">
+    <a class="nav-button" href="https://design.builtbystephen.me/">← design system</a>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">◐ switch theme</button>
+  </nav>
+
+  <main>
+    <div class="eyebrow">project jadeite</div>
+    <h1><span class="bbs-heart bbs-heart--hero" aria-hidden="true"></span><span>Project Jadeite</span></h1>
+    <p class="lede">my way of finally showing up in the world with the brain I actually have — not the one I spent decades trying (and failing) to pretend I had.</p>
+
+    <article>
+      <p>For most of my life, I didn't know I was Autistic with ADHD. All I knew was that things other people found simple felt impossible for me. Finishing tasks, staying organized, pushing through when something got overwhelming… it was all a mystery I blamed on myself.</p>
+      <p>I thought I just wasn't disciplined enough. Focused enough. Strong enough.</p>
+      <p>Then a few years ago, I finally got the words for what was happening in my brain — and everything clicked into place. The struggle wasn't a character flaw. It was an operating system mismatch.</p>
+      <p>Once I understood that, something in me shifted.</p>
+      <p>Instead of fighting my brain, I started working with it. Instead of apologizing for how I think, I began recognizing the things I do uniquely well — noticing patterns other people miss, building systems from scratch, connecting ideas sideways, and solving problems no one else can quite articulate.</p>
+
+      <div class="reframe">
+        <p>Project Jadeite is built on that reframing.</p>
+        <p>It's me treating Autism and ADHD not as deficits, but as superpowers — the reason I create, innovate, and help in the ways I do.</p>
+      </div>
+
+      <p>This isn't about fame, fortune, or intellectual property. I'm not chasing status or clout. That's never been the point.</p>
+      <p>Project Jadeite exists for one reason: to make my world, and the worlds of the people I care about, better. Kinder. Clearer. A little more magical around the edges.</p>
+      <p>Every tool I build, every character I create, every mint-and-violet idea that lives under the Jadeite banner comes from that place — the part of me that wants to leave things better than I found them.</p>
+      <p>And yes… there's a part of me that knows my mom would be proud of this work. Of the way I'm learning to take who I really am and turn it into something that helps other people more fully than I ever could before.</p>
+
+      <div class="closing">
+        <strong>That's Project Jadeite.</strong>
+        <p>Not a brand. Not a company. A mission. A shift. A home for every part of my brain that was told it was “too much” — and turned out to be exactly right.</p>
+      </div>
+
+      <div class="signature">
+        <div>mint-bright. glass-clear. and finally, true.</div>
+        <div>built by <span class="bbs-heart" aria-hidden="true"></span> stephen</div>
+        <a href="https://builtbystephen.me">builtbystephen.me</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="glass-footer"><a href="https://builtbystephen.me">built by <span class="bbs-heart" aria-hidden="true"></span> stephen</a></footer>
+
+  <script>
+    (() => {
+      const key = 'bbs-theme';
+      const themes = ['theme-labradorite', 'theme-opalite', 'theme-jadeite'];
+      const body = document.body;
+      const apply = (theme) => { body.classList.remove(...themes); body.classList.add(theme); try { localStorage.setItem(key, theme); } catch {} };
+      let saved = null; try { saved = localStorage.getItem(key); } catch {}
+      apply(themes.includes(saved) ? saved : 'theme-labradorite');
+      const next = () => { const current = themes.findIndex((theme) => body.classList.contains(theme)); apply(themes[(current + 1) % themes.length]); };
+      document.getElementById('theme-toggle')?.addEventListener('click', next);
+      addEventListener('keydown', (event) => { if ((event.metaKey || event.ctrlKey) && event.shiftKey && event.key.toLowerCase() === 't') { event.preventDefault(); next(); } });
+    })();
+  </script>
+</body>
+</html>

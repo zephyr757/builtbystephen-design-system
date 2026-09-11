@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="About page (BBS splash port)" subtitle="Stephen Condra — BBS token port" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Built by Stephen</title>
+<link rel="stylesheet" href="../tokens/bbs-tokens.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
+<style>
+  html, body { height: 100%; margin: 0; }
+  body { padding: 0; }
+  body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: var(--bbs-bg-overlay); mix-blend-mode: screen; opacity: 0.45; }
+
+  /* Top nav */
+  .page-nav {
+    position: fixed; top: 24px; left: 0; right: 0;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 clamp(20px, 4vw, 56px);
+    z-index: 10;
+  }
+  .nav-button {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px;
+    border-radius: var(--bbs-radius-pill);
+    background: var(--bbs-surface);
+    border: 1px solid var(--bbs-border);
+    backdrop-filter: blur(var(--bbs-blur-soft));
+    color: var(--bbs-text-secondary);
+    font-size: var(--bbs-fs-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--bbs-tracking-wide);
+    text-decoration: none;
+    transition: transform var(--bbs-transition-fast), border-color var(--bbs-transition-fast);
+  }
+  .nav-button:hover { transform: translateY(-2px); border-color: var(--bbs-glow); }
+  .theme-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--bbs-surface); border: 1px solid var(--bbs-border);
+    backdrop-filter: blur(var(--bbs-blur-soft));
+    cursor: pointer;
+    color: var(--bbs-text-secondary);
+    font-size: 1rem;
+    transition: transform var(--bbs-transition-fast);
+  }
+  .theme-toggle:hover { transform: translateY(-2px); }
+
+  /* Container */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 120px 24px 120px;
+    display: grid; gap: 24px;
+  }
+
+  /* Cards */
+  .glass-card {
+    padding: clamp(28px, 4vw, 44px);
+    border-radius: var(--bbs-radius-xl);
+    background: var(--bbs-surface);
+    border: 1px solid var(--bbs-border);
+    backdrop-filter: blur(var(--bbs-blur-strong));
+    box-shadow: var(--bbs-shadow-card);
+  }
+
+  /* Hero */
+  .about-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+    justify-items: center;
+  }
+  .profile-image {
+    width: 200px; height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 40px color-mix(in oklab, var(--bbs-heart) 35%, transparent));
+  }
+  .about-hero h1 {
+    font-size: var(--bbs-fs-3xl);
+    font-weight: var(--bbs-weight-display);
+    letter-spacing: var(--bbs-tracking-tight);
+    margin: 0 0 16px;
+    color: var(--bbs-heart);
+    line-height: 1.05;
+  }
+
+  /* Pills (badge row) */
+  .badge-row {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 28px;
+  }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 14px;
+    border-radius: var(--bbs-radius-pill);
+    background: color-mix(in oklab, var(--bbs-primary) 15%, var(--bbs-surface-soft));
+    border: 1px solid color-mix(in oklab, var(--bbs-primary) 40%, transparent);
+    color: var(--bbs-text);
+    font-size: var(--bbs-fs-xs);
+    font-weight: var(--bbs-weight-emphasis);
+  }
+  .pill i { color: var(--bbs-primary); font-size: 0.9em; }
+
+  /* Hero highlights */
+  .hero-highlights {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 14px;
+    text-align: left;
+    max-width: 52ch;
+  }
+  .hero-highlights li {
+    display: grid; grid-template-columns: 24px 1fr; gap: 12px;
+    color: var(--bbs-text-secondary);
+    line-height: var(--bbs-lh-body);
+    font-size: var(--bbs-fs-base);
+  }
+  .hero-highlights li i { color: var(--bbs-heart); margin-top: 0.25em; }
+
+  /* Two-up grid */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
+
+  .section-heading {
+    font-size: var(--bbs-fs-lg);
+    font-weight: var(--bbs-weight-heading);
+    color: var(--bbs-heart);
+    margin: 0 0 20px;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .section-heading i { color: var(--bbs-heart); }
+
+  .glass-card ul {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 16px;
+  }
+  .glass-card ul li {
+    display: grid; grid-template-columns: 22px 1fr; gap: 12px;
+    color: var(--bbs-text-secondary);
+    font-size: var(--bbs-fs-sm);
+    line-height: var(--bbs-lh-body);
+  }
+  .glass-card ul li i { color: var(--bbs-primary); margin-top: 0.2em; }
+
+  /* Connect card */
+  .about-connect { text-align: center; }
+  .about-connect p {
+    color: var(--bbs-text-secondary);
+    margin: 0 auto 24px;
+    max-width: 52ch;
+    line-height: var(--bbs-lh-body);
+  }
+  .social-icons-container {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 14px;
+  }
+  .social-icons-container a {
+    width: 48px; height: 48px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--bbs-surface-soft);
+    border: 1px solid color-mix(in oklab, var(--bbs-primary) 40%, transparent);
+    color: var(--bbs-primary);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: transform var(--bbs-transition-fast), border-color var(--bbs-transition-fast), box-shadow var(--bbs-transition-fast);
+  }
+  .social-icons-container a:hover {
+    transform: translateY(-4px);
+    border-color: var(--bbs-primary);
+    box-shadow: 0 0 20px color-mix(in oklab, var(--bbs-primary) 50%, transparent);
+  }
+
+  /* Footer */
+  .glass-footer {
+    padding: 24px;
+    text-align: center;
+    border-top: 1px solid var(--bbs-border-soft);
+    backdrop-filter: blur(var(--bbs-blur-soft));
+    background: var(--bbs-surface-soft);
+  }
+  .glass-footer a {
+    color: var(--bbs-text-secondary);
+    text-decoration: none;
+    font-size: var(--bbs-fs-sm);
+    font-weight: var(--bbs-weight-body);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .glass-footer a:hover { opacity: 0.85; }
+  .glass-footer .bbs-heart { --_bbs-heart-size: 0.95em; }
+</style>
+</head>
+<body class="bbs theme-labradorite">
+  <nav class="page-nav">
+    <a href="splash.html" class="nav-button" aria-label="Back to home">
+      <i class="fas fa-arrow-left"></i>
+      home
+    </a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="toggle theme">
+      <i id="ico" class="fas fa-moon"></i>
+    </button>
+  </nav>
+
+  <main class="container" role="main">
+    <section class="glass-card about-hero">
+      <img class="profile-image" src="assets/stephen-2026.png" alt="Portrait of Stephen Condra">
+      <div>
+        <h1>stephen condra</h1>
+        <div class="badge-row">
+          <span class="pill"><i class="fas fa-bullhorn"></i> social media professional</span>
+          <span class="pill"><i class="fas fa-location-dot"></i> coastal virginia</span>
+          <span class="pill"><i class="fas fa-headphones"></i> storyteller &amp; technologist</span>
+        </div>
+        <ul class="hero-highlights">
+          <li><i class="fas fa-pen-ruler"></i><span>designs human-centered experiences that feel warm and intentional.</span></li>
+          <li><i class="fas fa-wave-square"></i><span>keeps campaigns calm behind the scenes—even when timelines sprint.</span></li>
+          <li><i class="fas fa-people-group"></i><span>partners with communities to turn curiosity into genuine connection.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about-grid">
+      <article class="glass-card">
+        <h2 class="section-heading"><i class="fas fa-compass"></i> what guides me</h2>
+        <ul>
+          <li><i class="fas fa-magic-wand-sparkles"></i><span>translating messy ideas into polished narratives everyone can feel.</span></li>
+          <li><i class="fas fa-users"></i><span>building social systems that care for communities as much as they grow them.</span></li>
+          <li><i class="fas fa-brain"></i><span>leading with audhd superpowers: pattern obsession, deep listening, playful curiosity.</span></li>
+          <li><i class="fas fa-hand-holding-heart"></i><span>meeting collaborators where they are—then giving them the tools to go further.</span></li>
+        </ul>
+      </article>
+
+      <article class="glass-card">
+        <h2 class="section-heading"><i class="fas fa-hands"></i> how i help</h2>
+        <ul>
+          <li><i class="fas fa-seedling"></i><span>15+ years crafting multi-platform storytelling for global brands and local movements.</span></li>
+          <li><i class="fas fa-gauge-high"></i><span>leads high-speed content operations—from strategy and production to analytics and community care.</span></li>
+          <li><i class="fas fa-people-group"></i><span>partners with founders, agencies, and creators to launch campaigns with joyful rigor.</span></li>
+          <li><i class="fas fa-face-smile-beam"></i><span>obsessed with motion, accessibility, and little easter eggs that make audiences smile.</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="glass-card about-connect">
+      <h2 class="section-heading"><i class="fas fa-sparkles"></i> connect with me</h2>
+      <p>best collaborations start with a quick hello. reach out wherever you like hanging out—we'll make something unforgettable.</p>
+      <div class="social-icons-container">
+        <a href="https://facebook.com/zephyr757" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/stephencondra/" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@stephencondra" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.linkedin.com/in/stephencondra" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.threads.net/@stephencondra" aria-label="Threads" target="_blank" rel="noopener"><i class="fab fa-threads"></i></a>
+        <a href="https://x.com/zephyr757" aria-label="X (Twitter)" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+        <a href="mailto:hello@builtbystephen.me" aria-label="Contact me"><i class="fas fa-envelope"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="glass-footer">
+    <a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a>
+  </footer>
+
+<script>
+  const body = document.body;
+  const btn = document.getElementById('theme-toggle');
+  const ico = document.getElementById('ico');
+  const apply = (t) => {
+    [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c));
+    body.classList.add(t);
+    ico.className = t === 'theme-labradorite' ? 'fas fa-moon' : t === 'theme-jadeite' ? 'fas fa-gem' : 'fas fa-sun';
+    try { localStorage.setItem('bbs-theme', t); } catch {}
+  };
+  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  btn.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key.toLowerCase() === 't') { e.preventDefault(); btn.click(); }
+  });
+</script>
+</body>
+</html>

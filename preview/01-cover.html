@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Preview — Cover" subtitle="Brand lockup / cover" viewport="1280x800" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Built by Stephen — Design System Cover</title>
+<link rel="stylesheet" href="../tokens/bbs-tokens.css">
+<style>
+  html, body { height: 100%; margin: 0; }
+  body { overflow: hidden; }
+  .stage {
+    position: relative;
+    min-height: 100vh;
+    padding: clamp(40px, 6vw, 80px);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 32px;
+  }
+  .stage::before {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background: var(--bbs-bg-overlay); mix-blend-mode: screen; opacity: 0.45;
+  }
+  .stage > * { position: relative; z-index: 1; }
+
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: var(--bbs-fs-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--bbs-tracking-caps);
+    color: var(--bbs-text-muted);
+  }
+  .pill {
+    padding: 6px 14px;
+    border-radius: var(--bbs-radius-pill);
+    background: var(--bbs-surface-soft);
+    border: 1px solid var(--bbs-border-soft);
+    backdrop-filter: blur(var(--bbs-blur-soft));
+    color: var(--bbs-text-secondary);
+  }
+
+  .hero {
+    align-self: center;
+    display: grid;
+    gap: 28px;
+    max-width: 1100px;
+  }
+  .hero-kicker {
+    font-size: var(--bbs-fs-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--bbs-tracking-caps);
+    color: var(--bbs-text-muted);
+  }
+  .hero-title {
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: var(--bbs-weight-display);
+    letter-spacing: var(--bbs-tracking-tight);
+    line-height: 1.02;
+    color: var(--bbs-lockup-byline);
+  }
+  .hero-title .name { color: var(--bbs-lockup-name); }
+  .hero-title em {
+    font-style: normal;
+    color: var(--bbs-heart);
+    filter: drop-shadow(0 0 24px var(--bbs-heart));
+    display: inline-block;
+    transform: translateY(4px);
+  }
+  .hero-sub {
+    font-size: clamp(1.1rem, 1.3vw + 0.6rem, 1.4rem);
+    color: var(--bbs-text-secondary);
+    max-width: 58ch;
+    line-height: var(--bbs-lh-snug);
+  }
+  .chips { display: flex; gap: 10px; flex-wrap: wrap; }
+  .chip {
+    padding: 8px 14px;
+    border-radius: var(--bbs-radius-pill);
+    background: var(--bbs-surface);
+    border: 1px solid var(--bbs-border);
+    backdrop-filter: blur(var(--bbs-blur-soft));
+    font-size: var(--bbs-fs-xs);
+    color: var(--bbs-text-secondary);
+    font-weight: var(--bbs-weight-medium);
+  }
+  .chip b { color: var(--bbs-glow); font-weight: var(--bbs-weight-emphasis); }
+
+  .bottom {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 32px; flex-wrap: wrap;
+  }
+  .sig {
+    color: var(--bbs-lockup-byline);
+    text-decoration: none;
+    font-weight: var(--bbs-weight-light);
+    font-size: var(--bbs-fs-md);
+  }
+  .sig .bbs-heart { color: var(--bbs-heart); filter: drop-shadow(0 0 8px var(--bbs-heart)); }
+  .sig .name { color: var(--bbs-lockup-name); }
+
+  .toggle {
+    display: inline-flex; gap: 10px; align-items: center;
+    background: var(--bbs-surface);
+    border: 1px solid var(--bbs-border);
+    padding: 8px 14px;
+    border-radius: var(--bbs-radius-pill);
+    cursor: pointer;
+    backdrop-filter: blur(var(--bbs-blur-soft));
+    font-family: var(--bbs-font-body);
+    font-size: var(--bbs-fs-xs);
+    color: var(--bbs-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--bbs-tracking-wide);
+  }
+  .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--bbs-glow);
+    box-shadow: 0 0 12px var(--bbs-glow);
+  }
+</style>
+</head>
+<body class="bbs theme-labradorite">
+  <div class="stage">
+    <div class="topbar">
+      <span>v2026.09 · released 2026-09-11</span>
+      <button class="toggle" id="toggle"><span class="dot"></span> switch theme</button>
+    </div>
+
+    <section class="hero">
+      <span class="hero-kicker">Design System</span>
+      <h1 class="hero-title">built by <span class="bbs-heart bbs-heart--hero"></span> <span class="name">stephen</span></h1>
+      <p class="hero-sub">jadeite core. low friction. built with intent.</p>
+      <div class="chips">
+        <span class="chip"><b>jadeite</b> core</span>
+        <span class="chip">3 themes · 1 identity</span>
+        <span class="chip">Poppins 300–600</span>
+        <span class="chip">8pt grid · soft radii</span>
+        <span class="chip">glass over gradient</span>
+      </div>
+    </section>
+
+    <div class="bottom">
+      <a class="sig" href="https://builtbystephen.me">built by <span class="bbs-heart"></span> <span class="name">stephen</span></a>
+      <span style="color: var(--bbs-text-muted); font-size: var(--bbs-fs-xs); letter-spacing: var(--bbs-tracking-wide);">open preview/ for the full gallery →</span>
+    </div>
+  </div>
+
+<script>
+  const body = document.body, t = document.getElementById('toggle');
+  const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
+  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+</script>
+</body>
+</html>

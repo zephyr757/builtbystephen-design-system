@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Design System — Index" subtitle="Hub linking docs, previews, UI kit" viewport="1280x1200" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Built by Stephen — Design System</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { padding: clamp(40px, 5vw, 80px); min-height: 100vh; }
+  body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: var(--bbs-bg-overlay); mix-blend-mode: screen; opacity: 0.4; }
+
+  header { max-width: 900px; margin-bottom: 48px; }
+  .eyebrow { font-size: var(--bbs-fs-xs); text-transform: uppercase; letter-spacing: var(--bbs-tracking-caps); color: var(--bbs-text-muted); }
+  h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: var(--bbs-weight-title); letter-spacing: var(--bbs-tracking-tight); margin: 8px 0 16px; line-height: 1.05; }
+  h1 .h { color: var(--bbs-heart); filter: drop-shadow(0 0 20px var(--bbs-heart)); }
+  .hero-sig { display: flex; margin: 16px 0 4px; font-size: clamp(1.6rem, 3.4vw, 2.8rem); max-width: 100%; flex-wrap: wrap; }
+  .title-sub { font-size: clamp(2rem, 4.2vw, 3.4rem); font-weight: var(--bbs-weight-display); letter-spacing: var(--bbs-tracking-tight); margin: 0 0 16px; color: var(--bbs-lockup-name); line-height: 1.05; }
+  .lede { color: var(--bbs-text-secondary); font-size: var(--bbs-fs-md); max-width: 60ch; line-height: var(--bbs-lh-snug); }
+
+  .toggle { position: fixed; top: 24px; right: 24px; padding: 10px 16px; border-radius: var(--bbs-radius-pill); background: var(--bbs-surface); border: 1px solid var(--bbs-border); white-space: nowrap; font-family: var(--bbs-font-body); font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); cursor: pointer; backdrop-filter: blur(var(--bbs-blur-soft)); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); z-index: 10; }
+
+  .section-title { font-size: var(--bbs-fs-md); font-weight: var(--bbs-weight-medium); text-transform: uppercase; letter-spacing: var(--bbs-tracking-caps); color: var(--bbs-text-muted); margin: 0 0 20px; }
+  section { margin-bottom: 56px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+
+  .card {
+    padding: 24px;
+    border-radius: var(--bbs-radius-xl);
+    background: var(--bbs-surface);
+    border: 1px solid var(--bbs-border-soft);
+    backdrop-filter: blur(var(--bbs-blur-soft));
+    text-decoration: none;
+    color: inherit;
+    display: grid; gap: 10px;
+    transition: transform var(--bbs-transition-fast), border-color var(--bbs-transition-fast), box-shadow var(--bbs-transition-fast);
+    position: relative;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--bbs-glow); box-shadow: 0 0 24px color-mix(in oklab, var(--bbs-glow) 35%, transparent); }
+  .card .num { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: var(--bbs-text-muted); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); }
+  .card .name { font-size: var(--bbs-fs-lg); font-weight: var(--bbs-weight-subheading); }
+  .card .desc { color: var(--bbs-text-secondary); font-size: var(--bbs-fs-sm); line-height: var(--bbs-lh-snug); }
+  .card .arrow { position: absolute; top: 22px; right: 22px; color: var(--bbs-text-muted); transition: transform var(--bbs-transition-fast), color var(--bbs-transition-fast); }
+  .card:hover .arrow { transform: translate(4px, -4px); color: var(--bbs-glow); }
+
+  .doc-card { background: color-mix(in oklab, var(--bbs-primary) 10%, var(--bbs-surface)); border-color: var(--bbs-border); }
+
+  .footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--bbs-border-soft); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: var(--bbs-fs-sm); color: var(--bbs-text-secondary); }
+  .footer a { color: inherit; text-decoration: none; }
+  .footer .h { color: var(--bbs-heart); filter: drop-shadow(0 0 8px var(--bbs-heart)); }
+  .footer-sig { display: inline-flex; align-items: center; gap: 6px; color: inherit; text-decoration: none; font-weight: var(--bbs-weight-body); }
+  .footer-sig:hover { opacity: 0.85; }
+  .footer-sig .bbs-heart { --_bbs-heart-size: 0.95em; }
+</style>
+</head>
+<body class="bbs theme-labradorite">
+  <button class="toggle" id="toggle">switch theme</button>
+
+  <header>
+    <a class="bbs-signature bbs-signature--lg hero-sig" href="https://builtbystephen.me"><span class="bbs-heart"></span></a>
+    <h1 class="title-sub">design system</h1>
+    <p class="lede">jadeite core. low friction. built with intent. built by stephen.</p>
+  </header>
+
+  <section>
+    <h2 class="section-title">Docs</h2>
+    <div class="grid">
+      <a class="card doc-card" href="README.html">
+        <span class="num">readme</span>
+        <span class="name">README</span>
+        <span class="desc">Overview, principles, and how to use the system. Start here.</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card doc-card" href="SKILL.html">
+        <span class="num">skill</span>
+        <span class="name">SKILL.md</span>
+        <span class="desc">Quick invocation for Claude. Recipes, checklist, the three laws.</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card doc-card" href="tokens/bbs-tokens.css">
+        <span class="num">tokens</span>
+        <span class="name">bbs-tokens.css</span>
+        <span class="desc">Single source of truth. Every color, type, spacing, and theme binding.</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card doc-card" href="JADEITE-FIELD-NOTES.html">
+        <span class="num">field notes</span>
+        <span class="name">Jadeite Field Notes</span>
+        <span class="desc">The why behind the color. Voice, posture, and the rule that the heart is the signature.</span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Gallery</h2>
+    <div class="grid">
+      <a class="card" href="preview/01-cover.html">
+        <span class="num">01</span>
+        <span class="name">Cover</span>
+        <span class="desc">Brand lockup. Hero treatment. Theme switch across all modes.</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card" href="preview/02-colors.html">
+        <span class="num">02</span>
+        <span class="name">Colors</span>
+        <span class="desc">Jadeite anchors, labradorite/opalite/jadeite palettes, semantic tokens.</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card" href="preview/03-type.html">
+        <span class="num">03</span>
+        <span class="name">Typography</span>
+        <span class="desc">Poppins 300–600. Scale, weight ladder, the contract.</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card" href="preview/04-foundations.html">
+        <span class="num">04</span>
+        <span class="name">Foundations</span>
+        <span class="desc">8pt grid, radii, elevation, blur, surfaces, focus, motion.</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card" href="preview/05-components.html">
+        <span class="num">05</span>
+        <span class="name">Components</span>
+        <span class="desc">Buttons, links, chips, badges, every form control, avatars, progress.</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card" href="preview/06-logo.html">
+        <span class="num">06</span>
+        <span class="name">Logo & signature</span>
+        <span class="desc">Lockups, clear space, minimums, misuse, app icons, signature.</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card" href="preview/07-patterns.html">
+        <span class="num">07</span>
+        <span class="name">Patterns</span>
+        <span class="desc">Nav, tabs, overlays, menus, tables, empty states, accordion.</span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Worked examples</h2>
+    <div class="grid">
+      <a class="card" href="ui-kit/splash.html">
+        <span class="num">ex 01</span>
+        <span class="name">Splash · home</span>
+        <span class="desc">Calling card. Lockup, taglines, three nav pills. The minimal entry point.</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="card" href="ui-kit/about.html">
+        <span class="num">ex 02</span>
+        <span class="name">About · stephen</span>
+        <span class="desc">Headshot, pills, what-guides-me / how-i-help cards, seven real socials.</span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Project Jadeite</h2>
+    <div class="grid">
+      <a class="card doc-card" href="project-jadeite.html">
+        <span class="num">mission</span>
+        <span class="name">Project Jadeite</span>
+        <span class="desc">The shipped mission statement: showing up with the brain Stephen actually has.</span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="footer">
+    <a class="footer-sig" href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a>
+    <span>v2026.09 · released 2026-09-11</span>
+  </div>
+
+<script>
+  const body = document.body, t = document.getElementById('toggle');
+  const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
+  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+</script>
+</body>
+</html>

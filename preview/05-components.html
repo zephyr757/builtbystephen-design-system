@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Preview — Components" subtitle="Buttons, links, chips, badges, every form control, avatars, progress" viewport="1280x4620" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Components — Built by Stephen</title>
+<link rel="stylesheet" href="../tokens/bbs-tokens.css">
+<link rel="stylesheet" href="kit.css">
+</head>
+<body class="bbs theme-labradorite">
+  <button class="toggle-ui" id="toggle">switch theme</button>
+
+  <h1 class="page">Components</h1>
+  <p class="lede">Every primitive in semantic tokens. Flip the theme — the components stay; the colors swap. Composed layouts (nav, overlays, tables) live in <a href="07-patterns.html">patterns</a>.</p>
+
+  <section>
+    <h2>Buttons — variants</h2>
+    <p class="note">Five weights of emphasis plus destructive. Hover shifts color <em>and</em> elevation; a lift alone is easy to miss on a busy background.</p>
+    <div class="row"><span class="label">primary</span><button class="btn btn-primary">Let's build →</button><button class="btn btn-primary-jade">Get started</button><button class="btn btn-danger">Delete project</button></div>
+    <div class="row"><span class="label">secondary</span><button class="btn btn-ghost">Learn more</button><button class="btn btn-ghost-subtle">Secondary</button><button class="btn btn-glow">Jadeite accent</button></div>
+  </section>
+
+  <section>
+    <h2>Buttons — sizes &amp; icon-only</h2>
+    <p class="note">Icon-only buttons stay 44&nbsp;×&nbsp;44 at default size so they clear the minimum touch target.</p>
+    <div class="row"><span class="label">sizes</span><button class="btn btn-primary btn-sm">Small</button><button class="btn btn-primary">Default</button><button class="btn btn-primary btn-lg">Large</button></div>
+    <div class="row"><span class="label">icon-only</span><button class="btn btn-ghost btn-icon" aria-label="Settings">⚙</button><button class="btn btn-primary btn-icon" aria-label="Add">+</button><button class="btn btn-glow btn-icon" aria-label="Favorite">♥</button><button class="btn btn-ghost btn-icon btn-sm" aria-label="Close">×</button></div>
+    <div class="row"><span class="label">with icon</span><button class="btn btn-ghost">↓ Download</button><button class="btn btn-primary">Continue →</button></div>
+  </section>
+
+  <section>
+    <h2>Buttons — every state</h2>
+    <p class="note">Hover, focus, and active are shown here as static specimens so you can check them without a pointer.</p>
+    <div class="states">
+      <div class="state"><span class="tag">default</span><button class="btn btn-primary">Let's build</button></div>
+      <div class="state"><span class="tag">hover</span><button class="btn btn-primary is-hover">Let's build</button></div>
+      <div class="state"><span class="tag">focus</span><button class="btn btn-primary is-focus">Let's build</button></div>
+      <div class="state"><span class="tag">active</span><button class="btn btn-primary is-active">Let's build</button></div>
+      <div class="state"><span class="tag">loading</span><button class="btn btn-primary is-loading">Let's build</button></div>
+      <div class="state"><span class="tag">disabled</span><button class="btn btn-primary" disabled>Let's build</button></div>
+    </div>
+    <div class="states">
+      <div class="state"><span class="tag">ghost default</span><button class="btn btn-ghost">Learn more</button></div>
+      <div class="state"><span class="tag">ghost hover</span><button class="btn btn-ghost is-hover">Learn more</button></div>
+      <div class="state"><span class="tag">ghost focus</span><button class="btn btn-ghost is-focus">Learn more</button></div>
+      <div class="state"><span class="tag">ghost disabled</span><button class="btn btn-ghost" disabled>Learn more</button></div>
+      <div class="state"><span class="tag">glow default</span><button class="btn btn-glow">Accent</button></div>
+      <div class="state"><span class="tag">glow hover</span><button class="btn btn-glow is-hover">Accent</button></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Links</h2>
+    <div class="states">
+      <div class="state"><span class="tag">inline</span><span style="font-size:var(--bbs-fs-sm);color:var(--bbs-text-secondary)">Read the <a class="lnk">field notes</a> first.</span></div>
+      <div class="state"><span class="tag">inline hover</span><span style="font-size:var(--bbs-fs-sm);color:var(--bbs-text-secondary)">Read the <a class="lnk is-hover">field notes</a> first.</span></div>
+      <div class="state"><span class="tag">standalone</span><a class="lnk-standalone">All projects →</a></div>
+      <div class="state"><span class="tag">standalone hover</span><a class="lnk-standalone is-hover">All projects →</a></div>
+      <div class="state"><span class="tag">quiet</span><a class="lnk-quiet">Privacy</a></div>
+      <div class="state"><span class="tag">quiet hover</span><a class="lnk-quiet is-hover">Privacy</a></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Chips</h2>
+    <div class="row"><span class="label">variants</span><span class="chip">Default</span><span class="chip active">Active</span><span class="chip"><span class="chip-icon"></span>With icon</span><span class="chip">Dismissible<button class="chip-dismiss" aria-label="Remove">×</button></span></div>
+    <div class="states">
+      <div class="state"><span class="tag">default</span><span class="chip">Labradorite</span></div>
+      <div class="state"><span class="tag">hover</span><span class="chip is-hover">Labradorite</span></div>
+      <div class="state"><span class="tag">selected</span><span class="chip active">Labradorite</span></div>
+      <div class="state"><span class="tag">selected hover</span><span class="chip active is-hover">Labradorite</span></div>
+      <div class="state"><span class="tag">disabled</span><span class="chip is-disabled">Labradorite</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Badges</h2>
+    <div class="row"><span class="label">status</span><span class="badge neutral">Neutral</span><span class="badge new">New</span><span class="badge success">Success</span><span class="badge warning">Warning</span><span class="badge danger">Danger</span></div>
+  </section>
+
+  <section>
+    <h2>Text fields</h2>
+    <p class="note">Every field shares one shell: label above, hint or error below, 44px-tall control.</p>
+    <div class="row" style="align-items:flex-start">
+      <div class="field"><label>Your email</label><input class="input" placeholder="you@example.com"/><span class="hint">We only use this to sign you in.</span></div>
+      <div class="field"><label>Project name</label><input class="input" value="bestie-dot-dev"/></div>
+      <div class="field"><span class="lbl">Search</span><div class="search"><span class="mag"></span><input class="input" placeholder="Search projects"/></div></div>
+    </div>
+    <div class="row" style="align-items:flex-start">
+      <div class="field"><label>Notes</label><textarea class="input" placeholder="What's this project for?"></textarea></div>
+      <div class="field"><label>Launch date</label><input class="input" type="date" value="2026-04-17"/></div>
+      <div class="field"><label>Framework</label><div class="select-wrap"><select class="input"><option>Pick one</option><option selected>Vanilla + tokens</option><option>React</option><option>Svelte</option></select></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Text fields — every state</h2>
+    <div class="states">
+      <div class="state"><span class="tag">default</span><input class="input" placeholder="you@example.com"/></div>
+      <div class="state"><span class="tag">hover</span><input class="input is-hover" placeholder="you@example.com"/></div>
+      <div class="state"><span class="tag">focus</span><input class="input is-focus" value="stephen@"/></div>
+      <div class="state"><span class="tag">filled</span><input class="input" value="stephen@bestie.dev"/></div>
+      <div class="state"><span class="tag">error</span><input class="input is-error" value="stephen@@bestie"/></div>
+      <div class="state"><span class="tag">read-only</span><input class="input is-readonly" value="bbs-0041" readonly/></div>
+      <div class="state"><span class="tag">disabled</span><input class="input" value="Locked" disabled/></div>
+      <div class="state"><span class="tag">with error text</span><div class="field" style="width:auto"><input class="input is-error" value="stephen@@bestie"/><span class="err">That address has two @ signs.</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Checkbox</h2>
+    <div class="states">
+      <div class="state"><span class="tag">off</span><label class="check"><span class="box"></span>Remember me</label></div>
+      <div class="state"><span class="tag">on</span><label class="check on"><span class="box"></span>Remember me</label></div>
+      <div class="state"><span class="tag">indeterminate</span><label class="check mixed"><span class="box"></span>Some selected</label></div>
+      <div class="state"><span class="tag">hover</span><label class="check is-hover"><span class="box"></span>Remember me</label></div>
+      <div class="state"><span class="tag">focus</span><label class="check on is-focus"><span class="box"></span>Remember me</label></div>
+      <div class="state"><span class="tag">error</span><label class="check is-error"><span class="box"></span>Accept the terms</label></div>
+      <div class="state"><span class="tag">disabled</span><label class="check is-disabled"><span class="box"></span>Unavailable</label></div>
+      <div class="state"><span class="tag">disabled + on</span><label class="check on is-disabled"><span class="box"></span>Locked on</label></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Radio group</h2>
+    <div class="row" style="align-items:flex-start;gap:48px">
+      <div class="radio-group" id="radios">
+        <label class="check radio on"><span class="box"></span>Labradorite — dark</label>
+        <label class="check radio"><span class="box"></span>Opalite — light</label>
+        <label class="check radio"><span class="box"></span>Jadeite — monochrome</label>
+        <label class="check radio is-disabled"><span class="box"></span>System (coming soon)</label>
+      </div>
+      <div class="states" style="flex:1">
+        <div class="state"><span class="tag">off</span><label class="check radio"><span class="box"></span>Option</label></div>
+        <div class="state"><span class="tag">on</span><label class="check radio on"><span class="box"></span>Option</label></div>
+        <div class="state"><span class="tag">focus</span><label class="check radio on is-focus"><span class="box"></span>Option</label></div>
+        <div class="state"><span class="tag">disabled</span><label class="check radio is-disabled"><span class="box"></span>Option</label></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Toggle</h2>
+    <div class="states">
+      <div class="state"><span class="tag">off</span><div class="toggle-switch"><div class="track"><div class="thumb"></div></div><span>Notifications</span></div></div>
+      <div class="state"><span class="tag">on</span><div class="toggle-switch on"><div class="track"><div class="thumb"></div></div><span>Notifications</span></div></div>
+      <div class="state"><span class="tag">focus</span><div class="toggle-switch on is-focus"><div class="track"><div class="thumb"></div></div><span>Notifications</span></div></div>
+      <div class="state"><span class="tag">disabled</span><div class="toggle-switch is-disabled"><div class="track"><div class="thumb"></div></div><span>Notifications</span></div></div>
+      <div class="state"><span class="tag">interactive</span><div class="toggle-switch on" id="sw"><div class="track"><div class="thumb"></div></div><span>Try me</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Slider, segmented, stepper</h2>
+    <div class="row" style="align-items:flex-start">
+      <div class="field"><span class="lbl">Glow intensity</span><input class="slider" id="sld" type="range" min="0" max="100" value="55" style="--pct:55%"/><span class="hint" id="sldv">55%</span></div>
+      <div class="field" style="width:auto"><span class="lbl">Theme</span><div class="segmented" id="seg"><button class="on">Dark</button><button>Light</button><button>Mono</button></div></div>
+      <div class="field" style="width:auto"><span class="lbl">Seats</span><div class="stepper" id="stp"><button aria-label="Decrease">−</button><span class="val">3</span><button aria-label="Increase">+</button></div></div>
+    </div>
+    <div class="states">
+      <div class="state" style="grid-column:span 2"><span class="tag">slider disabled</span><input class="slider is-disabled" type="range" value="30" style="--pct:30%" disabled/></div>
+      <div class="state"><span class="tag">segmented disabled</span><div class="segmented is-disabled"><button class="on">Dark</button><button>Light</button></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>File upload</h2>
+    <div class="row" style="align-items:flex-start">
+      <div class="state" style="background:none;border:none;padding:0"><span class="tag">idle</span><div class="drop"><span class="clip">↑</span><span>Drop a file, or <span class="lnk">browse</span></span><span class="hint">PNG, SVG or PDF · up to 10MB</span></div></div>
+      <div class="state" style="background:none;border:none;padding:0"><span class="tag">drag over</span><div class="drop is-active"><span class="clip">↑</span><span>Release to upload</span><span class="hint">PNG, SVG or PDF · up to 10MB</span></div></div>
+      <div class="state" style="background:none;border:none;padding:0"><span class="tag">uploaded</span><div class="file-row"><span class="badge success">done</span><span class="nm">logo-stacked.svg</span><button class="chip-dismiss" aria-label="Remove">×</button></div><div class="file-row"><div class="ring sm"></div><span class="nm">hummingbird.png</span><span class="hint">62%</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Avatars</h2>
+    <div class="row"><span class="label">sizes</span><span class="avatar sm">SB</span><span class="avatar">SB</span><span class="avatar lg">SB</span><span class="avatar jade">SB</span></div>
+    <div class="row"><span class="label">presence</span><span class="avatar">SB<span class="presence"></span></span><span class="label" style="min-width:0">group</span><span class="avatar-group"><span class="avatar sm">SB</span><span class="avatar sm">JL</span><span class="avatar sm">MR</span><span class="avatar sm">+4</span></span></div>
+  </section>
+
+  <section>
+    <h2>Progress, spinners, skeletons</h2>
+    <div class="row" style="align-items:center;gap:28px">
+      <div class="field" style="width:300px"><span class="lbl">Determinate</span><div class="progress"><i style="width:68%"></i></div></div>
+      <div class="field" style="width:300px"><span class="lbl">Indeterminate</span><div class="progress indeterminate"><i></i></div></div>
+    </div>
+    <div class="row" style="align-items:center;gap:28px">
+      <div class="state"><span class="tag">spinner</span><div class="ring"></div></div>
+      <div class="state"><span class="tag">spinner sm</span><div class="ring sm"></div></div>
+      <div class="state"><span class="tag">meter</span><div class="meter-wrap"><div class="meter" style="--v:.68"></div><span class="meter-val">68%</span></div></div>
+      <div class="state" style="min-width:260px"><span class="tag">skeleton</span><div style="display:grid;gap:9px;width:100%"><div class="skel" style="height:13px;width:45%"></div><div class="skel" style="height:11px;width:88%"></div><div class="skel" style="height:11px;width:72%"></div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cards &amp; alerts</h2>
+    <div class="cols">
+      <div class="card">
+        <header>
+          <div>
+            <span style="font-size:var(--bbs-fs-2xs);text-transform:uppercase;letter-spacing:var(--bbs-tracking-wide);color:var(--bbs-text-muted)">Project</span>
+            <h3>ghostwriter</h3>
+          </div>
+          <span class="badge success">live</span>
+        </header>
+        <p>AI-assisted writing tool for friends of Built by Stephen. Shipping in three themes, obviously.</p>
+        <div class="row" style="margin:0;gap:8px"><span class="chip">labradorite</span><span class="chip">opalite</span><span class="chip">beta</span></div>
+        <footer><span style="font-size:var(--bbs-fs-xs);color:var(--bbs-text-muted)">updated 2 days ago</span><button class="btn btn-primary btn-sm">Open</button></footer>
+      </div>
+      <div style="display:grid;gap:14px;align-content:start">
+        <div class="alert"><span class="dot"></span><div><strong>Theme saved</strong><small>We remember your choice. Flip anytime with Cmd/Ctrl + Shift + T.</small></div></div>
+        <div class="alert" style="--bbs-glow:var(--bbs-primary);background:color-mix(in oklab,var(--bbs-primary) 12%,var(--bbs-surface-soft))"><span class="dot"></span><div><strong>Heads up</strong><small>Your jadeite heart is missing from the footer. Add it before you ship.</small></div></div>
+        <div class="alert" style="--bbs-glow:var(--bbs-status-danger);background:color-mix(in oklab,var(--bbs-status-danger) 12%,var(--bbs-surface-soft))"><span class="dot"></span><div><strong>Build failed</strong><small>Two tokens resolved to nothing. Check the field notes for the rename.</small></div></div>
+      </div>
+    </div>
+  </section>
+
+<script>
+  const body = document.body, t = document.getElementById('toggle');
+  const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
+  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  document.getElementById('sw').addEventListener('click', e => e.currentTarget.classList.toggle('on'));
+  const sld = document.getElementById('sld'), sldv = document.getElementById('sldv');
+  sld.addEventListener('input', e => { const v = e.target.value; e.target.style.setProperty('--pct', v + '%'); sldv.textContent = v + '%'; });
+  document.getElementById('seg').addEventListener('click', e => { if (e.target.tagName !== 'BUTTON') return; [...e.currentTarget.children].forEach(b => b.classList.remove('on')); e.target.classList.add('on'); });
+  document.getElementById('radios').addEventListener('click', e => { const l = e.target.closest('.check'); if (!l || l.classList.contains('is-disabled')) return; [...e.currentTarget.children].forEach(c => c.classList.remove('on')); l.classList.add('on'); });
+  const stp = document.getElementById('stp'), val = stp.querySelector('.val');
+  stp.addEventListener('click', e => { if (e.target.tagName !== 'BUTTON') return; const d = e.target.textContent.trim() === '+' ? 1 : -1; val.textContent = Math.max(0, +val.textContent + d); });
+</script>
+</body>
+</html>

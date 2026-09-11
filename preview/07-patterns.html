@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Preview — Patterns" subtitle="Nav, tabs, overlays, menus, tables, empty states" viewport="1280x3520" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patterns — Built by Stephen</title>
+<link rel="stylesheet" href="../tokens/bbs-tokens.css">
+<link rel="stylesheet" href="kit.css">
+<link rel="stylesheet" href="patterns.css">
+</head>
+<body class="bbs theme-labradorite">
+  <button class="toggle-ui" id="toggle">switch theme</button>
+
+  <h1 class="page">Patterns</h1>
+  <p class="lede">Primitives composed into the layouts that actually ship: navigation, overlays, data display. The single-element pieces live in <a href="05-components.html">components</a>.</p>
+
+  <section>
+    <h2>Tabs</h2>
+    <div class="tabs" id="tabs"><button class="on">Overview</button><button>Tokens</button><button>Usage</button><button disabled>Changelog</button></div>
+    <p class="tab-panel" id="tabpanel">Jadeite is the anchor. It shows up in three modes — dark, light, and monochrome.</p>
+    <div class="tabs-pill" id="tabs2"><button class="on">Dark</button><button>Light</button><button>Mono</button></div>
+  </section>
+
+  <section>
+    <h2>Nav bar</h2>
+    <div class="navbar">
+      <span class="brand"><span class="hrt"></span>built by stephen</span>
+      <nav><a class="on">Work</a><a>Projects</a><a>Field notes</a><a>About</a></nav>
+      <button class="btn btn-primary btn-sm">Say hi</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sidebar shell</h2>
+    <div class="shell">
+      <aside class="sidebar">
+        <span class="grp">Design</span>
+        <a class="on"><span class="ico"></span>Color</a>
+        <a><span class="ico"></span>Type</a>
+        <a><span class="ico"></span>Foundations</a>
+        <span class="grp">Build</span>
+        <a><span class="ico"></span>Components</a>
+        <a><span class="ico"></span>Patterns</a>
+        <a><span class="ico"></span>Tokens</a>
+      </aside>
+      <div class="body">
+        <div class="crumbs" style="margin-bottom:16px"><a>Design system</a><span class="sep">/</span><a>Design</a><span class="sep">/</span><span class="cur">Color</span></div>
+        <h3 style="margin:0 0 8px;font-size:var(--bbs-fs-lg);font-weight:var(--bbs-weight-subheading);color:var(--bbs-text)">Color</h3>
+        <p style="margin:0">Every color has a name and a reason. Use the named token, not the hex.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Breadcrumb &amp; pagination</h2>
+    <div class="row"><span class="label">breadcrumb</span><div class="crumbs"><a>Home</a><span class="sep">/</span><a>Projects</a><span class="sep">/</span><a>ghostwriter</a><span class="sep">/</span><span class="cur">Settings</span></div></div>
+    <div class="row"><span class="label">pagination</span><div class="pager" id="pager"><button disabled>←</button><button class="on">1</button><button>2</button><button>3</button><span class="gap">…</span><button>12</button><button>→</button></div></div>
+  </section>
+
+  <section>
+    <h2>Dropdown menu</h2>
+    <div class="row" style="align-items:flex-start;gap:28px">
+      <div class="menu">
+        <span class="grp">Project</span>
+        <div class="mi">Open<kbd>↵</kbd></div>
+        <div class="mi">Duplicate<kbd>⌘D</kbd></div>
+        <div class="mi on">Rename<kbd>F2</kbd></div>
+        <div class="sep"></div>
+        <div class="mi is-disabled">Move to…</div>
+        <div class="mi danger">Delete<kbd>⌫</kbd></div>
+      </div>
+      <div style="display:grid;gap:10px"><span class="tag" style="font-family:var(--bbs-font-mono);font-size:var(--bbs-fs-2xs);text-transform:uppercase;letter-spacing:var(--bbs-tracking-wide);color:var(--bbs-text-muted)">attached to trigger</span><div class="menu-anchor"><button class="btn btn-ghost btn-sm">Actions ▾</button><div class="menu" style="width:200px"><div class="mi">Open<kbd>↵</kbd></div><div class="mi">Duplicate<kbd>⌘D</kbd></div><div class="sep"></div><div class="mi danger">Delete<kbd>⌫</kbd></div></div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Modal</h2>
+    <div class="modal-demo">
+      <div class="scrim"></div>
+      <div class="modal">
+        <button class="x" aria-label="Close">×</button>
+        <h3>Delete ghostwriter?</h3>
+        <p>This removes the project and its 41 saved drafts. It can't be undone.</p>
+        <div class="acts"><button class="btn btn-ghost-subtle btn-sm">Cancel</button><button class="btn btn-danger btn-sm">Delete forever</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tooltip &amp; popover</h2>
+    <div class="row" style="align-items:flex-end;gap:110px;padding-top:44px;padding-left:90px">
+      <div class="tip-wrap"><span class="tip">Copies the hex to your clipboard</span><button class="btn btn-ghost btn-sm">#04ffb2</button></div>
+      <div class="popover">
+        <strong>Electric jadeite</strong>
+        <p>The neon version of the anchor. Labradorite glow, hover energy, the moment it lands.</p>
+        <a class="lnk-standalone" style="font-size:var(--bbs-fs-xs)">Open in field notes →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Table</h2>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Token</th><th class="sortable sorted">Name</th><th>Role</th><th class="num">Hex</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="nm">--bbs-jadeite</td><td>Jadeite</td><td>Brand anchor</td><td class="num">#3bc3a6</td><td><span class="badge success">stable</span></td></tr>
+          <tr class="on"><td class="nm">--obsidian</td><td>Obsidian</td><td>Background anchor</td><td class="num">#120227</td><td><span class="badge new">renamed</span></td></tr>
+          <tr><td class="nm">--amethyst</td><td>Amethyst</td><td>Violet support</td><td class="num">#8000ff</td><td><span class="badge new">renamed</span></td></tr>
+          <tr><td class="nm">--rose-quartz</td><td>Rose Quartz</td><td>Background warmth</td><td class="num">#ffe2ee</td><td><span class="badge new">renamed</span></td></tr>
+          <tr><td class="nm">--neon-yellow</td><td>Neon Yellow</td><td>Highlight</td><td class="num">#ffff00</td><td><span class="badge warning">reserved</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Empty state</h2>
+    <div class="cols">
+      <div class="empty">
+        <span class="glyph">♥</span>
+        <h3>No projects yet</h3>
+        <p>When you start something, it shows up here — drafts included, half-finished ones especially.</p>
+        <button class="btn btn-primary btn-sm">Start one</button>
+      </div>
+      <div class="empty">
+        <span class="glyph" style="color:var(--bbs-text-muted);filter:none">?</span>
+        <h3>Nothing matched "opalight"</h3>
+        <p>Check the spelling, or browse the full token list instead.</p>
+        <button class="btn btn-ghost btn-sm">Clear search</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Accordion</h2>
+    <div class="acc">
+      <details open><summary>Why three themes?</summary><div class="acc-body">Because the brand has three moods. Labradorite is the brain when it's running, opalite is the brain at peace, jadeite is the system turned all the way up.</div></details>
+      <details><summary>Can I add a color?</summary><div class="acc-body">Only if you can name the mineral. If you can't name it, you don't need it.</div></details>
+      <details><summary>Where does the heart go?</summary><div class="acc-body">In the lockup. Always. If the design can't hold it, redesign the container, not the lockup.</div></details>
+    </div>
+  </section>
+
+<script>
+  const body = document.body, t = document.getElementById('toggle');
+  const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
+  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  const panels = ["Jadeite is the anchor. It shows up in three modes — dark, light, and monochrome.","181 tokens, all named. Colors, type, spacing, radii, shadows, and the three theme bindings.","Import the token sheet, put a theme class on the body, and reach for semantic names only."];
+  document.getElementById('tabs').addEventListener('click', e => { if (e.target.tagName !== 'BUTTON' || e.target.disabled) return; const kids = [...e.currentTarget.children]; kids.forEach(b => b.classList.remove('on')); e.target.classList.add('on'); document.getElementById('tabpanel').textContent = panels[kids.indexOf(e.target)] || panels[0]; });
+  const pick = (id) => document.getElementById(id).addEventListener('click', e => { if (e.target.tagName !== 'BUTTON' || e.target.disabled) return; [...e.currentTarget.children].forEach(b => b.classList && b.classList.remove('on')); e.target.classList.add('on'); });
+  pick('tabs2'); pick('pager');
+</script>
+</body>
+</html>

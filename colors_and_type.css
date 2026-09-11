@@ -1,0 +1,21 @@
+/* =========================================================
+   Built by Stephen — Colors & Type
+   Brand fonts (self-hosted) + the type/color tokens they
+   pair with. This file is the host's canonical typography
+   manifest; tokens/bbs-tokens.css @imports it.
+   ========================================================= */
+
+/* ---------- Poppins — brand family, self-hosted ----------
+   Approved usage range: 300–600 (see preview/03-type.html).
+   Paths are relative to this file at the project root.     */
+
+
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/Poppins-Light.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 300; font-display: swap; src: url('fonts/Poppins-LightItalic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/Poppins-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 400; font-display: swap; src: url('fonts/Poppins-Italic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/Poppins-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 500; font-display: swap; src: url('fonts/Poppins-MediumItalic.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/Poppins-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Poppins'; font-style: italic; font-weight: 600; font-display: swap; src: url('fonts/Poppins-SemiBoldItalic.ttf') format('truetype'); }
+

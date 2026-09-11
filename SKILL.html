@@ -1,0 +1,102 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SKILL · Built by Stephen</title><link rel="stylesheet" href="tokens/bbs-tokens.css"><style>
+html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background:var(--bbs-bg-overlay);mix-blend-mode:screen;opacity:.4}.page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px clamp(20px,5vw,56px);border-bottom:1px solid var(--bbs-border-soft);backdrop-filter:blur(var(--bbs-blur-soft))}.page-nav a,.theme-toggle{min-height:44px;display:inline-flex;align-items:center;padding:8px 14px;border:1px solid var(--bbs-border);border-radius:var(--bbs-radius-pill);background:var(--bbs-surface);color:var(--bbs-text-secondary);font:inherit;text-decoration:none;cursor:pointer}article{width:min(70ch,calc(100% - 40px));margin:64px auto 96px;color:var(--bbs-text);font-size:var(--bbs-fs-md);line-height:var(--bbs-lh-body)}article h1{color:var(--bbs-lockup-name);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:var(--bbs-weight-display);line-height:1.05}article h2{margin-top:56px;color:var(--bbs-text);font-size:var(--bbs-fs-xl);font-weight:var(--bbs-weight-heading)}article h3{margin-top:36px;color:var(--bbs-heart);font-size:var(--bbs-fs-lg);font-weight:var(--bbs-weight-subheading)}article a{color:var(--bbs-primary)}article code,article pre{font-family:var(--bbs-font-mono)}article code{padding:2px 6px;border:1px solid var(--bbs-border-soft);border-radius:var(--bbs-radius-xs);color:var(--bbs-heart);background:var(--bbs-surface-soft)}article pre{overflow-x:auto;padding:20px;border:1px solid var(--bbs-border-soft);border-radius:var(--bbs-radius-lg);background:var(--bbs-surface)}article table{width:100%;border-collapse:collapse;font-size:var(--bbs-fs-sm)}article th,article td{padding:10px 12px;border-bottom:1px solid var(--bbs-border-soft);text-align:left;vertical-align:top}.glass-footer{padding:24px;border-top:1px solid var(--bbs-border-soft);background:var(--bbs-surface-soft);text-align:center}.glass-footer a{color:var(--bbs-text-secondary);text-decoration:none}
+</style></head><body class="bbs theme-labradorite"><nav class="page-nav"><a href="index.html">← design system</a><button class="theme-toggle" id="theme-toggle" type="button">◐ switch theme</button></nav><article><h1>BBS Skill — Quick Invocation for Claude</h1>
+<p><strong>When to use:</strong> Any design, prototype, slide, doc, or HTML artifact tagged &quot;Built by Stephen&quot; or using this project&#39;s tokens.</p>
+<h2>1 — Always do this first</h2>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;tokens/bbs-tokens.css&quot;&gt;
+&lt;body class=&quot;bbs theme-labradorite&quot;&gt;  &lt;!-- or theme-opalite / theme-jadeite --&gt;
+</code></pre>
+<h2>2 — Three laws (don&#39;t break)</h2>
+<ol>
+<li><strong>Jadeite heart or don&#39;t ship.</strong> <code>built by &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt; stephen</code> → <code>https://builtbystephen.me</code>. The <code>.bbs-heart</code> utility (from <code>tokens/bbs-tokens.css</code>) renders the neon jadeite mark, tinted via <code>--bbs-heart</code>: OG <code>#3bc3a6</code> on opalite, electric <code>#04ffb2</code> on labradorite and jadeite. Size variants: <code>--lg</code> (1.1em), <code>--xl</code> (1.3em), <code>--hero</code> (1.5em — for page-title lockups), <code>--display</code> (3em — for standalone specimens). Never a red/blue/purple/orange heart. Both are auto-bound via <code>--bbs-heart</code>.</li>
+<li><strong>Poppins 300–600 only, via semantic weight tokens.</strong> Never 100, 200, or 700+. Ultra-thin disappears on glass. Use <code>--bbs-weight-display</code> / <code>--bbs-weight-title</code> / <code>--bbs-weight-heading</code> / <code>--bbs-weight-subheading</code> / <code>--bbs-weight-body</code> / <code>--bbs-weight-emphasis</code> — the ladder leans light for display and firms up for UI. See README for the full table.</li>
+<li><strong>Use semantic tokens.</strong> <code>var(--bbs-text)</code>, <code>var(--bbs-surface)</code>, <code>var(--bbs-primary)</code> — never hardcode hex. If you do, the theme switch breaks.</li>
+</ol>
+<h2>3 — Component recipes</h2>
+<h3>Glass card</h3>
+<pre><code class="language-css">.bbs-card {
+  background: var(--bbs-surface);
+  backdrop-filter: blur(var(--bbs-blur-strong));
+  border: 1px solid var(--bbs-border);
+  border-radius: var(--bbs-radius-xl);
+  padding: var(--bbs-space-7);
+  box-shadow: var(--bbs-shadow-card);
+}
+</code></pre>
+<h3>Primary CTA</h3>
+<pre><code class="language-css">.bbs-cta {
+  background: var(--bbs-primary);
+  color: var(--bbs-primary-ink);
+  padding: var(--bbs-space-4) var(--bbs-space-6);
+  border-radius: var(--bbs-radius-pill);
+  font-weight: var(--bbs-weight-emphasis);
+  box-shadow: var(--bbs-shadow-cta);
+  transition: transform var(--bbs-transition-fast);
+}
+.bbs-cta:hover { transform: translateY(-4px) scale(1.02); }
+</code></pre>
+<h3>Chip / pill</h3>
+<pre><code class="language-css">.bbs-chip {
+  background: var(--bbs-surface-soft);
+  border: 1px solid var(--bbs-border-soft);
+  border-radius: var(--bbs-radius-pill);
+  padding: var(--bbs-space-3) var(--bbs-space-5);
+  font-size: var(--bbs-fs-xs);
+}
+</code></pre>
+<h3>Signature lockup</h3>
+<pre><code class="language-html">&lt;a href=&quot;https://builtbystephen.me&quot; class=&quot;bbs-signature&quot;&gt;
+  built by &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt; stephen
+&lt;/a&gt;
+</code></pre>
+<pre><code class="language-css">.bbs-signature {
+  color: var(--bbs-text-secondary);
+  text-decoration: none;
+  font-weight: var(--bbs-weight-light);
+}
+.bbs-signature .bbs-heart {
+  color: var(--bbs-heart);
+  filter: drop-shadow(0 0 8px var(--bbs-heart));
+}
+</code></pre>
+<h2>4 — Theme toggle (copy-paste)</h2>
+<pre><code class="language-js">const KEY = &#39;bbs-theme&#39;;
+const body = document.body;
+// The three themes, in cycle order: Labradorite (dark) → Opalite (light) → Jadeite (monochrome).
+const THEMES = [&#39;theme-labradorite&#39;, &#39;theme-opalite&#39;, &#39;theme-jadeite&#39;];
+const apply = (t) =&gt; {
+  // Strip ANY theme-* class so stale/renamed values can&#39;t stick around.
+  [...body.classList].forEach((c) =&gt; c.startsWith(&#39;theme-&#39;) &amp;&amp; body.classList.remove(c));
+  body.classList.add(t);
+  try { localStorage.setItem(KEY, t); } catch {}
+};
+let saved = null;
+try { saved = localStorage.getItem(&#39;bbs-theme&#39;); } catch {}
+apply(THEMES.includes(saved)
+  ? saved
+  : (matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches ? &#39;theme-labradorite&#39; : &#39;theme-opalite&#39;));
+
+document.getElementById(&#39;theme-toggle&#39;)?.addEventListener(&#39;click&#39;, () =&gt; {
+  const cur = THEMES.find((c) =&gt; body.classList.contains(c)) || THEMES[0];
+  apply(THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length]);
+});
+addEventListener(&#39;keydown&#39;, (e) =&gt; {
+  if ((e.metaKey || e.ctrlKey) &amp;&amp; e.shiftKey &amp;&amp; e.key.toLowerCase() === &#39;t&#39;) {
+    e.preventDefault();
+    document.getElementById(&#39;theme-toggle&#39;)?.click();
+  }
+});
+</code></pre>
+<h2>5 — Before ship, check</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Jadeite heart present in signature, links to <code>builtbystephen.me</code></li>
+<li><input disabled="" type="checkbox"> Both themes work (flip the class and scan)</li>
+<li><input disabled="" type="checkbox"> No hardcoded hex in components — semantic tokens only</li>
+<li><input disabled="" type="checkbox"> Poppins weights all ≥ 300 and ≤ 600, via <code>--bbs-weight-*</code> semantic tokens (display/title/heading/subheading/body/emphasis)</li>
+<li><input disabled="" type="checkbox"> Focus rings visible on all interactive elements</li>
+<li><input disabled="" type="checkbox"> Touch targets ≥ 44px on mobile</li>
+<li><input disabled="" type="checkbox"> Reduced motion: transitions honor <code>prefers-reduced-motion</code></li>
+<li><input disabled="" type="checkbox"> Voice: friendly, lowercase, no corporate filler</li>
+</ul>
+<p>If any of these fail, fix before calling the work done.</p>
+</article><footer class="glass-footer"><a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a></footer><script>(() => { const themes=['theme-labradorite','theme-opalite','theme-jadeite']; const body=document.body; const apply=t=>{body.classList.remove(...themes);body.classList.add(t);try{localStorage.setItem('bbs-theme',t)}catch{}};let saved=null;try{saved=localStorage.getItem('bbs-theme')}catch{};apply(themes.includes(saved)?saved:'theme-labradorite');document.getElementById('theme-toggle')?.addEventListener('click',()=>{const i=themes.findIndex(t=>body.classList.contains(t));apply(themes[(i+1)%themes.length])}) })();</script></body></html>

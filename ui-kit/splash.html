@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Splash page (BBS home port)" subtitle="Calling card — lockup + taglines + 3 nav pills" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Built by Stephen</title>
+<link rel="stylesheet" href="../tokens/bbs-tokens.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
+<style>
+  html, body { height: 100%; margin: 0; }
+  body { padding: 0; display: grid; grid-template-rows: auto 1fr auto; min-height: 100vh; }
+  body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: var(--bbs-bg-overlay); mix-blend-mode: screen; opacity: 0.45; }
+
+  /* Top nav */
+  .page-nav {
+    position: fixed; top: 24px; right: clamp(20px, 4vw, 56px);
+    z-index: 10;
+  }
+  .theme-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--bbs-surface);
+    border: 1px solid var(--bbs-border);
+    backdrop-filter: blur(var(--bbs-blur-soft));
+    cursor: pointer;
+    color: var(--bbs-text-secondary);
+    font-size: 1rem;
+    transition: transform var(--bbs-transition-fast);
+  }
+  .theme-toggle:hover { transform: translateY(-2px); }
+
+  /* Hero */
+  main {
+    display: grid;
+    place-items: center;
+    padding: 120px 24px 60px;
+  }
+  .hero {
+    display: grid;
+    gap: 48px;
+    justify-items: center;
+    text-align: center;
+    max-width: 640px;
+  }
+
+  .lockup {
+    font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+    font-weight: var(--bbs-weight-display);
+    letter-spacing: var(--bbs-tracking-tight);
+    line-height: 1.05;
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(12px, 2vw, 20px);
+    text-decoration: none;
+  }
+  .lockup .byline { color: var(--bbs-lockup-byline); }
+  .lockup .name { color: var(--bbs-lockup-name); }
+  .lockup .bbs-heart { --_bbs-heart-size: 0.9em; }
+
+  .taglines {
+    display: grid; gap: 12px;
+    font-size: var(--bbs-fs-md);
+    color: var(--bbs-text-secondary);
+    font-weight: var(--bbs-weight-body);
+    line-height: 1.5;
+  }
+  .taglines .kicker {
+    font-weight: var(--bbs-weight-emphasis);
+    color: var(--bbs-text);
+    margin-top: 8px;
+  }
+
+  .nav-pills {
+    display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+  }
+  .nav-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px;
+    border-radius: var(--bbs-radius-pill);
+    background: color-mix(in oklab, var(--bbs-primary) 12%, var(--bbs-surface-soft));
+    border: 1px solid color-mix(in oklab, var(--bbs-primary) 40%, transparent);
+    color: var(--bbs-text);
+    font-size: var(--bbs-fs-sm);
+    font-weight: var(--bbs-weight-emphasis);
+    text-decoration: none;
+    transition: transform var(--bbs-transition-fast), border-color var(--bbs-transition-fast), box-shadow var(--bbs-transition-fast);
+  }
+  .nav-pill i { color: var(--bbs-primary); }
+  .nav-pill:hover {
+    transform: translateY(-2px);
+    border-color: var(--bbs-primary);
+    box-shadow: 0 0 20px color-mix(in oklab, var(--bbs-primary) 40%, transparent);
+  }
+
+  /* Footer */
+  .glass-footer {
+    padding: 24px;
+    text-align: center;
+    border-top: 1px solid var(--bbs-border-soft);
+    backdrop-filter: blur(var(--bbs-blur-soft));
+    background: var(--bbs-surface-soft);
+  }
+  .glass-footer a {
+    color: var(--bbs-text-secondary);
+    text-decoration: none;
+    font-size: var(--bbs-fs-sm);
+    font-weight: var(--bbs-weight-body);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .glass-footer a:hover { opacity: 0.85; }
+  .glass-footer .bbs-heart { --_bbs-heart-size: 0.95em; }
+</style>
+</head>
+<template id="__bundler_thumbnail" data-bg-color="#0b0f1a">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0b0f1a"/>
+    <g transform="translate(600 400)">
+      <path d="M 0 60 C -80 -20, -140 -80, -80 -140 C -40 -180, 0 -140, 0 -100 C 0 -140, 40 -180, 80 -140 C 140 -80, 80 -20, 0 60 Z" fill="#6fcf97"/>
+    </g>
+  </svg>
+</template>
+<body class="bbs theme-labradorite">
+  <nav class="page-nav">
+    <button class="theme-toggle" id="theme-toggle" aria-label="toggle theme">
+      <i id="ico" class="fas fa-moon"></i>
+    </button>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <a class="lockup" href="https://builtbystephen.me"><span class="byline">built by</span> <span class="bbs-heart"></span> <span class="name">stephen</span></a>
+
+      <div class="taglines">
+        <div>crafted with intention</div>
+        <div>designed pixel by pixel</div>
+        <div>orchestrated with care</div>
+        <div class="kicker">let's build something new together</div>
+      </div>
+
+      <div class="nav-pills">
+        <a class="nav-pill" href="mailto:hello@builtbystephen.me"><i class="fas fa-envelope"></i> contact</a>
+        <a class="nav-pill" href="#"><i class="fas fa-briefcase"></i> portfolio</a>
+        <a class="nav-pill" href="about.html"><i class="fas fa-user"></i> about me</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="glass-footer">
+    <a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a>
+  </footer>
+
+<script>
+  const body = document.body;
+  const btn = document.getElementById('theme-toggle');
+  const ico = document.getElementById('ico');
+  const apply = (t) => {
+    [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c));
+    body.classList.add(t);
+    ico.className = t === 'theme-labradorite' ? 'fas fa-moon' : t === 'theme-jadeite' ? 'fas fa-gem' : 'fas fa-sun';
+    try { localStorage.setItem('bbs-theme', t); } catch {}
+  };
+  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  btn.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key.toLowerCase() === 't') { e.preventDefault(); btn.click(); }
+  });
+</script>
+</body>
+</html>
