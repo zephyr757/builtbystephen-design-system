@@ -1,5 +1,5 @@
 /* =========================================================
-   Built by Stephen — Design Tokens (v2026.09)
+   Built by Stephen — Design Tokens (v2026.09.1)
    Single source of truth for colors, type, spacing, effects.
    This file contains the tokens and all three theme bindings.
    ========================================================= */
@@ -22,7 +22,6 @@
   --bbs-weight-regular:    400;
   --bbs-weight-medium:     500;
   --bbs-weight-semibold:   600;
-
 
   /* Semantic weight ladder — USE THESE, not the numeric aliases.
      The ladder leans light for large display and gets firmer for UI chrome,
@@ -158,6 +157,9 @@
   --rose-quartz: #ffe2ee;   /* cream-pink — quiet, tender, unprecedented */
   --celestite:         #9ac1ff;   /* powder blue — self-aware morning */
   --lepidolite:         #d4a5ff;   /* lavender — the slow-reveal color */
+  --jadeite-deep:       #15705c;   /* jadeite dark enough to set type on a light ground */
+  --dioptase:          #0d5c6b;   /* deep blue-green — the calm accent, petrol depth */
+  --dioptase-bright:   #2f9fb3;   /* lifted dioptase — same colour, legible on dark grounds */
   --sunwash:           #ffb5a5;   /* peach — warm highlight, morning light */
   --soft-pink:         #ff9ac1;   /* primary CTA on light */
   --mint-green:        #c1ff9a;   /* highlight — reserved */
@@ -281,6 +283,10 @@
   --bbs-accent:          var(--apatite);
   --bbs-glow:            var(--bbs-electric-jadeite);
   --bbs-heart:           var(--bbs-electric-jadeite);
+  --bbs-voice:           var(--lepidolite);   /* italic/personal copy — light lavender on the dark ground */
+  --bbs-jadeite-text:    var(--bbs-jadeite);   /* jadeite reads fine as type on the dark ground */
+  --bbs-accent-calm:     var(--dioptase-bright); /* quieter alternative to neon kiss — 5.5:1 here */
+  --bbs-surface-deep:    color-mix(in oklab, var(--dioptase) 34%, var(--labradorite-surface)); /* deep panels, raised cards */
 
   --bbs-shadow-card:     var(--labradorite-glow-card);
   --bbs-shadow-cta:      var(--labradorite-glow-cta);
@@ -320,6 +326,10 @@
   --bbs-accent:          var(--celestite);
   --bbs-glow:            var(--bbs-jadeite);
   --bbs-heart:           var(--bbs-jadeite);
+  --bbs-voice:           var(--amethyst);     /* italic/personal copy — deep violet, readable on the pale ground */
+  --bbs-jadeite-text:    var(--jadeite-deep);  /* brand jadeite is only 2.2:1 on this ground */
+  --bbs-accent-calm:     var(--dioptase);        /* full-depth dioptase — 7:1 on the pale ground */
+  --bbs-surface-deep:    color-mix(in oklab, var(--dioptase) 14%, var(--opalite-surface));
 
   --bbs-shadow-card:     var(--opalite-shadow-card);
   --bbs-shadow-cta:      var(--opalite-shadow-cta);
@@ -359,6 +369,12 @@
   --bbs-accent:          var(--bbs-electric-jadeite);
   --bbs-glow:            var(--bbs-electric-jadeite);
   --bbs-heart:           var(--bbs-electric-jadeite);
+  --bbs-voice:           var(--bbs-text-secondary); /* single-hue theme: the voice leans on weight, not colour */
+  --bbs-jadeite-text:    var(--mint-bright);   /* on the near-black mono ground, the bright end reads */
+  --bbs-accent-calm:     var(--bbs-jadeite);  /* mono theme keeps ONE hue — the calm accent is
+                                                 the softer jadeite, not dioptase. A second colour
+                                                 here would make this theme monochrome in name only. */
+  --bbs-surface-deep:    color-mix(in oklab, var(--bbs-jadeite) 16%, var(--jadeite-surface));
 
   --bbs-shadow-card:     var(--jadeite-glow-card);
   --bbs-shadow-cta:      var(--jadeite-glow-cta);
@@ -436,7 +452,8 @@
    tinted via CSS mask so they inherit --bbs-text or --bbs-heart.
 
    Usage:
-     <a class="bbs-signature bbs-signature--jade" href="https://builtbystephen.me">
+     <a class="bbs-signature bbs-signature--jade" href="https://builtbystephen.me"
+                aria-label="built by stephen">
        <span class="bbs-heart"></span>
      </a>
 

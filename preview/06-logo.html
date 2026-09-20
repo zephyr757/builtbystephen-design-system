@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- @dsCard group="Brand" name="Preview — Logo Usage" subtitle="Lockups, clear space, minimums, misuse, app icons, signature" viewport="1280x3750" -->
+<!-- @dsCard group="Brand" name="Preview — Logo Usage" subtitle="Lockups, clear space, minimums, misuse, app icons, signature" viewport="1280x4150" -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -72,8 +72,21 @@
   .ms .n b { color: var(--bbs-glow); font-weight: var(--bbs-weight-emphasis); }
 
   /* App icons */
+  /* Opaque on purpose. The plate is the contrast guarantee, so it is the one
+     surface in the system that is never glass — any translucency hands the
+     ratio back to a ground you do not control. */
+  .plate-mark { display: grid; place-items: center; padding: 13px; border-radius: 50%; background: var(--bbs-primary-ink); }
+  .bbs-heart.keyline { --key: var(--bbs-primary-ink); filter: drop-shadow(1.5px 0 0 var(--key)) drop-shadow(-1.5px 0 0 var(--key)) drop-shadow(0 1.5px 0 var(--key)) drop-shadow(0 -1.5px 0 var(--key)); }
+
   .icons { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-end; }
   .ic { display: grid; gap: 8px; justify-items: center; }
+  .thresh { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px; }
+  .tcol { display: grid; gap: 8px; justify-items: center; }
+  .tcol .thead { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); color: var(--bbs-glow); margin-bottom: 2px; }
+  .tcol em { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); font-style: normal; color: var(--bbs-text-muted); text-align: center; margin-bottom: 10px; }
+  .tcol em.warn { color: var(--bbs-status-warning); }
+  .tile.hostile { background: repeating-linear-gradient(48deg, #2b2b33 0 6px, #d8d4cc 6px 12px); border: none; }
+
   .ic .tile { display: grid; place-items: center; background: linear-gradient(145deg, #0d2a22, #04150f); border: 1px solid var(--jadeite-border); }
   .ic .tile.sq { width: 96px; height: 96px; border-radius: 22px; }
   .ic .tile.circle { width: 96px; height: 96px; border-radius: 50%; }
@@ -94,8 +107,6 @@
   .ph image-slot { position: absolute; inset: 0; }
   .ph .scrim { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(5,1,18,0) 30%, rgba(5,1,18,0.72)); }
   .ph .plate { position: absolute; left: 20px; bottom: 18px; pointer-events: none; display: grid; gap: 4px; }
-  /* The "don't" card must actually BE a jadeite lockup for the demo to hold. */
-  .ph.bad .bbs-lockup { color: var(--bbs-heart); }
   .ph .tagline { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: #fff; align-self: start; padding: 3px 8px; border-radius: var(--bbs-radius-sm); background: rgba(5,1,18,0.72); }
   .ph.bad .scrim { background: none; }
   .ph .flag { position: absolute; top: 12px; left: 14px; font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); padding: 4px 10px; border-radius: var(--bbs-radius-pill); }
@@ -121,7 +132,8 @@
   </section>
 
   <section>
-    <h2>Monochrome · for print and single-color contexts</h2>
+    <h2>Monochrome · one-ink print only</h2>
+    <p class="lede" style="margin-bottom:18px">The only place the heart legally stops being jadeite: a medium that physically cannot produce it — one-ink screen print, engraving, fax, laser etch. <b style="color:var(--bbs-text)">Not for screens.</b> On screen you always have jadeite available, so an unreadable ground is fixed with a scrim, a keyline, or a plate — see <a href="#uncontrolled">when you can't control the ground</a>.</p>
     <div class="lock-grid">
       <div class="lock mono-light"><span class="bbs-lockup bbs-lockup--mono" style="--bbs-lockup-size:34px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="cap" style="color: #6b5a80">light bg · ink fill</span></div>
       <div class="lock mono-dark"><span class="bbs-lockup bbs-lockup--mono" style="--bbs-lockup-size:34px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="cap" style="color: rgba(255,255,255,0.6)">dark bg · white fill</span></div>
@@ -174,10 +186,10 @@
         <div class="use">Every BBS artifact. Hero moments, inline text, footers — the signature that says Stephen made it. Always wrapped in <code style="font-family:var(--bbs-font-mono);font-size:0.85em;color:var(--bbs-text);">&lt;a href="https://builtbystephen.me"&gt;</code>.</div>
       </div>
       <div class="hh fallback">
-        <span class="rank">02 · fallback only</span>
-        <div class="big" style="font-family: var(--bbs-font-mono); color: var(--bbs-text-secondary);">♡</div>
-        <div class="name">Mono heart</div>
-        <div class="use">Print, single-color contexts — only if jadeite unavailable.</div>
+        <span class="rank">02 · large &amp; quiet only</span>
+        <div class="big" style="color: var(--bbs-heart);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:84px;height:84px" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+        <div class="name">Outline heart · jadeite</div>
+        <div class="use">Large quiet moments only — section marks, watermarks, anywhere the solid heart is too loud at size. <b style="color:var(--bbs-text)">Never below 32px:</b> the stroke carries far less ink than the solid form, so it loses contrast exactly where legibility matters most. Small stays solid.</div>
       </div>
     </div>
   </section>
@@ -207,20 +219,46 @@
 
   <section>
     <h2>On photography &amp; busy backgrounds</h2>
-    <p class="lede" style="margin-bottom:18px">Use the white monochrome lockup over imagery, and always lay a scrim under it. Drop your own photos into these slots to test a real one.</p>
+    <p class="lede" style="margin-bottom:18px">Scrim the image, then keep the heart jadeite. A scrimmed photo puts jadeite around 6.8:1 — well past the 3:1 WCAG asks of a meaningful graphic — so there's no reason to drop the thread. Fix the ground, not the mark. Drop your own photos in to test. Full working at <a href="mono-heart-study.html">mono heart on screen</a>.</p>
     <div class="photo-row">
       <div class="ph">
         <image-slot id="logo-photo-ok" shape="rect" placeholder="Drop a photo — dark or busy"></image-slot>
         <div class="scrim"></div>
-        <div class="plate"><span class="bbs-lockup bbs-lockup--mono" style="--bbs-lockup-size:20px;color:#fff"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="tagline">white lockup · scrim underneath</span></div>
+        <div class="plate"><span class="bbs-lockup" style="--bbs-lockup-size:20px;--bbs-lockup-byline:#fff;--bbs-lockup-name:#fff"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="tagline">scrimmed · heart stays jadeite</span></div>
         <span class="flag ok">Do</span>
       </div>
       <div class="ph bad">
         <image-slot id="logo-photo-bad" shape="rect" placeholder="Drop the same photo here"></image-slot>
-        <div class="plate"><span class="bbs-lockup bbs-lockup--mono" style="--bbs-lockup-size:20px"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="tagline">jadeite lockup · no scrim</span></div>
+        <div class="plate"><span class="bbs-lockup" style="--bbs-lockup-size:20px;--bbs-lockup-byline:#fff;--bbs-lockup-name:#fff"><i class="lk-builtby"></i><i class="lk-heart"></i><i class="lk-stephen"></i></span><span class="tagline">no scrim · ground left uncontrolled</span></div>
         <span class="flag no">Don't</span>
       </div>
     </div>
+  </section>
+
+  <section>
+    <h2 id="uncontrolled">When you can't control the ground</h2>
+    <p class="lede" style="margin-bottom:18px">User-uploaded backgrounds, partner templates, print-on-demand. You can't guarantee a ratio you don't own, so give the heart its own ground instead of recolouring it.</p>
+    <div class="thresh">
+      <div class="tcol"><span class="thead">at 44px</span>
+        <span class="tile sq hostile"><span class="bbs-heart keyline" style="font-size:44px;--bbs-heart:#fff"></span></span>
+        <em>keyline — holds the silhouette</em>
+        <span class="tile sq hostile"><span class="plate-mark" style="padding:12px"><span class="bbs-heart" style="font-size:44px;filter:none"></span></span></span>
+        <em>plate — also fine, just heavier</em>
+      </div>
+      <div class="tcol"><span class="thead">at 16px</span>
+        <span class="tile sq hostile"><span class="bbs-heart keyline" style="font-size:16px;--bbs-heart:#fff"></span></span>
+        <em class="warn">keyline — 1.5px now eats the shape</em>
+        <span class="tile sq hostile"><span class="plate-mark" style="padding:7px"><span class="bbs-heart" style="font-size:16px;filter:none"></span></span></span>
+        <em>plate — still legible, still jadeite</em>
+      </div>
+      <div class="tcol"><span class="thead">controlled ground</span>
+        <span class="tile sq" style="background:linear-gradient(140deg,#120227,#241b2e)"><span class="bbs-heart" style="font-size:44px"></span></span>
+        <em>jadeite, untreated</em>
+        <span class="tile sq" style="background:linear-gradient(140deg,#120227,#241b2e)"><span class="bbs-heart" style="font-size:16px"></span></span>
+        <em>jadeite, untreated</em>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:16px;font-size:var(--bbs-fs-xs);color:var(--bbs-text-muted)">The plate is the only route that keeps the heart jadeite <i>and</i> guarantees the ratio — you own both sides of the contrast. Prefer it. It's solid on purpose: at 84% over a pale photo jadeite drops to 2.2:1, under the bar, so the plate is the one surface in the system that is never glass.</p>
   </section>
 
   <section>

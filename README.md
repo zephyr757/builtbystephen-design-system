@@ -195,4 +195,4 @@ Never red. Never blue/purple. Never a generic icon-font heart without the jadeit
 
 ## Version
 
-v2026.09 — released 2026-09-11. Canonical three-theme system: Labradorite, Opalite, and Jadeite. Based on production implementations at `builtbystephen.me` and `ghostwriter.systems`.
+v2026.09.1 — released 2026-09-20. Canonical three-theme system: Labradorite, Opalite, and Jadeite. Adds the dioptase calm-accent family, the `--bbs-voice` / `--bbs-jadeite-text` / `--bbs-accent-calm` / `--bbs-surface-deep` semantic bindings, and the mono-heart-on-screen study. Based on production implementations at `builtbystephen.me` and `ghostwriter.systems`.

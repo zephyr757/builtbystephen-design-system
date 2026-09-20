@@ -52,6 +52,7 @@ For dark surfaces. High contrast. The brain when it's running.
 | `--spinel` | `#ff00a0` / magenta | State changes, "shimmer back to life" moments, the feedback for the moment it lands. |
 | `--amethyst` | `#8000ff` (purple) | Softer violet support. Reach for it when neon kiss is too loud. |
 | `--apatite` | `#00ffff` | Electric cyan accent. Sparingly. |
+| `--dioptase` | `#0d5c6b` | Deep blue-green. The calm accent and the deep-panel tint — where neon kiss would be too loud. On dark grounds use `--dioptase-bright` (`#2f9fb3`); the deep value only clears 2.2:1 there. **Labradorite and opalite only** — the jadeite theme stays one hue, so `--bbs-accent-calm` resolves to soft jadeite there instead. |
 
 ### Opalite — the glass-clear, soft-morning brain
 
@@ -123,6 +124,8 @@ Some things aren't a hex code; they're a posture. These live in the voice, not t
 - Use the named tokens, not the hex codes. If you reach for a hex, stop and ask which token you meant.
 - If you invent a new color, give it a named reason. If you can't name it, you don't need it.
 - The jadeite heart goes in the lockup. Always. If the design can't hold it, redesign the container, not the lockup.
+- **The heart is jadeite. Not "usually" jadeite.** It can change *weight* — solid or outline, big or 16px — but not hue. A red heart is someone else's brand, a white heart is a placeholder, a purple heart is a mood. The one exception is true single-ink print, where there's physically only one colour available.
+- **On screen, control the ground instead of recolouring the heart.** A scrimmed photo puts jadeite at roughly 6.8:1, well past the 3:1 WCAG asks of a meaningful graphic. So: controlled ground → jadeite, untreated. Uncontrolled ground at 20px and up → white heart with a 1.5px hard keyline in `--bbs-primary-ink`. Uncontrolled and under 20px → put it on a plate (a **solid** `--bbs-primary-ink` disc — never glass, since translucency hands the ratio back to a ground you do not control) and keep the heart jadeite. Never a soft grey shadow — a blur adds haze without adding an edge, which is exactly the low-vision failure case. Working shown in `preview/mono-heart-study.html`.
 - `preview/` pages are the review surface. `tokens/bbs-tokens.css` is the source of truth. Everything else is downstream.
 
 ---

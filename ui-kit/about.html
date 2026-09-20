@@ -5,10 +5,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — Built by Stephen</title>
-<link rel="stylesheet" href="../tokens/bbs-tokens.css">
+<link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
 <style>
-  html, body { height: 100%; margin: 0; }
+  html { height: 100%; }
+  body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; }
   body { padding: 0; }
   body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: var(--bbs-bg-overlay); mix-blend-mode: screen; opacity: 0.45; }
 
@@ -83,7 +84,7 @@
     font-weight: var(--bbs-weight-display);
     letter-spacing: var(--bbs-tracking-tight);
     margin: 0 0 16px;
-    color: var(--bbs-heart);
+    color: var(--bbs-jadeite-text);
     line-height: 1.05;
   }
 
@@ -178,6 +179,7 @@
 
   /* Footer */
   .glass-footer {
+    margin-top: auto;   /* sits after the content; pinned to the bottom only when the page is short */
     padding: 24px;
     text-align: center;
     border-top: 1px solid var(--bbs-border-soft);
@@ -217,9 +219,9 @@
           <span class="pill"><i class="fas fa-headphones"></i> storyteller &amp; technologist</span>
         </div>
         <ul class="hero-highlights">
-          <li><i class="fas fa-pen-ruler"></i><span>designs human-centered experiences that feel warm and intentional.</span></li>
-          <li><i class="fas fa-wave-square"></i><span>keeps campaigns calm behind the scenes—even when timelines sprint.</span></li>
-          <li><i class="fas fa-people-group"></i><span>partners with communities to turn curiosity into genuine connection.</span></li>
+          <li><i class="fas fa-pen-ruler"></i><span>i design products and systems that feel warm and intentional.</span></li>
+          <li><i class="fas fa-wave-square"></i><span>i keep campaigns calm behind the scenes—even when timelines sprint.</span></li>
+          <li><i class="fas fa-people-group"></i><span>i partner with communities to turn curiosity into genuine connection.</span></li>
         </ul>
       </div>
     </section>
@@ -230,7 +232,7 @@
         <ul>
           <li><i class="fas fa-magic-wand-sparkles"></i><span>translating messy ideas into polished narratives everyone can feel.</span></li>
           <li><i class="fas fa-users"></i><span>building social systems that care for communities as much as they grow them.</span></li>
-          <li><i class="fas fa-brain"></i><span>leading with audhd superpowers: pattern obsession, deep listening, playful curiosity.</span></li>
+          <li><i class="fas fa-brain"></i><span>audhd by design: pattern obsession, deep listening, playful curiosity.</span></li>
           <li><i class="fas fa-hand-holding-heart"></i><span>meeting collaborators where they are—then giving them the tools to go further.</span></li>
         </ul>
       </article>
@@ -238,10 +240,10 @@
       <article class="glass-card">
         <h2 class="section-heading"><i class="fas fa-hands"></i> how i help</h2>
         <ul>
-          <li><i class="fas fa-seedling"></i><span>15+ years crafting multi-platform storytelling for global brands and local movements.</span></li>
-          <li><i class="fas fa-gauge-high"></i><span>leads high-speed content operations—from strategy and production to analytics and community care.</span></li>
-          <li><i class="fas fa-people-group"></i><span>partners with founders, agencies, and creators to launch campaigns with joyful rigor.</span></li>
-          <li><i class="fas fa-face-smile-beam"></i><span>obsessed with motion, accessibility, and little easter eggs that make audiences smile.</span></li>
+          <li><i class="fas fa-seedling"></i><span>i've spent 15+ years crafting multi-platform storytelling for global brands and local movements.</span></li>
+          <li><i class="fas fa-gauge-high"></i><span>i lead high-speed content operations—from strategy and production to analytics and community care.</span></li>
+          <li><i class="fas fa-people-group"></i><span>i collaborate with creators, founders, and agencies — from first idea to launch day.</span></li>
+          <li><i class="fas fa-face-smile-beam"></i><span>i'm obsessed with tiny details — accessibility so <em>everyone</em> can use it, and the motion and UI cues that make it obvious first try.</span></li>
         </ul>
       </article>
     </section>
@@ -262,7 +264,13 @@
   </main>
 
   <footer class="glass-footer">
-    <a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a>
+    <a class="bbs-jadeite-footer" href="https://ghostwriter.systems/project-jadeite">
+      <span class="jf-text">
+        <span class="jf-name">built by <span class="bbs-heart"></span> stephen</span>
+        <span class="jf-part">part of project jadeite</span>
+      </span>
+      <img class="jf-mark" src="../assets/hummingbird-mark.png" alt="" aria-hidden="true">
+    </a>
   </footer>
 
 <script>

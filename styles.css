@@ -70,3 +70,56 @@
 .bbs-lockup--mono .lk-heart { background-color: currentColor; }
 /* Optional glow, matching the standalone heart treatment. */
 .bbs-lockup--glow .lk-heart { filter: drop-shadow(0 0 10px var(--bbs-heart)); }
+
+
+/* =========================================================
+   Project Jadeite footer
+   builtbystephen.me is home, so "built by <heart> stephen" is
+   tautological there — it links to the page you are already on.
+   Home pages carry the sub-brand instead, matching the family
+   pattern used on ghostwriter.systems:
+
+     <product name>
+     PART OF PROJECT JADEITE      <hummingbird>
+
+   Use .bbs-signature on artifacts that TRAVEL; use this at home.
+   The hummingbird is the Jadeite mark the way the heart is the
+   Built by Stephen mark — it ships as artwork (assets/hummingbird-mark.png),
+   already jadeite, so it is placed as an <img> rather than masked.
+   ========================================================= */
+.bbs-jadeite-footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--bbs-font-body);
+  text-decoration: none;
+  color: inherit;
+}
+.bbs-jadeite-footer .jf-text { display: grid; gap: 2px; justify-items: start; }
+/* Sized with font-size rather than by overriding --_bbs-heart-size: .bbs-heart
+   derives its box from 1em, so this gets the same result without declaring a
+   custom property under a component selector. */
+.bbs-jadeite-footer .jf-name .bbs-heart { font-size: 0.92em; vertical-align: -0.06em; }
+.bbs-jadeite-footer .jf-name {
+  font-size: var(--bbs-fs-md);
+  font-weight: var(--bbs-weight-regular);
+  color: var(--bbs-text);
+  line-height: 1.1;
+}
+.bbs-jadeite-footer .jf-part {
+  font-size: var(--bbs-fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--bbs-tracking-caps);
+  color: var(--bbs-text-muted);
+  line-height: 1.2;
+}
+.bbs-jadeite-footer .jf-mark {
+  /* Sized by HEIGHT so it stays level with the two-line text block —
+     the mark is 970x699 (1.39:1), so a width-based size would run long. */
+  height: 42px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 10px color-mix(in oklab, var(--bbs-heart) 40%, transparent));
+}
+a.bbs-jadeite-footer:hover .jf-name { color: var(--bbs-heart); }

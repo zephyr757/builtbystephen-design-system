@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Built by Stephen</title>
-<link rel="stylesheet" href="../tokens/bbs-tokens.css">
+<link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
 <style>
-  html, body { height: 100%; margin: 0; }
-  body { padding: 0; display: grid; grid-template-rows: auto 1fr auto; min-height: 100vh; }
+  html { height: 100%; }
+  body { padding: 0; margin: 0; display: grid; grid-template-rows: auto 1fr auto; min-height: 100vh; }
   body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: var(--bbs-bg-overlay); mix-blend-mode: screen; opacity: 0.45; }
 
   /* Top nav */
@@ -96,6 +96,7 @@
 
   /* Footer */
   .glass-footer {
+    margin-top: auto;   /* sits after the content; pinned to the bottom only when the page is short */
     padding: 24px;
     text-align: center;
     border-top: 1px solid var(--bbs-border-soft);
@@ -148,7 +149,13 @@
   </main>
 
   <footer class="glass-footer">
-    <a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a>
+    <a class="bbs-jadeite-footer" href="https://ghostwriter.systems/project-jadeite">
+      <span class="jf-text">
+        <span class="jf-name">built by <span class="bbs-heart"></span> stephen</span>
+        <span class="jf-part">part of project jadeite</span>
+      </span>
+      <img class="jf-mark" src="../assets/hummingbird-mark.png" alt="" aria-hidden="true">
+    </a>
   </footer>
 
 <script>

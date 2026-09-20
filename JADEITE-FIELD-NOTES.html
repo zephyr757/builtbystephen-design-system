@@ -79,6 +79,11 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <td><code>#00ffff</code></td>
 <td>Electric cyan accent. Sparingly.</td>
 </tr>
+<tr>
+<td><code>--dioptase</code></td>
+<td><code>#0d5c6b</code></td>
+<td>Deep blue-green. The calm accent and the deep-panel tint — where neon kiss would be too loud. On dark grounds use <code>--dioptase-bright</code> (<code>#2f9fb3</code>); the deep value only clears 2.2:1 there. <strong>Labradorite and opalite only</strong> — the jadeite theme stays one hue, so <code>--bbs-accent-calm</code> resolves to soft jadeite there instead.</td>
+</tr>
 </tbody></table>
 <h3>Opalite — the glass-clear, soft-morning brain</h3>
 <p>For light surfaces. Lower contrast. The brain when it&#39;s at peace.</p>
@@ -200,6 +205,8 @@ border: 2px solid var(--bbs-primary-ink);
 <li>Use the named tokens, not the hex codes. If you reach for a hex, stop and ask which token you meant.</li>
 <li>If you invent a new color, give it a named reason. If you can&#39;t name it, you don&#39;t need it.</li>
 <li>The jadeite heart goes in the lockup. Always. If the design can&#39;t hold it, redesign the container, not the lockup.</li>
+<li><strong>The heart is jadeite. Not &quot;usually&quot; jadeite.</strong> It can change <em>weight</em> — solid or outline, big or 16px — but not hue. A red heart is someone else&#39;s brand, a white heart is a placeholder, a purple heart is a mood. The one exception is true single-ink print, where there&#39;s physically only one colour available.</li>
+<li><strong>On screen, control the ground instead of recolouring the heart.</strong> A scrimmed photo puts jadeite at roughly 6.8:1, well past the 3:1 WCAG asks of a meaningful graphic. So: controlled ground → jadeite, untreated. Uncontrolled ground at 20px and up → white heart with a 1.5px hard keyline in <code>--bbs-primary-ink</code>. Uncontrolled and under 20px → put it on a plate (a <strong>solid</strong> <code>--bbs-primary-ink</code> disc — never glass, since translucency hands the ratio back to a ground you do not control) and keep the heart jadeite. Never a soft grey shadow — a blur adds haze without adding an edge, which is exactly the low-vision failure case. Working shown in <code>preview/mono-heart-study.html</code>.</li>
 <li><code>preview/</code> pages are the review surface. <code>tokens/bbs-tokens.css</code> is the source of truth. Everything else is downstream.</li>
 </ul>
 <hr>

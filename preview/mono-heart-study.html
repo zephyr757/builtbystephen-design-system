@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Study — Mono heart on screen" subtitle="Edge treatments over uncontrolled grounds" viewport="1280x2400" -->
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mono heart on screen — treatment study</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:clamp(28px,4vw,56px);background:var(--bbs-bg);color:var(--bbs-text);font-family:var(--bbs-font-body)}
+h1{font-size:var(--bbs-fs-2xl);font-weight:var(--bbs-weight-title);letter-spacing:var(--bbs-tracking-tight);margin:0 0 8px}
+.lede{color:var(--bbs-text-secondary);max-width:64ch;margin:0 0 10px;line-height:var(--bbs-lh-snug)}
+.note{color:var(--bbs-text-muted);font-size:var(--bbs-fs-xs);max-width:64ch;margin:0 0 42px}
+h2{font-size:var(--bbs-fs-md);font-weight:var(--bbs-weight-medium);text-transform:uppercase;letter-spacing:var(--bbs-tracking-caps);color:var(--bbs-text-muted);margin:0 0 6px}
+h2+.sub{color:var(--bbs-text-muted);font-size:var(--bbs-fs-xs);margin:0 0 18px;max-width:62ch}
+section{margin-bottom:54px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;border-radius:var(--bbs-radius-md);overflow:hidden}
+.g{aspect-ratio:1;display:grid;place-items:center;position:relative;min-width:0;overflow:hidden}
+.g .lbl{position:absolute;left:7px;top:6px;font-family:var(--bbs-font-mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(5,1,18,.66);padding:2px 5px;border-radius:3px}
+.pale{background:linear-gradient(140deg,#fdf6ef,#e7eef6 60%,#f7f1ea)}
+.dark{background:linear-gradient(140deg,#0b0a14,#241b2e 60%,#0e1418)}
+.busy{background:radial-gradient(circle at 30% 34%,#8fa4b8 0 22%,transparent 23%),radial-gradient(circle at 72% 66%,#c9b7a0 0 26%,transparent 27%),linear-gradient(120deg,#6f7f8f,#a89a86)}
+.fine{background:repeating-linear-gradient(48deg,#2b2b33 0 5px,#d8d4cc 5px 10px)}
+.t-soft{filter:drop-shadow(0 2px 6px rgba(128,128,128,.3))}
+.t-tight{filter:drop-shadow(0 0 3px rgba(0,0,0,.9))}
+.t-key{--key:var(--bbs-primary-ink);filter:drop-shadow(1.5px 0 0 var(--key)) drop-shadow(-1.5px 0 0 var(--key)) drop-shadow(0 1.5px 0 var(--key)) drop-shadow(0 -1.5px 0 var(--key))}
+.plate{display:grid;place-items:center;padding:13px;border-radius:50%;background:var(--bbs-primary-ink)}
+.small .plate{padding:6px}
+.row{display:grid;grid-template-columns:128px minmax(0,1fr);gap:16px;align-items:center;margin-bottom:2px}
+.rname{font-family:var(--bbs-font-mono);font-size:var(--bbs-fs-2xs);text-transform:uppercase;letter-spacing:var(--bbs-tracking-wide);color:var(--bbs-text-muted);text-align:right;line-height:1.4}
+.rname b{display:block;color:var(--bbs-glow);font-weight:var(--bbs-weight-emphasis)}
+.verdict{margin-top:16px;font-size:var(--bbs-fs-xs);color:var(--bbs-text-secondary);line-height:var(--bbs-lh-snug);max-width:72ch}
+.verdict b{color:var(--bbs-text)}
+.rec{display:grid;gap:12px;max-width:74ch;font-size:var(--bbs-fs-sm);color:var(--bbs-text-secondary);line-height:var(--bbs-lh-snug)}
+.rec p{margin:0}.rec b{color:var(--bbs-text)}
+.real{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.slot{position:relative;aspect-ratio:3/2;border-radius:var(--bbs-radius-lg);overflow:hidden;border:1px solid var(--bbs-border-soft)}
+.slot image-slot{position:absolute;inset:0}
+.slot .mark{position:absolute;right:14px;bottom:12px}
+.slot .cap{position:absolute;left:10px;top:9px;font-family:var(--bbs-font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:rgba(5,1,18,.7);padding:3px 7px;border-radius:4px}
+a{color:var(--bbs-glow)}a:hover{color:var(--bbs-text)}
+.toggle-ui{position:fixed;top:24px;right:24px;z-index:40;padding:8px 14px;border-radius:var(--bbs-radius-pill);background:var(--bbs-surface);border:1px solid var(--bbs-border);font-family:var(--bbs-font-body);font-size:var(--bbs-fs-xs);color:var(--bbs-text-secondary);cursor:pointer;backdrop-filter:blur(var(--bbs-blur-soft));text-transform:uppercase;letter-spacing:var(--bbs-tracking-wide)}
+</style>
+</head>
+<body class="bbs theme-labradorite">
+
+<button class="toggle-ui" id="toggle">switch theme</button>
+
+<h1>Mono heart on screen</h1>
+<p class="lede">Five edge treatments over the four grounds that actually break a mark: pale, dark, mid-tone busy, and high-frequency detail. Same heart, same size — only the edge changes.</p>
+<p class="note">Grounds are CSS stand-ins for photography; what matters is the value range, not the picture. Real-photo test at the bottom.</p>
+
+<section>
+  <h2>At 46px</h2>
+  <p class="sub">Watch the pale and fine columns — that's where a mark either holds its silhouette or dissolves into the ground.</p>
+
+  <div class="row"><span class="rname">01<b>bare</b>no treatment</span><div class="grid">
+    <div class="g pale"><span class="lbl">pale</span><span class="bbs-heart" style="font-size:46px;--bbs-heart:#fff;filter:none"></span></div>
+    <div class="g dark"><span class="lbl">dark</span><span class="bbs-heart" style="font-size:46px;--bbs-heart:#fff;filter:none"></span></div>
+    <div class="g busy"><span class="lbl">busy</span><span class="bbs-heart" style="font-size:46px;--bbs-heart:#fff;filter:none"></span></div>
+    <div class="g fine"><span class="lbl">fine</span><span class="bbs-heart" style="font-size:46px;--bbs-heart:#fff;filter:none"></span></div>
+  </div></div>
+
+  <div class="row"><span class="rname">02<b>soft 30%</b>gray, blurred</span><div class="grid">
+    <div class="g pale"><span class="bbs-heart t-soft" style="font-size:46px;--bbs-heart:#fff"></span></div>
+    <div class="g dark"><span class="bbs-heart t-soft" style="font-size:46px;--bbs-heart:#fff"></span></div>
+    <div class="g busy"><span class="bbs-heart t-soft" style="font-size:46px;--bbs-heart:#fff"></span></div>
+    <div class="g fine"><span class="bbs-heart t-soft" style="font-size:46px;--bbs-heart:#fff"></span></div>
+  </div></div>
+
+  <div class="row"><span class="rname">03<b>tight dark</b>0 0 3px · 90%</span><div class="grid">
+    <div class="g pale"><span class="bbs-heart t-tight" style="font-size:46px;--bbs-heart:#fff"></span></div>
+    <div class="g dark"><span class="bbs-heart t-tight" style="font-size:46px;--bbs-heart:#fff"></span></div>
+    <div class="g busy"><span class="bbs-heart t-tight" style="font-size:46px;--bbs-heart:#fff"></span></div>
+    <div class="g fine"><span class="bbs-heart t-tight" style="font-size:46px;--bbs-heart:#fff"></span></div>
+  </div></div>
+
+  <div class="row"><span class="rname">04<b>keyline</b>1.5px, hard</span><div class="grid">
+    <div class="g pale"><span class="bbs-heart t-key" style="font-size:46px;--bbs-heart:#fff"></span></div>
+    <div class="g dark"><span class="bbs-heart t-key" style="font-size:46px;--bbs-heart:#fff"></span></div>
+    <div class="g busy"><span class="bbs-heart t-key" style="font-size:46px;--bbs-heart:#fff"></span></div>
+    <div class="g fine"><span class="bbs-heart t-key" style="font-size:46px;--bbs-heart:#fff"></span></div>
+  </div></div>
+
+  <div class="row"><span class="rname">05<b>plate</b>opaque disc · jadeite</span><div class="grid">
+    <div class="g pale"><span class="plate"><span class="bbs-heart" style="font-size:46px;filter:none"></span></span></div>
+    <div class="g dark"><span class="plate"><span class="bbs-heart" style="font-size:46px;filter:none"></span></span></div>
+    <div class="g busy"><span class="plate"><span class="bbs-heart" style="font-size:46px;filter:none"></span></span></div>
+    <div class="g fine"><span class="plate"><span class="bbs-heart" style="font-size:46px;filter:none"></span></span></div>
+  </div></div>
+
+  <p class="verdict"><b>What I see:</b> bare dies on pale and fine. The soft 30% adds haze without adding an edge — on the pale ground it's barely better than bare, which is the low-vision failure mode exactly. The tight dark shadow works but rounds off the notch. <b>The keyline holds the silhouette on all four.</b> The plate is the only one that's unconditionally safe — and it's the only row still showing a jadeite heart.</p>
+</section>
+
+<section>
+  <h2>At 18px</h2>
+  <p class="sub">The real test. Small is where low-vision legibility is won or lost.</p>
+
+  <div class="row small"><span class="rname"><b>bare</b></span><div class="grid">
+    <div class="g pale"><span class="bbs-heart" style="font-size:18px;--bbs-heart:#fff;filter:none"></span></div>
+    <div class="g dark"><span class="bbs-heart" style="font-size:18px;--bbs-heart:#fff;filter:none"></span></div>
+    <div class="g busy"><span class="bbs-heart" style="font-size:18px;--bbs-heart:#fff;filter:none"></span></div>
+    <div class="g fine"><span class="bbs-heart" style="font-size:18px;--bbs-heart:#fff;filter:none"></span></div>
+  </div></div>
+
+  <div class="row small"><span class="rname"><b>soft 30%</b></span><div class="grid">
+    <div class="g pale"><span class="bbs-heart t-soft" style="font-size:18px;--bbs-heart:#fff"></span></div>
+    <div class="g dark"><span class="bbs-heart t-soft" style="font-size:18px;--bbs-heart:#fff"></span></div>
+    <div class="g busy"><span class="bbs-heart t-soft" style="font-size:18px;--bbs-heart:#fff"></span></div>
+    <div class="g fine"><span class="bbs-heart t-soft" style="font-size:18px;--bbs-heart:#fff"></span></div>
+  </div></div>
+
+  <div class="row small"><span class="rname"><b>keyline</b></span><div class="grid">
+    <div class="g pale"><span class="bbs-heart t-key" style="font-size:18px;--bbs-heart:#fff"></span></div>
+    <div class="g dark"><span class="bbs-heart t-key" style="font-size:18px;--bbs-heart:#fff"></span></div>
+    <div class="g busy"><span class="bbs-heart t-key" style="font-size:18px;--bbs-heart:#fff"></span></div>
+    <div class="g fine"><span class="bbs-heart t-key" style="font-size:18px;--bbs-heart:#fff"></span></div>
+  </div></div>
+
+  <div class="row small"><span class="rname"><b>plate</b></span><div class="grid">
+    <div class="g pale"><span class="plate"><span class="bbs-heart" style="font-size:18px;filter:none"></span></span></div>
+    <div class="g dark"><span class="plate"><span class="bbs-heart" style="font-size:18px;filter:none"></span></span></div>
+    <div class="g busy"><span class="plate"><span class="bbs-heart" style="font-size:18px;filter:none"></span></span></div>
+    <div class="g fine"><span class="plate"><span class="bbs-heart" style="font-size:18px;filter:none"></span></span></div>
+  </div></div>
+
+  <p class="verdict">At 18px the soft shadow contributes nothing — it's below the size where a blur reads as an edge at all. The keyline still works, but 1.5px is now a real fraction of the mark and it starts eating the silhouette. <b>Below roughly 20px, stop treating the mark and put it on a plate.</b></p>
+</section>
+
+<section>
+  <h2>What I'd write into the rules</h2>
+  <p class="sub">Two thresholds, both keyed to whether you control the ground.</p>
+  <div class="rec">
+    <p><b>Controlled ground → jadeite, untreated.</b> Scrim the photo and the heart sits around 6.8:1, comfortably past the 3:1 that WCAG asks of a meaningful graphic. Fix the ground, not the mark.</p>
+    <p><b>Uncontrolled ground, 20px and up → white heart with a 1.5px keyline</b> in <code style="font-family:var(--bbs-font-mono);font-size:.9em;color:var(--bbs-text)">--bbs-primary-ink</code>, the darkest brand value. Crisp under magnification, holds the notch and the sparkle, no haze.</p>
+    <p><b>Uncontrolled ground, under 20px → plate.</b> A <i>solid</i> <code style="font-family:var(--bbs-font-mono);font-size:.9em;color:var(--bbs-text)">--bbs-primary-ink</code> disc, jadeite heart on top. Opaque is the point — at 84% over a pale photo jadeite drops to 2.2:1, under the bar; solid it is 8.6:1. The plate is the one surface in the system that is never glass. You own both sides of the contrast, so the ratio is guaranteed — and the thread comes back. This is the one I'd reach for most.</p>
+    <p style="color:var(--bbs-text-muted)">Note the pattern: the plate is the only option that keeps the heart jadeite <i>and</i> guarantees contrast. Every other route buys legibility by giving up the colour.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Test with a real photo</h2>
+  <p class="sub">Drop the same image into both — a pale one is the honest test.</p>
+  <div class="real">
+    <div class="slot">
+      <image-slot id="mono-test-key" shape="rect" placeholder="Drop a photo here"></image-slot>
+      <span class="cap">keyline · white</span>
+      <span class="mark"><span class="bbs-heart t-key" style="font-size:40px;--bbs-heart:#fff"></span></span>
+    </div>
+    <div class="slot">
+      <image-slot id="mono-test-plate" shape="rect" placeholder="Drop the same photo here"></image-slot>
+      <span class="cap">plate · jadeite</span>
+      <span class="mark"><span class="plate"><span class="bbs-heart" style="font-size:40px;filter:none"></span></span></span>
+    </div>
+  </div>
+</section>
+
+<script src="./image-slot.js"></script>
+<script>
+  const body=document.body,t=document.getElementById('toggle');
+  const apply=(th)=>{[...body.classList].forEach(c=>c.startsWith('theme-')&&body.classList.remove(c));body.classList.add(th);try{localStorage.setItem('bbs-theme',th)}catch{}};
+  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme'))?localStorage.getItem('bbs-theme'):'theme-labradorite');
+  t.addEventListener('click',()=>{const cy=['theme-labradorite','theme-opalite','theme-jadeite'];const cur=cy.find(c=>body.classList.contains(c))||cy[0];apply(cy[(cy.indexOf(cur)+1)%cy.length])});
+</script>
+</body></html>
