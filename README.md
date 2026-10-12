@@ -1,10 +1,10 @@
 # Built by Stephen — Design System
 
-A three-theme glassmorphism design system. **Labradorite** (dark, neon, cyberpunk), **Opalite** (light, pastel, dreamy), and **Jadeite** (deep green, monochrome), unified by the **jadeite** signature color — the non-negotiable thread that identifies Built by Stephen's work.
+A triple-theme glassmorphism design system. **Labradorite** (dark, neon, cyberpunk), **Opalite** (light, pastel, dreamy) and **Jadeite** (dark, single-hue), unified by the **jadeite** signature color — the non-negotiable thread that identifies Built by Stephen's work.
 
 > **Brand DNA in one line**: Solid glass objects stacked with light distortion, always signed in jadeite.
 
-> **Voice & color names**: See [`Jadeite Field Notes`](./JADEITE-FIELD-NOTES.html). Read it before writing copy or naming a new token.
+> **Voice & color names**: See [`JADEITE-FIELD-NOTES.md`](./JADEITE-FIELD-NOTES.md). Read it before writing copy or naming a new token.
 
 ---
 
@@ -13,9 +13,9 @@ A three-theme glassmorphism design system. **Labradorite** (dark, neon, cyberpun
 When asked to design anything for Built by Stephen:
 
 1. **Read this file, `SKILL.md`, and `JADEITE-FIELD-NOTES.md` first.** The design system is not optional — every artifact must conform. The field notes are the voice + color-name reference.
-2. **Import `tokens/bbs-tokens.css`** into your HTML and apply `class="bbs theme-labradorite"` (or `theme-opalite`, or `theme-jadeite`) to the body.
+2. **Link `styles.css`** (it imports `tokens/bbs-tokens.css` and the Poppins faces, and adds the `.bbs-lockup` and Project Jadeite footer classes) and apply `class="bbs theme-labradorite"` (or `theme-opalite`, or `theme-jadeite`) to the body.
 3. **Use semantic tokens** (`var(--bbs-text)`, `var(--bbs-surface)`, `var(--bbs-primary)`) rather than raw hex — they swap with the theme.
-4. **Brand-sign it.** Every finished artifact ends with `built by <span class="bbs-heart"></span> stephen` — the heart is the neon jadeite mark rendered via the `.bbs-heart` utility (imports with `tokens/bbs-tokens.css`), and the lockup MUST link to `https://builtbystephen.me`.
+4. **Brand-sign it.** Every finished artifact ends with the built by [heart] stephen lockup — the heart is the neon jadeite mark rendered via the `.bbs-heart` utility, and the lockup MUST link to `https://builtbystephen.me`. Markup is under *Minimum viable setup* below.
 5. **Preview your work** against the gallery in `preview/` to sanity-check colors, spacing, and glass levels.
 
 If a request would break one of these rules (e.g. "use a red heart"), push back politely and recommend the on-brand alternative.
@@ -30,7 +30,12 @@ If a request would break one of these rules (e.g. "use a red heart"), push back 
 | `JADEITE-FIELD-NOTES.md` | **The voice + color-name reference.** Read before writing copy or naming tokens |
 | `SKILL.md` | Short invocation pattern for Claude — quickest path to on-brand output |
 | `tokens/bbs-tokens.css` | **Single source of truth.** All CSS variables — colors, type, spacing, radii, shadows, themes |
-
+| `styles.css` | Single entry point for consumers — imports the tokens, adds lockup + Project Jadeite footer classes |
+| `colors_and_type.css` | Poppins `@font-face` manifest (imported by the tokens) |
+| `index.html` | Hub page linking every doc, preview and worked example. Every page links back here |
+| `assets/` | Logo SVGs (stacked, horizontal, heart, mark, wordmarks), hummingbird mark, `lapis-lazuli.svg` and `fluorite-crystal.svg` texture sources |
+| `preview/` | Visual gallery — cover, color, type, foundations, components, logo, patterns, mono-heart study |
+| `ui-kit/` | Worked examples — `splash.html` is the reference implementation |
 
 ---
 
@@ -38,10 +43,7 @@ If a request would break one of these rules (e.g. "use a red heart"), push back 
 
 | Component | What it is |
 | --- | --- |
-| `project-jadeite.html` | Full-page Project Jadeite mission statement, based on the shipped Ghostwriter page. |
-| `assets/` | Logo SVGs (stacked, horizontal, heart, mark, wordmarks) |
-| `preview/` | Visual gallery — type specimen, palette, components, logo usage |
-| `ui-kit/` | Worked examples — `splash.html` is the reference implementation |
+| `ProjectJadeitePage` | Full-page about/philosophy route for Project Jadeite — back link (`backHref`), header, story copy, signature. Source: `components/ProjectJadeitePage/` |
 
 ---
 
@@ -62,8 +64,11 @@ The jadeite heart is the signature. Think of it like a craftsman's stamp. It's w
 
 Surfaces are glass — translucent, blurred, layered over a rich background. Solid fills are rare and feel wrong in this system.
 
-- **Labradorite glass**: low opacity (`0.03–0.08`), strong blur (32px), neon border.
-- **Opalite glass**: higher opacity (`0.40–0.78`), softer blur (16px), pastel border.
+- **Labradorite glass**: `0.03` soft layers, `0.82` card surface, neon border.
+- **Opalite glass**: `0.40` soft layers, `0.78` card surface, pastel border.
+- **Jadeite glass**: `0.05` soft layers, `0.82` card surface, jadeite border.
+- **Blur**: `--bbs-blur-strong` (32px) for cards and panels, `--bbs-blur-soft` (16px) for chips, pills and toggles — same in every theme.
+- **Stone textures** are the one exception to translucent glass: `.bbs-lapis` and `.bbs-fluorite` are opaque stone for a hero, feature card or deep panel. One stone per view. See `preview/04-foundations.html`.
 
 ### 3. 8pt grid, soft radii
 
@@ -93,7 +98,7 @@ Every transition uses `cubic-bezier(0.23, 1, 0.32, 1)` (easeOutQuint). Fast inte
 
 ### 6. Voice: down-to-earth, bestie energy
 
-Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you're explaining something to a friend at a kitchen table. Lowercase is fine when it suits the vibe — the lockup itself is `built by 💚 stephen`, all lowercase.
+Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you're explaining something to a friend at a kitchen table. Lowercase is fine when it suits the vibe — the lockup itself is built by [jadeite heart] stephen, all lowercase.
 
 ---
 
@@ -108,14 +113,18 @@ Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you're e
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Your page · Built by Stephen</title>
-  <link rel="stylesheet" href="tokens/bbs-tokens.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bbs theme-labradorite">
   <!-- your content, using var(--bbs-*) tokens -->
   <footer>
-    <a href="https://builtbystephen.me" class="bbs-signature">
-      built by <span class="bbs-heart"></span> stephen
+    <!-- Wordmark lockup: .bbs-signature draws "built by" and "stephen"
+         itself, so the only child is the heart. -->
+    <a href="https://builtbystephen.me" class="bbs-signature" aria-label="built by stephen">
+      <span class="bbs-heart"></span>
     </a>
+    <!-- Plain-text alternative (small footers): live text + heart, no .bbs-signature class -->
+    <!-- <a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a> -->
   </footer>
 </body>
 </html>
@@ -123,7 +132,7 @@ Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you're e
 
 ### Theme switching
 
-Cycle the three themes by swapping the `theme-labradorite` / `theme-opalite` / `theme-jadeite` class on `<body>`. Persist to `localStorage`. Keyboard shortcut: `Cmd/Ctrl + Shift + T`. See `ui-kit/splash.html` for a copy-pasteable implementation.
+Cycle the three themes by swapping the `theme-labradorite` / `theme-opalite` / `theme-jadeite` class on `<body>`. Persist to `localStorage` under `bbs-theme`. Keyboard shortcut: `Cmd/Ctrl + Shift + T`. Copy-paste snippet in `SKILL.md` §4; `ui-kit/splash.html` shows it in a real page.
 
 ### Picking a theme
 
@@ -158,11 +167,25 @@ All tokens live on `:root` as raw values, then get bound to semantic names insid
 --bbs-accent          /* secondary accent */
 --bbs-glow            /* glow / active / wildcard — always a jadeite variant */
 --bbs-heart           /* the one and only color for the signature heart */
+--bbs-accent-calm     /* quiet accent — lapis lazuli (labradorite: --lapis-bright, opalite: full depth), soft jadeite in jadeite */
+--bbs-surface-deep    /* deep panels — lapis- (or jadeite-) tinted surface */
+--bbs-voice           /* italic / personal copy */
+--bbs-jadeite-text    /* jadeite that's legible as type on this ground */
+--bbs-lockup-byline   /* lockup: quiet half */
+--bbs-lockup-name     /* lockup: authored half */
+
+/* Stone textures (background only, not colors) — labradorite + opalite, one per view */
+--lapis-flecked       /* lapis lazuli with pyrite flecks — raw = no type; class .bbs-lapis adds a scrim for type */
+--fluorite-crystal    /* fluorite crystal (+ --fluorite-glow) — or class .bbs-fluorite; type on a glass panel only */
+
+/* Status — same in all three themes */
+--bbs-status-warning  --bbs-status-danger  --bbs-status-info
 
 /* Shape & motion */
 --bbs-radius-{xs,sm,md,lg,xl,2xl,pill}
 --bbs-space-{1..10}
 --bbs-shadow-card     /* card elevation (glow in dark, soft shadow in light) */
+--bbs-elev-{flat,raised,floating,glow}
 --bbs-shadow-cta      /* CTA elevation */
 --bbs-transition-fast /* 0.35s easeOutQuint */
 --bbs-transition-base /* 0.6s easeOutQuint */
@@ -177,6 +200,7 @@ All tokens live on `:root` as raw values, then get bound to semantic names insid
 - **`prefers-reduced-motion` is respected** — `bbs-tokens.css` already kills transitions for users who ask for it.
 - **44px minimum** touch targets on mobile.
 - **Keyboard nav** always works. Tab order matches visual order.
+- **Lapis**: type and borders use flat `--lapis-lazuli` on light, `--lapis-bright` on dark. Type over the stone goes in a `.bbs-lapis` element (bottom scrim + text-shadow, copy kept low), never on raw `--lapis-flecked`. Never set type in `--pyrite`.
 
 ---
 
@@ -184,10 +208,10 @@ All tokens live on `:root` as raw values, then get bound to semantic names insid
 
 When picking which heart to use:
 
-1. **`bbs-heart--hero`** — 1.5× inline scale, heavier glow — for hero lockups like "built by \[heart\] stephen" in page titles
-2. **`bbs-heart`** — inline-sized neon jadeite (1em) for footers, signatures ← **default**
-3. **`bbs-heart--display`** — 3× scale, standalone specimen (use alone, not next to running text)
-4. 🖤 / 🤍 **Black or white heart** — fallback **only** when jadeite is truly unavailable (e.g. single-color print)
+1. **`bbs-heart--hero`** — 0.9em box with a heavy double glow — for hero lockups like "built by \[heart\] stephen" in page titles
+2. **`bbs-heart`** — 1em inline neon jadeite for footers, signatures ← **default**. `--lg` (0.95em) and `--xl` (1.05em) step the glow up.
+3. **`bbs-heart--display`** — 3em standalone specimen (use alone, not next to running text)
+4. **Black or white heart** — only for true single-ink print. On screen over an uncontrolled ground, follow the plate / keyline rule in `JADEITE-FIELD-NOTES.md` §5 and `preview/mono-heart-study.html`.
 
 Never red. Never blue/purple. Never a generic icon-font heart without the jadeite color treatment.
 
@@ -195,4 +219,4 @@ Never red. Never blue/purple. Never a generic icon-font heart without the jadeit
 
 ## Version
 
-v2026.09.1 — released 2026-09-20. Canonical three-theme system: Labradorite, Opalite, and Jadeite. Adds the dioptase calm-accent family, the `--bbs-voice` / `--bbs-jadeite-text` / `--bbs-accent-calm` / `--bbs-surface-deep` semantic bindings, and the mono-heart-on-screen study. Based on production implementations at `builtbystephen.me` and `ghostwriter.systems`.
+v2025.10 — canonical triple-theme system. Lapis lazuli replaces dioptase as the calm accent. Jadeite core. Based on production implementations at `builtbystephen.me` and `ghostwriter.ozdust.me`.

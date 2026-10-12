@@ -5,13 +5,13 @@
 ## 1 — Always do this first
 
 ```html
-<link rel="stylesheet" href="tokens/bbs-tokens.css">
+<link rel="stylesheet" href="styles.css">  <!-- imports tokens/bbs-tokens.css + fonts -->
 <body class="bbs theme-labradorite">  <!-- or theme-opalite / theme-jadeite -->
 ```
 
 ## 2 — Three laws (don't break)
 
-1. **Jadeite heart or don't ship.** `built by <span class="bbs-heart"></span> stephen` → `https://builtbystephen.me`. The `.bbs-heart` utility (from `tokens/bbs-tokens.css`) renders the neon jadeite mark, tinted via `--bbs-heart`: OG `#3bc3a6` on opalite, electric `#04ffb2` on labradorite and jadeite. Size variants: `--lg` (1.1em), `--xl` (1.3em), `--hero` (1.5em — for page-title lockups), `--display` (3em — for standalone specimens). Never a red/blue/purple/orange heart. Both are auto-bound via `--bbs-heart`.
+1. **Jadeite heart or don't ship.** The built by [heart] stephen lockup links to `https://builtbystephen.me`. The `.bbs-heart` utility (from `tokens/bbs-tokens.css`) renders the neon jadeite mark, tinted via `--bbs-heart`: OG `#3bc3a6` on opalite, electric `#04ffb2` on labradorite and jadeite — auto-bound per theme. Size variants: `--lg` (0.95em), `--xl` (1.05em), `--hero` (0.9em, heavy glow — for page-title lockups), `--display` (3em — for standalone specimens). Never a red/blue/purple/orange heart.
 2. **Poppins 300–600 only, via semantic weight tokens.** Never 100, 200, or 700+. Ultra-thin disappears on glass. Use `--bbs-weight-display` / `--bbs-weight-title` / `--bbs-weight-heading` / `--bbs-weight-subheading` / `--bbs-weight-body` / `--bbs-weight-emphasis` — the ladder leans light for display and firms up for UI. See README for the full table.
 3. **Use semantic tokens.** `var(--bbs-text)`, `var(--bbs-surface)`, `var(--bbs-primary)` — never hardcode hex. If you do, the theme switch breaks.
 
@@ -55,22 +55,30 @@
 ```
 
 ### Signature lockup
+`.bbs-signature` is built into the tokens — it draws the "built by" and "stephen" wordmarks itself, so the heart is the only child. Don't add text inside it.
 ```html
-<a href="https://builtbystephen.me" class="bbs-signature">
-  built by <span class="bbs-heart"></span> stephen
+<a href="https://builtbystephen.me" class="bbs-signature" aria-label="built by stephen">
+  <span class="bbs-heart"></span>
 </a>
 ```
-```css
-.bbs-signature {
-  color: var(--bbs-text-secondary);
-  text-decoration: none;
-  font-weight: var(--bbs-weight-light);
-}
-.bbs-signature .bbs-heart {
-  color: var(--bbs-heart);
-  filter: drop-shadow(0 0 8px var(--bbs-heart));
-}
+Modifiers: `--jade` (all jadeite, hero moments), `--solid` (one color), `--sm` / `--md` / `--lg` / `--xl`.
+
+Plain-text alternative for small footers (no `.bbs-signature` class):
+```html
+<a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a>
 ```
+
+### Stone textures (lapis + fluorite)
+```html
+<!-- Lapis: .bbs-lapis adds a bottom scrim + text-shadow; keep copy low -->
+<div class="bbs-lapis">…</div>
+
+<!-- Fluorite: type always on a glass panel over the stone -->
+<div class="bbs-fluorite">
+  <div class="bbs-card">…</div>
+</div>
+```
+Rules: one stone per view; hero / feature card / deep panel, never wallpaper; labradorite + opalite only. Both lift on hover only when the element is a link, button or `[tabindex]`. For flat lapis (type, borders) use `var(--bbs-accent-calm)` — it resolves to the legible lapis value per theme.
 
 ## 4 — Theme toggle (copy-paste)
 
@@ -85,8 +93,7 @@ const apply = (t) => {
   body.classList.add(t);
   try { localStorage.setItem(KEY, t); } catch {}
 };
-let saved = null;
-try { saved = localStorage.getItem('bbs-theme'); } catch {}
+const saved = localStorage.getItem(KEY);
 apply(THEMES.includes(saved)
   ? saved
   : (matchMedia('(prefers-color-scheme: dark)').matches ? 'theme-labradorite' : 'theme-opalite'));
@@ -106,7 +113,7 @@ addEventListener('keydown', (e) => {
 ## 5 — Before ship, check
 
 - [ ] Jadeite heart present in signature, links to `builtbystephen.me`
-- [ ] Both themes work (flip the class and scan)
+- [ ] All three themes work (cycle labradorite → opalite → jadeite and scan)
 - [ ] No hardcoded hex in components — semantic tokens only
 - [ ] Poppins weights all ≥ 300 and ≤ 600, via `--bbs-weight-*` semantic tokens (display/title/heading/subheading/body/emphasis)
 - [ ] Focus rings visible on all interactive elements

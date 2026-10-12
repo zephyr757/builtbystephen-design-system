@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Built by Stephen — Design System</title>
 <link rel="stylesheet" href="styles.css">
+<template id="__bundler_thumbnail" data-bg-color="#120227"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#120227"/><path d="M50 72 C26 56 30 34 42 34 C47 34 50 38 50 41 C50 38 53 34 58 34 C70 34 74 56 50 72 Z" fill="#04ffb2"/></svg></template>
 <style>
   body { padding: clamp(40px, 5vw, 80px); min-height: 100vh; }
   body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: var(--bbs-bg-overlay); mix-blend-mode: screen; opacity: 0.4; }
@@ -38,7 +39,7 @@
     position: relative;
   }
   .card:hover { transform: translateY(-4px); border-color: var(--bbs-glow); box-shadow: 0 0 24px color-mix(in oklab, var(--bbs-glow) 35%, transparent); }
-  .card .num { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: var(--bbs-text-muted); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); }
+  .card .num { padding-right: 28px; font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-2xs); color: var(--bbs-text-muted); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); }
   .card .name { font-size: var(--bbs-fs-lg); font-weight: var(--bbs-weight-subheading); }
   .card .desc { color: var(--bbs-text-secondary); font-size: var(--bbs-fs-sm); line-height: var(--bbs-lh-snug); }
   .card .arrow { position: absolute; top: 22px; right: 22px; color: var(--bbs-text-muted); transition: transform var(--bbs-transition-fast), color var(--bbs-transition-fast); }
@@ -66,13 +67,13 @@
   <section>
     <h2 class="section-title">Docs</h2>
     <div class="grid">
-      <a class="card doc-card" href="README.html">
+      <a class="card doc-card" href="README.md">
         <span class="num">readme</span>
         <span class="name">README</span>
         <span class="desc">Overview, principles, and how to use the system. Start here.</span>
         <span class="arrow">↗</span>
       </a>
-      <a class="card doc-card" href="SKILL.html">
+      <a class="card doc-card" href="SKILL.md">
         <span class="num">skill</span>
         <span class="name">SKILL.md</span>
         <span class="desc">Quick invocation for Claude. Recipes, checklist, the three laws.</span>
@@ -84,7 +85,7 @@
         <span class="desc">Single source of truth. Every color, type, spacing, and theme binding.</span>
         <span class="arrow">↗</span>
       </a>
-      <a class="card doc-card" href="JADEITE-FIELD-NOTES.html">
+      <a class="card doc-card" href="JADEITE-FIELD-NOTES.md">
         <span class="num">field notes</span>
         <span class="name">Jadeite Field Notes</span>
         <span class="desc">The why behind the color. Voice, posture, and the rule that the heart is the signature.</span>
@@ -117,7 +118,7 @@
       <a class="card" href="preview/04-foundations.html">
         <span class="num">04</span>
         <span class="name">Foundations</span>
-        <span class="desc">8pt grid, radii, elevation, blur, surfaces, focus, motion.</span>
+        <span class="desc">8pt grid, radii, elevation, blur, surfaces, stone textures, focus, motion.</span>
         <span class="arrow">↗</span>
       </a>
       <a class="card" href="preview/05-components.html">
@@ -165,21 +166,9 @@
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">Project Jadeite</h2>
-    <div class="grid">
-      <a class="card doc-card" href="project-jadeite.html">
-        <span class="num">mission</span>
-        <span class="name">Project Jadeite</span>
-        <span class="desc">The shipped mission statement: showing up with the brain Stephen actually has.</span>
-        <span class="arrow">↗</span>
-      </a>
-    </div>
-  </section>
-
   <div class="footer">
     <a class="footer-sig" href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a>
-    <span>v2026.09.1 · released 2026-09-20</span>
+    <span>v2025.10 · built with intent</span>
   </div>
 
 <script>

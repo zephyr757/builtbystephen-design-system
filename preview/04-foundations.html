@@ -116,9 +116,21 @@
   .toggle { position: fixed; top: 24px; right: 24px; z-index: 40; padding: 8px 14px; border-radius: var(--bbs-radius-pill); background: var(--bbs-surface); border: 1px solid var(--bbs-border); font-family: var(--bbs-font-body); font-size: var(--bbs-fs-xs); color: var(--bbs-text-secondary); cursor: pointer; backdrop-filter: blur(var(--bbs-blur-soft)); text-transform: uppercase; letter-spacing: var(--bbs-tracking-wide); }
   a { color: var(--bbs-glow); }
   a:hover { color: var(--bbs-text); }
+
+  /* Stone textures */
+  .tex { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; }
+  .tex-demo { min-height: 280px; padding: var(--bbs-space-7); display: grid; align-content: end; gap: var(--bbs-space-3); }
+  .tex-demo .k { font-size: var(--bbs-fs-2xs); text-transform: uppercase; letter-spacing: var(--bbs-tracking-caps); }
+  .tex-demo h3 { margin: 0; font-size: var(--bbs-fs-xl); font-weight: var(--bbs-weight-heading); letter-spacing: var(--bbs-tracking-tight); }
+  .tex-demo p { margin: 0; font-size: var(--bbs-fs-sm); line-height: var(--bbs-lh-snug); max-width: 40ch; }
+  .tex-panel { padding: var(--bbs-space-6); border-radius: var(--bbs-radius-md); background: var(--bbs-surface); border: 1px solid var(--bbs-border-soft); backdrop-filter: blur(var(--bbs-blur-strong)); -webkit-backdrop-filter: blur(var(--bbs-blur-strong)); color: var(--bbs-text); display: grid; gap: var(--bbs-space-3); }
+  .tex-panel p { color: var(--bbs-text-secondary); }
+  .tex-rules { margin: var(--bbs-space-5) 0 0; padding: 0; list-style: none; display: grid; gap: var(--bbs-space-3); font-size: var(--bbs-fs-sm); color: var(--bbs-text-secondary); }
+  .tex-rules code { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); color: var(--bbs-text); }
 </style>
 </head>
 <body class="bbs theme-labradorite">
+  <a class="bbs-back" href="../index.html">← design system</a>
   <button class="toggle" id="toggle">switch theme</button>
   <h1>Foundations</h1>
   <p class="lede">The measurements everything else is built on: spacing, radii, elevation, blur, surfaces, focus, and motion. 8pt grid keeps the rhythm; soft radii keep it feeling like glass; elevation is a neon bloom in labradorite and a pastel drop shadow in opalite.</p>
@@ -219,6 +231,30 @@
       <div class="sf" style="background:transparent;border:1px solid var(--bbs-border)"><span class="n">--bbs-border</span><span class="d">Primary stroke</span></div>
       <div class="sf" style="background:transparent;border:1px solid var(--bbs-border-soft)"><span class="n">--bbs-border-soft</span><span class="d">Dividers, quiet edges</span></div>
     </div>
+  </section>
+
+  <section>
+    <h2>Stone textures</h2>
+    <p class="note">Two textures, both real stones: lapis lazuli and fluorite crystal. Use them for a hero, a feature card or a deep panel, never as page wallpaper. One stone per view. Switch to jadeite and both fall back to the deep jadeite panel. Labradorite and opalite only.</p>
+    <div class="tex">
+      <a class="bbs-lapis tex-demo" href="#" onclick="return false">
+        <span class="k" style="color: var(--glass-clear)">.bbs-lapis · type on the built-in scrim</span>
+        <h3 style="color: var(--glass-clear)">the calm one</h3>
+        <p style="color: var(--glass-clear)">A scrim rises from the bottom edge so glass-clear type holds even where a gold vein crosses it. Keep copy low. Hover it — interactive stones lift.</p>
+      </a>
+      <div class="bbs-fluorite tex-demo">
+        <div class="tex-panel">
+          <span class="k" style="color: var(--bbs-text-muted)">.bbs-fluorite · type on a glass panel</span>
+          <h3>the bright one</h3>
+          <p>The crystal zones swing from near-black to pale mint, so copy always rides on a <code style="font-family: var(--bbs-font-mono); font-size: 0.92em; white-space: nowrap;">--bbs-surface</code> panel. Flip the theme: the panel swaps, the stone stays.</p>
+        </div>
+      </div>
+    </div>
+    <ul class="tex-rules">
+      <li><code>class="bbs-lapis"</code> for anything with type (scrim included). Raw <code>var(--lapis-flecked)</code> is for type-free swatches and panels. Flat lapis for type and borders is <code>--bbs-accent-calm</code>.</li>
+      <li><code>class="bbs-fluorite"</code> or <code>background: var(--fluorite-crystal)</code> + <code>box-shadow: var(--fluorite-glow)</code>.</li>
+      <li>Both are backgrounds, not colors. In <code>border</code>, <code>color</code> or <code>box-shadow</code> they drop silently.</li>
+    </ul>
   </section>
 
   <section>

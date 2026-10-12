@@ -3,12 +3,12 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 </style></head><body class="bbs theme-labradorite"><nav class="page-nav"><a href="index.html">← design system</a><button class="theme-toggle" id="theme-toggle" type="button">◐ switch theme</button></nav><article><h1>BBS Skill — Quick Invocation for Claude</h1>
 <p><strong>When to use:</strong> Any design, prototype, slide, doc, or HTML artifact tagged &quot;Built by Stephen&quot; or using this project&#39;s tokens.</p>
 <h2>1 — Always do this first</h2>
-<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;tokens/bbs-tokens.css&quot;&gt;
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;  &lt;!-- imports tokens/bbs-tokens.css + fonts --&gt;
 &lt;body class=&quot;bbs theme-labradorite&quot;&gt;  &lt;!-- or theme-opalite / theme-jadeite --&gt;
 </code></pre>
 <h2>2 — Three laws (don&#39;t break)</h2>
 <ol>
-<li><strong>Jadeite heart or don&#39;t ship.</strong> <code>built by &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt; stephen</code> → <code>https://builtbystephen.me</code>. The <code>.bbs-heart</code> utility (from <code>tokens/bbs-tokens.css</code>) renders the neon jadeite mark, tinted via <code>--bbs-heart</code>: OG <code>#3bc3a6</code> on opalite, electric <code>#04ffb2</code> on labradorite and jadeite. Size variants: <code>--lg</code> (1.1em), <code>--xl</code> (1.3em), <code>--hero</code> (1.5em — for page-title lockups), <code>--display</code> (3em — for standalone specimens). Never a red/blue/purple/orange heart. Both are auto-bound via <code>--bbs-heart</code>.</li>
+<li><strong>Jadeite heart or don&#39;t ship.</strong> The built by [heart] stephen lockup links to <code>https://builtbystephen.me</code>. The <code>.bbs-heart</code> utility (from <code>tokens/bbs-tokens.css</code>) renders the neon jadeite mark, tinted via <code>--bbs-heart</code>: OG <code>#3bc3a6</code> on opalite, electric <code>#04ffb2</code> on labradorite and jadeite — auto-bound per theme. Size variants: <code>--lg</code> (0.95em), <code>--xl</code> (1.05em), <code>--hero</code> (0.9em, heavy glow — for page-title lockups), <code>--display</code> (3em — for standalone specimens). Never a red/blue/purple/orange heart.</li>
 <li><strong>Poppins 300–600 only, via semantic weight tokens.</strong> Never 100, 200, or 700+. Ultra-thin disappears on glass. Use <code>--bbs-weight-display</code> / <code>--bbs-weight-title</code> / <code>--bbs-weight-heading</code> / <code>--bbs-weight-subheading</code> / <code>--bbs-weight-body</code> / <code>--bbs-weight-emphasis</code> — the ladder leans light for display and firms up for UI. See README for the full table.</li>
 <li><strong>Use semantic tokens.</strong> <code>var(--bbs-text)</code>, <code>var(--bbs-surface)</code>, <code>var(--bbs-primary)</code> — never hardcode hex. If you do, the theme switch breaks.</li>
 </ol>
@@ -45,20 +45,25 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 }
 </code></pre>
 <h3>Signature lockup</h3>
-<pre><code class="language-html">&lt;a href=&quot;https://builtbystephen.me&quot; class=&quot;bbs-signature&quot;&gt;
-  built by &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt; stephen
+<p><code>.bbs-signature</code> is built into the tokens — it draws the &quot;built by&quot; and &quot;stephen&quot; wordmarks itself, so the heart is the only child. Don&#39;t add text inside it.</p>
+<pre><code class="language-html">&lt;a href=&quot;https://builtbystephen.me&quot; class=&quot;bbs-signature&quot; aria-label=&quot;built by stephen&quot;&gt;
+  &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt;
 &lt;/a&gt;
 </code></pre>
-<pre><code class="language-css">.bbs-signature {
-  color: var(--bbs-text-secondary);
-  text-decoration: none;
-  font-weight: var(--bbs-weight-light);
-}
-.bbs-signature .bbs-heart {
-  color: var(--bbs-heart);
-  filter: drop-shadow(0 0 8px var(--bbs-heart));
-}
+<p>Modifiers: <code>--jade</code> (all jadeite, hero moments), <code>--solid</code> (one color), <code>--sm</code> / <code>--md</code> / <code>--lg</code> / <code>--xl</code>.</p>
+<p>Plain-text alternative for small footers (no <code>.bbs-signature</code> class):</p>
+<pre><code class="language-html">&lt;a href=&quot;https://builtbystephen.me&quot;&gt;built by &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt; stephen&lt;/a&gt;
 </code></pre>
+<h3>Stone textures (lapis + fluorite)</h3>
+<pre><code class="language-html">&lt;!-- Lapis: .bbs-lapis adds a bottom scrim + text-shadow; keep copy low --&gt;
+&lt;div class=&quot;bbs-lapis&quot;&gt;…&lt;/div&gt;
+
+&lt;!-- Fluorite: type always on a glass panel over the stone --&gt;
+&lt;div class=&quot;bbs-fluorite&quot;&gt;
+  &lt;div class=&quot;bbs-card&quot;&gt;…&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Rules: one stone per view; hero / feature card / deep panel, never wallpaper; labradorite + opalite only. Both lift on hover only when the element is a link, button or <code>[tabindex]</code>. For flat lapis (type, borders) use <code>var(--bbs-accent-calm)</code> — it resolves to the legible lapis value per theme.</p>
 <h2>4 — Theme toggle (copy-paste)</h2>
 <pre><code class="language-js">const KEY = &#39;bbs-theme&#39;;
 const body = document.body;
@@ -70,8 +75,7 @@ const apply = (t) =&gt; {
   body.classList.add(t);
   try { localStorage.setItem(KEY, t); } catch {}
 };
-let saved = null;
-try { saved = localStorage.getItem(&#39;bbs-theme&#39;); } catch {}
+const saved = localStorage.getItem(KEY);
 apply(THEMES.includes(saved)
   ? saved
   : (matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches ? &#39;theme-labradorite&#39; : &#39;theme-opalite&#39;));
@@ -90,7 +94,7 @@ addEventListener(&#39;keydown&#39;, (e) =&gt; {
 <h2>5 — Before ship, check</h2>
 <ul>
 <li><input disabled="" type="checkbox"> Jadeite heart present in signature, links to <code>builtbystephen.me</code></li>
-<li><input disabled="" type="checkbox"> Both themes work (flip the class and scan)</li>
+<li><input disabled="" type="checkbox"> All three themes work (cycle labradorite → opalite → jadeite and scan)</li>
 <li><input disabled="" type="checkbox"> No hardcoded hex in components — semantic tokens only</li>
 <li><input disabled="" type="checkbox"> Poppins weights all ≥ 300 and ≤ 600, via <code>--bbs-weight-*</code> semantic tokens (display/title/heading/subheading/body/emphasis)</li>
 <li><input disabled="" type="checkbox"> Focus rings visible on all interactive elements</li>

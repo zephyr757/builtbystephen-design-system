@@ -90,8 +90,9 @@
 </style>
 </head>
 <body class="bbs theme-opalite">
+  <a class="bbs-back" href="../index.html">← design system</a>
   <h1>Color</h1>
-  <p class="lede">Jadeite is the anchor. It shows up in three modes — dark, light, and single-hue. Every color has a name and a reason; use the named token, not the hex. <a href="../JADEITE-FIELD-NOTES.html" style="color: var(--bbs-heart); text-decoration: underline; text-underline-offset: 3px;">Read the field notes →</a></p>
+  <p class="lede">Jadeite is the anchor. It shows up in three modes — dark, light, and single-hue. Every color has a name and a reason; use the named token, not the hex. <a href="../JADEITE-FIELD-NOTES.md" style="color: var(--bbs-heart); text-decoration: underline; text-underline-offset: 3px;">Read the field notes →</a></p>
 
   <section>
     <h2>Jadeite — brand anchor</h2>
@@ -112,16 +113,17 @@
   <div class="split">
     <div class="pane labra">
       <h3>🌙 <span id="dark-mode-name">Labradorite</span> <span style="font-weight: var(--bbs-weight-body); font-size: var(--bbs-fs-xs); color: var(--bbs-text-muted); letter-spacing: var(--bbs-tracking-wide); text-transform: uppercase;">the aha moment</span></h3>
-      <p>Cyberpunk neon on deep space. Low-opacity glass (0.03–0.08) over dramatic gradient. The brain when it's running.</p>
+      <p>Cyberpunk neon on deep space. Deep glass (0.03 soft layers, 0.82 cards) over a dramatic gradient. The brain when it's running.</p>
       <div class="grid">
         <div class="swatch"><div class="chip" style="--c:#ff0080"></div><div class="meta"><span class="name">Neon Kiss</span><span class="hex">#ff0080</span><span class="use">Primary CTA · hot pink, no apology</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#ff00a0"></div><div class="meta"><span class="name">Spinel</span><span class="hex">#ff00a0</span><span class="use">State change · shimmer back to life</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#04ffb2"></div><div class="meta"><span class="name">Electric Jadeite</span><span class="hex">#04ffb2</span><span class="use">Glow · hover · brand</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#00ffff"></div><div class="meta"><span class="name">Apatite</span><span class="hex">#00ffff</span><span class="use">Accent · sparingly</span></div></div>
-        <div class="swatch"><div class="chip" style="--c:#0d5c6b"></div><div class="meta"><span class="name">Dioptase</span><span class="hex">#0d5c6b</span><span class="use">Calm accent · deep panel tint</span></div></div>
-        <div class="swatch"><div class="chip" style="--c:#2f9fb3"></div><div class="meta"><span class="name">Dioptase Bright</span><span class="hex">#2f9fb3</span><span class="use">Dioptase, legible on dark</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:var(--lapis-flecked)"></div><div class="meta"><span class="name">Lapis Lazuli</span><span class="hex">#303698 + pyrite</span><span class="use">Calm accent · deep panel tint</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:#8a91ec"></div><div class="meta"><span class="name">Lapis Bright</span><span class="hex">#8a91ec</span><span class="use">Lapis, legible as type on dark</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:#d9b45a"></div><div class="meta"><span class="name">Pyrite</span><span class="hex">#d9b45a</span><span class="use">The gold flecks · texture only</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#8000ff"></div><div class="meta"><span class="name">Amethyst</span><span class="hex">#8000ff</span><span class="use">Softer violet support</span></div></div>
-        <div class="swatch"><div class="chip" style="--c:rgba(224,224,255,0.85)"></div><div class="meta"><span class="name">Fluorite</span><span class="hex">e0e0ff / 85%</span><span class="use">Secondary text · thinking at 2am</span></div></div>
+        <div class="swatch"><div class="chip" style="display:grid; grid-template-columns:1fr 1fr;"><div style="background:rgba(224,224,255,0.85)"></div><div style="background:var(--fluorite-crystal); background-size:cover; box-shadow:var(--fluorite-glow);"></div></div><div class="meta"><span class="name">Fluorite</span><span class="hex">e0e0ff / 85% · crystal</span><span class="use">Flat: secondary text · Banded: .bbs-fluorite surface</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#120227"></div><div class="meta"><span class="name">Obsidian</span><span class="hex">#120227</span><span class="use">Background anchor</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#ffffff"></div><div class="meta"><span class="name">Glass Clear</span><span class="hex">#ffffff</span><span class="use">Primary text on dark</span></div></div>
       </div>
@@ -129,13 +131,14 @@
 
     <div class="pane opal">
       <h3>🌅 <span id="light-mode-name">Opalite</span> <span style="font-weight: var(--bbs-weight-body); font-size: var(--bbs-fs-xs); color: var(--bbs-text-muted); letter-spacing: var(--bbs-tracking-wide); text-transform: uppercase;">glass clear</span></h3>
-      <p>80s pastels on a dreamy spectrum. Higher opacity glass (0.4–0.78) with soft shadows. The brain when it's at peace.</p>
+      <p>80s pastels on a dreamy spectrum. Higher-opacity glass (0.40 soft layers, 0.78 cards) with soft shadows. The brain when it's at peace.</p>
       <div class="grid">
         <div class="swatch"><div class="chip" style="--c:#ff9ac1"></div><div class="meta"><span class="name">Soft Pink</span><span class="hex">#ff9ac1</span><span class="use">Primary CTA</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#9ac1ff"></div><div class="meta"><span class="name">Celestite</span><span class="hex">#9ac1ff</span><span class="use">Powder blue · self-aware morning</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#3bc3a6"></div><div class="meta"><span class="name">Jadeite</span><span class="hex">#3bc3a6</span><span class="use">Brand anchor</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#d4a5ff"></div><div class="meta"><span class="name">Lepidolite</span><span class="hex">#d4a5ff</span><span class="use">Lavender · the slow-reveal color</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#ffb5a5"></div><div class="meta"><span class="name">Sunwash</span><span class="hex">#ffb5a5</span><span class="use">Peach · morning light</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:var(--lapis-flecked)"></div><div class="meta"><span class="name">Lapis Lazuli</span><span class="hex">#303698 + pyrite</span><span class="use">Calm accent · full depth on light</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#ffe2ee"></div><div class="meta"><span class="name">Rose Quartz</span><span class="hex">#ffe2ee</span><span class="use">Background warmth · tender, unprecedented</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#eafff7"></div><div class="meta"><span class="name">Mint Bright</span><span class="hex">#eafff7</span><span class="use">Jadeite-tinted off-white · lockup names</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#2d1b3d"></div><div class="meta"><span class="name">Ink Well</span><span class="hex">#2d1b3d</span><span class="use">Deep plum-ink · primary text</span></div></div>
@@ -172,8 +175,16 @@
   </section>
 
   <section style="margin-top: 56px;">
+    <h2>Stone textures <span style="font-weight: var(--bbs-weight-body); font-size: var(--bbs-fs-md); color: var(--bbs-text-muted);">— backgrounds, not colors</span></h2>
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+      <div class="swatch" style="grid-template-rows: 140px auto;"><div class="chip" style="--c: var(--lapis-flecked)"></div><div class="meta"><span class="name">--lapis-flecked</span><span class="hex">#303698 + pyrite</span><span class="use">.bbs-lapis adds a scrim for type</span></div></div>
+      <div class="swatch" style="grid-template-rows: 140px auto;"><div class="chip" style="background: var(--fluorite-crystal); background-size: cover; box-shadow: var(--fluorite-glow);"></div><div class="meta"><span class="name">--fluorite-crystal</span><span class="hex">purple · teal · mint crystal zones</span><span class="use">.bbs-fluorite · type on a glass panel only</span></div></div>
+    </div>
+  </section>
+
+  <section style="margin-top: 56px;">
     <h2>Status colors <span style="font-weight: var(--bbs-weight-body); font-size: var(--bbs-fs-md); color: var(--bbs-text-muted);">— universal, not themed</span></h2>
-    <p class="lede" style="max-width: 64ch; font-size: var(--bbs-fs-md);">These stay constant across labradorite and opalite. Amber means caution, red means stop — same everywhere, so users don't have to relearn the signal when the theme changes.</p>
+    <p class="lede" style="max-width: 64ch; font-size: var(--bbs-fs-md);">These stay constant across labradorite, opalite and jadeite. Amber means caution, red means stop — same everywhere, so users don't have to relearn the signal when the theme changes.</p>
     <div class="grid">
       <div class="swatch"><div class="chip" style="--c: var(--bbs-status-warning)"></div><div class="meta"><span class="name">--bbs-status-warning</span><span class="hex">#ffb454</span><span class="use">Caution · amber</span></div></div>
       <div class="swatch"><div class="chip" style="--c: var(--bbs-status-danger)"></div><div class="meta"><span class="name">--bbs-status-danger</span><span class="hex">#ff5a7a</span><span class="use">Stop · coral red</span></div></div>

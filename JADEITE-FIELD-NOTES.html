@@ -57,7 +57,7 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <tr>
 <td><code>--fluorite</code></td>
 <td><code>rgba(224, 224, 255, 0.85)</code></td>
-<td>Secondary text and the hazy mid-tones. The color of thinking at 2am.</td>
+<td>Secondary text and the hazy mid-tones. The color of thinking at 2am. Its patterned twin is <code>--fluorite-crystal</code> (below) — flat for type, crystal for surfaces.</td>
 </tr>
 <tr>
 <td><code>--neon-kiss</code></td>
@@ -80,11 +80,27 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <td>Electric cyan accent. Sparingly.</td>
 </tr>
 <tr>
-<td><code>--dioptase</code></td>
-<td><code>#0d5c6b</code></td>
-<td>Deep blue-green. The calm accent and the deep-panel tint — where neon kiss would be too loud. On dark grounds use <code>--dioptase-bright</code> (<code>#2f9fb3</code>); the deep value only clears 2.2:1 there. <strong>Labradorite and opalite only</strong> — the jadeite theme stays one hue, so <code>--bbs-accent-calm</code> resolves to soft jadeite there instead.</td>
+<td><code>--lapis-lazuli</code></td>
+<td><code>#303698</code></td>
+<td>Deep royal blue, shot through with gold. The calm accent and the deep-panel tint — where neon kiss would be too loud. Flat hex for type and borders (8.9:1 on opalite). On dark grounds use <code>--lapis-bright</code> (<code>#8a91ec</code>, 6.8:1); the deep value only clears 2:1 there. <strong>Labradorite and opalite only</strong> — the jadeite theme stays one hue, so <code>--bbs-accent-calm</code> resolves to soft jadeite there instead.</td>
+</tr>
+<tr>
+<td><code>--lapis-flecked</code></td>
+<td><code>#303698</code> + pyrite</td>
+<td>The stone itself: lapis blue with random gold flecks and veins. Every lapis swatch and any lapis surface big enough to show the texture uses this. Raw token = no type on it. For type, use the <code>.bbs-lapis</code> utility, which adds a scrim from the bottom edge and a hard text-shadow so copy holds over the gold veins.</td>
+</tr>
+<tr>
+<td><code>--pyrite</code></td>
+<td><code>#d9b45a</code></td>
+<td>The gold in lapis. Lives inside <code>--lapis-flecked</code> only. Never a standalone accent, never type.</td>
+</tr>
+<tr>
+<td><code>--fluorite-crystal</code></td>
+<td>purple · teal · mint crystal zones</td>
+<td>The second stone texture: interlocking cubic fluorite crystals with angular growth zoning — nested rings with hard corners in amethyst, lavender, teal and mint, shaded faces, glassy rims, translucent overlap. Grown, not settled. Source art in <code>assets/fluorite-crystal.svg</code>. Use via <code>background</code> + <code>--fluorite-glow</code>, or the <code>.bbs-fluorite</code> utility. Its zones run from near-black to pale mint, so <strong>no type directly on it</strong> — copy rides on a <code>--bbs-surface</code> glass panel. Not to be confused with <code>--fluorite</code>, the secondary-text color.</td>
 </tr>
 </tbody></table>
+<p><strong>Stone textures — the rules.</strong> Lapis and fluorite are the only two textures. One stone per view. Hero, feature card or deep panel — never page wallpaper. Labradorite and opalite only; the jadeite theme stays one hue, so <code>.bbs-lapis</code> and <code>.bbs-fluorite</code> automatically fall back to the deep jadeite panel there. Worked examples in <code>preview/04-foundations.html</code>.</p>
 <h3>Opalite — the glass-clear, soft-morning brain</h3>
 <p>For light surfaces. Lower contrast. The brain when it&#39;s at peace.</p>
 <table>
@@ -115,12 +131,8 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <td><code>#ffb5a5</code> (peach)</td>
 <td>Warm highlight. Morning light on a kitchen counter.</td>
 </tr>
-<tr>
-<td><code>--moonstone</code></td>
-<td>reserved</td>
-<td>Tender emphasis. Earnest, unpretentious. Use sparingly for &quot;I&#39;d marry you&quot; moments in copy — small joyful highlights.</td>
-</tr>
 </tbody></table>
+<p>Opalite also carries full-depth <code>--lapis-lazuli</code> as its calm accent — see the labradorite table above.</p>
 <h3>Neutrals and text</h3>
 <table>
 <thead>
@@ -152,7 +164,7 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 </tr>
 </tbody></table>
 <h3>Gotchas — tokens that aren&#39;t what they look like</h3>
-<p>Two tokens will silently break a rule if you use them where a plain color belongs. CSS drops an invalid declaration without a word, so nothing errors — it just doesn&#39;t paint.</p>
+<p>Four tokens will silently break a rule if you use them where a plain color belongs. CSS drops an invalid declaration without a word, so nothing errors — it just doesn&#39;t paint.</p>
 <table>
 <thead>
 <tr>
@@ -171,6 +183,16 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <td>a gradient too</td>
 <td>Same deal. It&#39;s a <code>background</code> layer, nothing else.</td>
 </tr>
+<tr>
+<td><code>--lapis-flecked</code></td>
+<td>an image + color layer</td>
+<td>Same deal. For a flat lapis color use <code>--lapis-lazuli</code> (or <code>--lapis-bright</code> on dark).</td>
+</tr>
+<tr>
+<td><code>--fluorite-crystal</code></td>
+<td>a stack of gradients</td>
+<td>Same deal. There&#39;s no flat &quot;fluorite texture color&quot; — if you need one, you need <code>--bbs-accent</code> or <code>--bbs-voice</code> instead.</td>
+</tr>
 </tbody></table>
 <p>The trap: <code>var(--bbs-bg, #000)</code> looks safe, but the fallback <strong>never fires</strong> — the variable <em>is</em> defined, it&#39;s just the wrong type. Silent failure either way.</p>
 <p>When you need a solid color that matches the theme&#39;s ground, use <code>--bbs-primary-ink</code>. It&#39;s a real color in all three themes.</p>
@@ -183,6 +205,7 @@ border: 2px solid var(--bbs-primary-ink);
 <h3>Floats — not colors, but words that carry color</h3>
 <p>Some things aren&#39;t a hex code; they&#39;re a posture. These live in the voice, not the tokens.</p>
 <ul>
+<li><strong>Moonstone</strong> — tender emphasis. Earnest, unpretentious. Use sparingly for &quot;I&#39;d marry you&quot; moments in copy — small joyful highlights. Never a swatch.</li>
 <li><strong>Milk Opal</strong> — the tender, protective register. Used in copy about family, mom&#39;s line, the &quot;I&#39;d do anything for you&quot; moments. Never put this in a swatch. Let it float.</li>
 <li><strong>The Aha Moment</strong> — the feeling the whole system is built to produce: something lands for a brain that doesn&#39;t usually get that feeling. It conjugates, so use the form the sentence needs: <em>it clicks</em> / <em>it computes</em> (verb), <em>the aha moment</em> (noun), <em>the moment it lands</em> (modifier). Don&#39;t hyphenate it into an adjective. Headers and product copy, never a color name.</li>
 <li><strong>Hummingbird</strong> — the gradient/glow emblem reserved for Project Jadeite&#39;s most precious moments. Small, fast, almost-missed. If you&#39;re tempted to use it for decoration, don&#39;t.</li>
@@ -190,7 +213,7 @@ border: 2px solid var(--bbs-primary-ink);
 <hr>
 <h2>4 — Voice rules</h2>
 <ol>
-<li><strong>Down-to-earth, bestie energy.</strong> Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you&#39;re explaining something to a friend at a kitchen table. Lowercase is fine when it suits the vibe — the lockup itself is built by 💚 stephen, all lowercase.</li>
+<li><strong>Down-to-earth, bestie energy.</strong> Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you&#39;re explaining something to a friend at a kitchen table. Lowercase is fine when it suits the vibe — the lockup itself is built by [jadeite heart] stephen, all lowercase.</li>
 <li><strong>Lowercase-first.</strong> Headings, labels, lockups. Capital letters feel corporate-loud. Save caps for the eyebrow ALL-CAPS treatment where the letterspacing does the work.</li>
 <li><strong>Specific over general.</strong> &quot;It clicks&quot; over &quot;intuitive.&quot; &quot;Late-night&quot; over &quot;dark mode.&quot; The specificity <em>is</em> the voice.</li>
 <li><strong>Name colors for the mineral, not the look.</strong> Obsidian, fluorite, celestite — the material the color behaves like, not a description of it. &quot;Deep indigo&quot; is what the hex already says. If you can&#39;t name the mineral, you don&#39;t need the color.</li>
@@ -207,7 +230,7 @@ border: 2px solid var(--bbs-primary-ink);
 <li>The jadeite heart goes in the lockup. Always. If the design can&#39;t hold it, redesign the container, not the lockup.</li>
 <li><strong>The heart is jadeite. Not &quot;usually&quot; jadeite.</strong> It can change <em>weight</em> — solid or outline, big or 16px — but not hue. A red heart is someone else&#39;s brand, a white heart is a placeholder, a purple heart is a mood. The one exception is true single-ink print, where there&#39;s physically only one colour available.</li>
 <li><strong>On screen, control the ground instead of recolouring the heart.</strong> A scrimmed photo puts jadeite at roughly 6.8:1, well past the 3:1 WCAG asks of a meaningful graphic. So: controlled ground → jadeite, untreated. Uncontrolled ground at 20px and up → white heart with a 1.5px hard keyline in <code>--bbs-primary-ink</code>. Uncontrolled and under 20px → put it on a plate (a <strong>solid</strong> <code>--bbs-primary-ink</code> disc — never glass, since translucency hands the ratio back to a ground you do not control) and keep the heart jadeite. Never a soft grey shadow — a blur adds haze without adding an edge, which is exactly the low-vision failure case. Working shown in <code>preview/mono-heart-study.html</code>.</li>
-<li><code>preview/</code> pages are the review surface. <code>tokens/bbs-tokens.css</code> is the source of truth. Everything else is downstream.</li>
+<li><code>preview/</code> pages are the review surface. <code>tokens/bbs-tokens.css</code> is the source of truth. Everything else is downstream. <code>index.html</code> is the hub; every page links back to it with <code>.bbs-back</code>.</li>
 </ul>
 <hr>
 <p><em>Built for the aha moment.</em></p>

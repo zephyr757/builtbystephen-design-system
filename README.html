@@ -1,21 +1,21 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>README · Built by Stephen</title><link rel="stylesheet" href="tokens/bbs-tokens.css"><style>
 html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height:100vh}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background:var(--bbs-bg-overlay);mix-blend-mode:screen;opacity:.4}.page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px clamp(20px,5vw,56px);border-bottom:1px solid var(--bbs-border-soft);backdrop-filter:blur(var(--bbs-blur-soft))}.page-nav a,.theme-toggle{min-height:44px;display:inline-flex;align-items:center;padding:8px 14px;border:1px solid var(--bbs-border);border-radius:var(--bbs-radius-pill);background:var(--bbs-surface);color:var(--bbs-text-secondary);font:inherit;text-decoration:none;cursor:pointer}article{width:min(70ch,calc(100% - 40px));margin:64px auto 96px;color:var(--bbs-text);font-size:var(--bbs-fs-md);line-height:var(--bbs-lh-body)}article h1{color:var(--bbs-lockup-name);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:var(--bbs-weight-display);line-height:1.05}article h2{margin-top:56px;color:var(--bbs-text);font-size:var(--bbs-fs-xl);font-weight:var(--bbs-weight-heading)}article h3{margin-top:36px;color:var(--bbs-heart);font-size:var(--bbs-fs-lg);font-weight:var(--bbs-weight-subheading)}article a{color:var(--bbs-primary)}article code,article pre{font-family:var(--bbs-font-mono)}article code{padding:2px 6px;border:1px solid var(--bbs-border-soft);border-radius:var(--bbs-radius-xs);color:var(--bbs-heart);background:var(--bbs-surface-soft)}article pre{overflow-x:auto;padding:20px;border:1px solid var(--bbs-border-soft);border-radius:var(--bbs-radius-lg);background:var(--bbs-surface)}article table{width:100%;border-collapse:collapse;font-size:var(--bbs-fs-sm)}article th,article td{padding:10px 12px;border-bottom:1px solid var(--bbs-border-soft);text-align:left;vertical-align:top}.glass-footer{padding:24px;border-top:1px solid var(--bbs-border-soft);background:var(--bbs-surface-soft);text-align:center}.glass-footer a{color:var(--bbs-text-secondary);text-decoration:none}
 </style></head><body class="bbs theme-labradorite"><nav class="page-nav"><a href="index.html">← design system</a><button class="theme-toggle" id="theme-toggle" type="button">◐ switch theme</button></nav><article><h1>Built by Stephen — Design System</h1>
-<p>A three-theme glassmorphism design system. <strong>Labradorite</strong> (dark, neon, cyberpunk), <strong>Opalite</strong> (light, pastel, dreamy), and <strong>Jadeite</strong> (deep green, monochrome), unified by the <strong>jadeite</strong> signature color — the non-negotiable thread that identifies Built by Stephen&#39;s work.</p>
+<p>A triple-theme glassmorphism design system. <strong>Labradorite</strong> (dark, neon, cyberpunk), <strong>Opalite</strong> (light, pastel, dreamy) and <strong>Jadeite</strong> (dark, single-hue), unified by the <strong>jadeite</strong> signature color — the non-negotiable thread that identifies Built by Stephen&#39;s work.</p>
 <blockquote>
 <p><strong>Brand DNA in one line</strong>: Solid glass objects stacked with light distortion, always signed in jadeite.</p>
 </blockquote>
 <blockquote>
-<p><strong>Voice &amp; color names</strong>: See <a href="./JADEITE-FIELD-NOTES.html"><code>Jadeite Field Notes</code></a>. Read it before writing copy or naming a new token.</p>
+<p><strong>Voice &amp; color names</strong>: See <a href="./JADEITE-FIELD-NOTES.md"><code>JADEITE-FIELD-NOTES.md</code></a>. Read it before writing copy or naming a new token.</p>
 </blockquote>
 <hr>
 <h2>Start here (for Claude)</h2>
 <p>When asked to design anything for Built by Stephen:</p>
 <ol>
 <li><strong>Read this file, <code>SKILL.md</code>, and <code>JADEITE-FIELD-NOTES.md</code> first.</strong> The design system is not optional — every artifact must conform. The field notes are the voice + color-name reference.</li>
-<li><strong>Import <code>tokens/bbs-tokens.css</code></strong> into your HTML and apply <code>class=&quot;bbs theme-labradorite&quot;</code> (or <code>theme-opalite</code>, or <code>theme-jadeite</code>) to the body.</li>
+<li><strong>Link <code>styles.css</code></strong> (it imports <code>tokens/bbs-tokens.css</code> and the Poppins faces, and adds the <code>.bbs-lockup</code> and Project Jadeite footer classes) and apply <code>class=&quot;bbs theme-labradorite&quot;</code> (or <code>theme-opalite</code>, or <code>theme-jadeite</code>) to the body.</li>
 <li><strong>Use semantic tokens</strong> (<code>var(--bbs-text)</code>, <code>var(--bbs-surface)</code>, <code>var(--bbs-primary)</code>) rather than raw hex — they swap with the theme.</li>
-<li><strong>Brand-sign it.</strong> Every finished artifact ends with <code>built by &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt; stephen</code> — the heart is the neon jadeite mark rendered via the <code>.bbs-heart</code> utility (imports with <code>tokens/bbs-tokens.css</code>), and the lockup MUST link to <code>https://builtbystephen.me</code>.</li>
+<li><strong>Brand-sign it.</strong> Every finished artifact ends with the built by [heart] stephen lockup — the heart is the neon jadeite mark rendered via the <code>.bbs-heart</code> utility, and the lockup MUST link to <code>https://builtbystephen.me</code>. Markup is under <em>Minimum viable setup</em> below.</li>
 <li><strong>Preview your work</strong> against the gallery in <code>preview/</code> to sanity-check colors, spacing, and glass levels.</li>
 </ol>
 <p>If a request would break one of these rules (e.g. &quot;use a red heart&quot;), push back politely and recommend the on-brand alternative.</p>
@@ -44,6 +44,30 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <td><code>tokens/bbs-tokens.css</code></td>
 <td><strong>Single source of truth.</strong> All CSS variables — colors, type, spacing, radii, shadows, themes</td>
 </tr>
+<tr>
+<td><code>styles.css</code></td>
+<td>Single entry point for consumers — imports the tokens, adds lockup + Project Jadeite footer classes</td>
+</tr>
+<tr>
+<td><code>colors_and_type.css</code></td>
+<td>Poppins <code>@font-face</code> manifest (imported by the tokens)</td>
+</tr>
+<tr>
+<td><code>index.html</code></td>
+<td>Hub page linking every doc, preview and worked example. Every page links back here</td>
+</tr>
+<tr>
+<td><code>assets/</code></td>
+<td>Logo SVGs (stacked, horizontal, heart, mark, wordmarks), hummingbird mark, <code>lapis-lazuli.svg</code> and <code>fluorite-crystal.svg</code> texture sources</td>
+</tr>
+<tr>
+<td><code>preview/</code></td>
+<td>Visual gallery — cover, color, type, foundations, components, logo, patterns, mono-heart study</td>
+</tr>
+<tr>
+<td><code>ui-kit/</code></td>
+<td>Worked examples — <code>splash.html</code> is the reference implementation</td>
+</tr>
 </tbody></table>
 <hr>
 <h2>Components</h2>
@@ -55,20 +79,8 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 </tr>
 </thead>
 <tbody><tr>
-<td><code>project-jadeite.html</code></td>
-<td>Full-page Project Jadeite mission statement, based on the shipped Ghostwriter page.</td>
-</tr>
-<tr>
-<td><code>assets/</code></td>
-<td>Logo SVGs (stacked, horizontal, heart, mark, wordmarks)</td>
-</tr>
-<tr>
-<td><code>preview/</code></td>
-<td>Visual gallery — type specimen, palette, components, logo usage</td>
-</tr>
-<tr>
-<td><code>ui-kit/</code></td>
-<td>Worked examples — <code>splash.html</code> is the reference implementation</td>
+<td><code>ProjectJadeitePage</code></td>
+<td>Full-page about/philosophy route for Project Jadeite — back link (<code>backHref</code>), header, story copy, signature. Source: <code>components/ProjectJadeitePage/</code></td>
 </tr>
 </tbody></table>
 <hr>
@@ -84,8 +96,11 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <h3>2. Glassmorphism, not flat</h3>
 <p>Surfaces are glass — translucent, blurred, layered over a rich background. Solid fills are rare and feel wrong in this system.</p>
 <ul>
-<li><strong>Labradorite glass</strong>: low opacity (<code>0.03–0.08</code>), strong blur (32px), neon border.</li>
-<li><strong>Opalite glass</strong>: higher opacity (<code>0.40–0.78</code>), softer blur (16px), pastel border.</li>
+<li><strong>Labradorite glass</strong>: <code>0.03</code> soft layers, <code>0.82</code> card surface, neon border.</li>
+<li><strong>Opalite glass</strong>: <code>0.40</code> soft layers, <code>0.78</code> card surface, pastel border.</li>
+<li><strong>Jadeite glass</strong>: <code>0.05</code> soft layers, <code>0.82</code> card surface, jadeite border.</li>
+<li><strong>Blur</strong>: <code>--bbs-blur-strong</code> (32px) for cards and panels, <code>--bbs-blur-soft</code> (16px) for chips, pills and toggles — same in every theme.</li>
+<li><strong>Stone textures</strong> are the one exception to translucent glass: <code>.bbs-lapis</code> and <code>.bbs-fluorite</code> are opaque stone for a hero, feature card or deep panel. One stone per view. See <code>preview/04-foundations.html</code>.</li>
 </ul>
 <h3>3. 8pt grid, soft radii</h3>
 <p>Spacing: <code>2 · 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96</code>. Radii: <code>6 · 10 · 14 · 20 · 28 · 36</code> plus pill (<code>999px</code>). Nothing should have a razor-sharp corner.</p>
@@ -140,7 +155,7 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <h3>5. Motion has easing</h3>
 <p>Every transition uses <code>cubic-bezier(0.23, 1, 0.32, 1)</code> (easeOutQuint). Fast interactions: <code>0.35s</code>. Theme changes and big moves: <code>0.6s</code>. Standard hover lift: <code>translateY(-4px) scale(1.02)</code>.</p>
 <h3>6. Voice: down-to-earth, bestie energy</h3>
-<p>Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you&#39;re explaining something to a friend at a kitchen table. Lowercase is fine when it suits the vibe — the lockup itself is <code>built by 💚 stephen</code>, all lowercase.</p>
+<p>Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you&#39;re explaining something to a friend at a kitchen table. Lowercase is fine when it suits the vibe — the lockup itself is built by [jadeite heart] stephen, all lowercase.</p>
 <hr>
 <h2>Using the system</h2>
 <h3>Minimum viable setup</h3>
@@ -150,20 +165,24 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
   &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
   &lt;title&gt;Your page · Built by Stephen&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;tokens/bbs-tokens.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
 &lt;/head&gt;
 &lt;body class=&quot;bbs theme-labradorite&quot;&gt;
   &lt;!-- your content, using var(--bbs-*) tokens --&gt;
   &lt;footer&gt;
-    &lt;a href=&quot;https://builtbystephen.me&quot; class=&quot;bbs-signature&quot;&gt;
-      built by &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt; stephen
+    &lt;!-- Wordmark lockup: .bbs-signature draws &quot;built by&quot; and &quot;stephen&quot;
+         itself, so the only child is the heart. --&gt;
+    &lt;a href=&quot;https://builtbystephen.me&quot; class=&quot;bbs-signature&quot; aria-label=&quot;built by stephen&quot;&gt;
+      &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt;
     &lt;/a&gt;
+    &lt;!-- Plain-text alternative (small footers): live text + heart, no .bbs-signature class --&gt;
+    &lt;!-- &lt;a href=&quot;https://builtbystephen.me&quot;&gt;built by &lt;span class=&quot;bbs-heart&quot;&gt;&lt;/span&gt; stephen&lt;/a&gt; --&gt;
   &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 <h3>Theme switching</h3>
-<p>Cycle the three themes by swapping the <code>theme-labradorite</code> / <code>theme-opalite</code> / <code>theme-jadeite</code> class on <code>&lt;body&gt;</code>. Persist to <code>localStorage</code>. Keyboard shortcut: <code>Cmd/Ctrl + Shift + T</code>. See <code>ui-kit/splash.html</code> for a copy-pasteable implementation.</p>
+<p>Cycle the three themes by swapping the <code>theme-labradorite</code> / <code>theme-opalite</code> / <code>theme-jadeite</code> class on <code>&lt;body&gt;</code>. Persist to <code>localStorage</code> under <code>bbs-theme</code>. Keyboard shortcut: <code>Cmd/Ctrl + Shift + T</code>. Copy-paste snippet in <code>SKILL.md</code> §4; <code>ui-kit/splash.html</code> shows it in a real page.</p>
 <h3>Picking a theme</h3>
 <ul>
 <li><strong>Labradorite</strong> → dev tools, code interfaces, evening/night apps, tech-forward products.</li>
@@ -193,11 +212,25 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 --bbs-accent          /* secondary accent */
 --bbs-glow            /* glow / active / wildcard — always a jadeite variant */
 --bbs-heart           /* the one and only color for the signature heart */
+--bbs-accent-calm     /* quiet accent — lapis lazuli (labradorite: --lapis-bright, opalite: full depth), soft jadeite in jadeite */
+--bbs-surface-deep    /* deep panels — lapis- (or jadeite-) tinted surface */
+--bbs-voice           /* italic / personal copy */
+--bbs-jadeite-text    /* jadeite that&#39;s legible as type on this ground */
+--bbs-lockup-byline   /* lockup: quiet half */
+--bbs-lockup-name     /* lockup: authored half */
+
+/* Stone textures (background only, not colors) — labradorite + opalite, one per view */
+--lapis-flecked       /* lapis lazuli with pyrite flecks — raw = no type; class .bbs-lapis adds a scrim for type */
+--fluorite-crystal    /* fluorite crystal (+ --fluorite-glow) — or class .bbs-fluorite; type on a glass panel only */
+
+/* Status — same in all three themes */
+--bbs-status-warning  --bbs-status-danger  --bbs-status-info
 
 /* Shape &amp; motion */
 --bbs-radius-{xs,sm,md,lg,xl,2xl,pill}
 --bbs-space-{1..10}
 --bbs-shadow-card     /* card elevation (glow in dark, soft shadow in light) */
+--bbs-elev-{flat,raised,floating,glow}
 --bbs-shadow-cta      /* CTA elevation */
 --bbs-transition-fast /* 0.35s easeOutQuint */
 --bbs-transition-base /* 0.6s easeOutQuint */
@@ -210,18 +243,19 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <li><strong><code>prefers-reduced-motion</code> is respected</strong> — <code>bbs-tokens.css</code> already kills transitions for users who ask for it.</li>
 <li><strong>44px minimum</strong> touch targets on mobile.</li>
 <li><strong>Keyboard nav</strong> always works. Tab order matches visual order.</li>
+<li><strong>Lapis</strong>: type and borders use flat <code>--lapis-lazuli</code> on light, <code>--lapis-bright</code> on dark. Type over the stone goes in a <code>.bbs-lapis</code> element (bottom scrim + text-shadow, copy kept low), never on raw <code>--lapis-flecked</code>. Never set type in <code>--pyrite</code>.</li>
 </ul>
 <hr>
 <h2>The heart hierarchy</h2>
 <p>When picking which heart to use:</p>
 <ol>
-<li><strong><code>bbs-heart--hero</code></strong> — 1.5× inline scale, heavier glow — for hero lockups like &quot;built by [heart] stephen&quot; in page titles</li>
-<li><strong><code>bbs-heart</code></strong> — inline-sized neon jadeite (1em) for footers, signatures ← <strong>default</strong></li>
-<li><strong><code>bbs-heart--display</code></strong> — 3× scale, standalone specimen (use alone, not next to running text)</li>
-<li>🖤 / 🤍 <strong>Black or white heart</strong> — fallback <strong>only</strong> when jadeite is truly unavailable (e.g. single-color print)</li>
+<li><strong><code>bbs-heart--hero</code></strong> — 0.9em box with a heavy double glow — for hero lockups like &quot;built by [heart] stephen&quot; in page titles</li>
+<li><strong><code>bbs-heart</code></strong> — 1em inline neon jadeite for footers, signatures ← <strong>default</strong>. <code>--lg</code> (0.95em) and <code>--xl</code> (1.05em) step the glow up.</li>
+<li><strong><code>bbs-heart--display</code></strong> — 3em standalone specimen (use alone, not next to running text)</li>
+<li><strong>Black or white heart</strong> — only for true single-ink print. On screen over an uncontrolled ground, follow the plate / keyline rule in <code>JADEITE-FIELD-NOTES.md</code> §5 and <code>preview/mono-heart-study.html</code>.</li>
 </ol>
 <p>Never red. Never blue/purple. Never a generic icon-font heart without the jadeite color treatment.</p>
 <hr>
 <h2>Version</h2>
-<p>v2026.09.1 — released 2026-09-20. Canonical three-theme system: Labradorite, Opalite, and Jadeite. Adds the dioptase calm-accent family, the <code>--bbs-voice</code> / <code>--bbs-jadeite-text</code> / <code>--bbs-accent-calm</code> / <code>--bbs-surface-deep</code> semantic bindings, and the mono-heart-on-screen study. Based on production implementations at <code>builtbystephen.me</code> and <code>ghostwriter.systems</code>.</p>
+<p>v2025.10 — canonical triple-theme system. Lapis lazuli replaces dioptase as the calm accent. Jadeite core. Based on production implementations at <code>builtbystephen.me</code> and <code>ghostwriter.ozdust.me</code>.</p>
 </article><footer class="glass-footer"><a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a></footer><script>(() => { const themes=['theme-labradorite','theme-opalite','theme-jadeite']; const body=document.body; const apply=t=>{body.classList.remove(...themes);body.classList.add(t);try{localStorage.setItem('bbs-theme',t)}catch{}};let saved=null;try{saved=localStorage.getItem('bbs-theme')}catch{};apply(themes.includes(saved)?saved:'theme-labradorite');document.getElementById('theme-toggle')?.addEventListener('click',()=>{const i=themes.findIndex(t=>body.classList.contains(t));apply(themes[(i+1)%themes.length])}) })();</script></body></html>
