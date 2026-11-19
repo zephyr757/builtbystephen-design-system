@@ -72,6 +72,23 @@ For light surfaces. Lower contrast. The brain when it's at peace.
 
 Opalite also carries full-depth `--lapis-lazuli` as its calm accent — see the labradorite table above.
 
+### Quartz — the on-the-record brain
+
+For evidence-grade, screen-reader, e-reader, and print-ready tools. Quartz is the calibration mineral: clear, hard, zero color distortion. Opaque paper surfaces, WCAG AAA ink contrast, Poppins `400` body weight, tabular numerals, zero backdrop blur, and zero neon bloom.
+
+| Token | Hex | Use it when... |
+|---|---|---|
+| `--clear-quartz` | `#ffffff` | Crisp card and document surfaces. Zero e-ink dithering, clean print ground. |
+| `--quartz-ground` | `#f7f9f8` | Whisper-cool mineral paper page ground. Prints pure white. |
+| `--quartz-surface-soft` | `#eef3f1` | Table headers, metadata strips, verbatim code/quote blocks. |
+| `--quartz-border` | `#b8c7c2` | 1px hairline borders that survive e-ink and B&W photocopies. |
+| `--graphite-quartz` | `#111816` | Primary text (17.9:1 on `--clear-quartz`, WCAG AAA). |
+| `--smoky-quartz` | `#3b4a45` | Secondary text (9.3:1 on `--clear-quartz`, WCAG AAA). |
+| `--slate-quartz` | `#52635d` | Muted metadata and captions (6.3:1 on `--clear-quartz`, WCAG AA+). |
+| `--jadeite-ink` | `#0f5949` | High-contrast jadeite ink for links, rules, and focus outlines (8.2:1, WCAG AAA). |
+
+**Quartz rules.** Never rely on color alone — status badges always pair color with a border, symbol, and explicit text label. Stone textures (`.bbs-lapis`, `.bbs-fluorite`) fall back to solid `--bbs-surface-deep`. Voice stays clear, specific, and honest without playful lowercase phrasing when the output may be read as formal evidence.
+
 ### Neutrals and text
 
 | Token | Hex | What it is |

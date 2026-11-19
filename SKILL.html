@@ -4,7 +4,7 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <p><strong>When to use:</strong> Any design, prototype, slide, doc, or HTML artifact tagged &quot;Built by Stephen&quot; or using this project&#39;s tokens.</p>
 <h2>1 — Always do this first</h2>
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;  &lt;!-- imports tokens/bbs-tokens.css + fonts --&gt;
-&lt;body class=&quot;bbs theme-labradorite&quot;&gt;  &lt;!-- or theme-opalite / theme-jadeite --&gt;
+&lt;body class=&quot;bbs theme-labradorite&quot;&gt;  &lt;!-- or theme-opalite / theme-jadeite / theme-quartz --&gt;
 </code></pre>
 <h2>2 — Three laws (don&#39;t break)</h2>
 <ol>
@@ -67,8 +67,8 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 <h2>4 — Theme toggle (copy-paste)</h2>
 <pre><code class="language-js">const KEY = &#39;bbs-theme&#39;;
 const body = document.body;
-// The three themes, in cycle order: Labradorite (dark) → Opalite (light) → Jadeite (monochrome).
-const THEMES = [&#39;theme-labradorite&#39;, &#39;theme-opalite&#39;, &#39;theme-jadeite&#39;];
+// The four themes, in cycle order: Labradorite (dark) → Opalite (light) → Jadeite (monochrome) → Quartz (evidence/print/e-reader).
+const THEMES = [&#39;theme-labradorite&#39;, &#39;theme-opalite&#39;, &#39;theme-jadeite&#39;, &#39;theme-quartz&#39;];
 const apply = (t) =&gt; {
   // Strip ANY theme-* class so stale/renamed values can&#39;t stick around.
   [...body.classList].forEach((c) =&gt; c.startsWith(&#39;theme-&#39;) &amp;&amp; body.classList.remove(c));
@@ -94,7 +94,8 @@ addEventListener(&#39;keydown&#39;, (e) =&gt; {
 <h2>5 — Before ship, check</h2>
 <ul>
 <li><input disabled="" type="checkbox"> Jadeite heart present in signature, links to <code>builtbystephen.me</code></li>
-<li><input disabled="" type="checkbox"> All three themes work (cycle labradorite → opalite → jadeite and scan)</li>
+<li><input disabled="" type="checkbox"> All four themes work (cycle labradorite → opalite → jadeite → quartz and scan)</li>
+<li><input disabled="" type="checkbox"> If evidence/print/e-reader (<code>theme-quartz</code>): verify grayscale/print preview, tabular numerals, semantic landmarks, and color+label+border status badges (never color alone)</li>
 <li><input disabled="" type="checkbox"> No hardcoded hex in components — semantic tokens only</li>
 <li><input disabled="" type="checkbox"> Poppins weights all ≥ 300 and ≤ 600, via <code>--bbs-weight-*</code> semantic tokens (display/title/heading/subheading/body/emphasis)</li>
 <li><input disabled="" type="checkbox"> Focus rings visible on all interactive elements</li>
@@ -103,4 +104,4 @@ addEventListener(&#39;keydown&#39;, (e) =&gt; {
 <li><input disabled="" type="checkbox"> Voice: friendly, lowercase, no corporate filler</li>
 </ul>
 <p>If any of these fail, fix before calling the work done.</p>
-</article><footer class="glass-footer"><a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a></footer><script>(() => { const themes=['theme-labradorite','theme-opalite','theme-jadeite']; const body=document.body; const apply=t=>{body.classList.remove(...themes);body.classList.add(t);try{localStorage.setItem('bbs-theme',t)}catch{}};let saved=null;try{saved=localStorage.getItem('bbs-theme')}catch{};apply(themes.includes(saved)?saved:'theme-labradorite');document.getElementById('theme-toggle')?.addEventListener('click',()=>{const i=themes.findIndex(t=>body.classList.contains(t));apply(themes[(i+1)%themes.length])}) })();</script></body></html>
+</article><footer class="glass-footer"><a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a></footer><script>(() => { const themes=['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz']; const body=document.body; const apply=t=>{body.classList.remove(...themes);body.classList.add(t);try{localStorage.setItem('bbs-theme',t)}catch{}};let saved=null;try{saved=localStorage.getItem('bbs-theme')}catch{};apply(themes.includes(saved)?saved:'theme-labradorite');document.getElementById('theme-toggle')?.addEventListener('click',()=>{const i=themes.findIndex(t=>body.classList.contains(t));apply(themes[(i+1)%themes.length])}) })();</script></body></html>

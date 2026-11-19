@@ -1,6 +1,6 @@
 # Built by Stephen — Design System
 
-A triple-theme glassmorphism design system. **Labradorite** (dark, neon, cyberpunk), **Opalite** (light, pastel, dreamy) and **Jadeite** (dark, single-hue), unified by the **jadeite** signature color — the non-negotiable thread that identifies Built by Stephen's work.
+A four-theme glass-and-mineral design system. **Labradorite** (dark, neon, cyberpunk), **Opalite** (light, pastel, dreamy), **Jadeite** (dark, single-hue), and **Quartz** (light, high-contrast, evidence/print/e-reader), unified by the **jadeite** signature color — the non-negotiable thread that identifies Built by Stephen's work.
 
 > **Brand DNA in one line**: Solid glass objects stacked with light distortion, always signed in jadeite.
 
@@ -132,14 +132,15 @@ Friendly, Gen-Z-meets-millennial, no corporate filler. Write copy as if you're e
 
 ### Theme switching
 
-Cycle the three themes by swapping the `theme-labradorite` / `theme-opalite` / `theme-jadeite` class on `<body>`. Persist to `localStorage` under `bbs-theme`. Keyboard shortcut: `Cmd/Ctrl + Shift + T`. Copy-paste snippet in `SKILL.md` §4; `ui-kit/splash.html` shows it in a real page.
+Cycle the four themes by swapping the `theme-labradorite` / `theme-opalite` / `theme-jadeite` / `theme-quartz` class on `<body>`. Persist to `localStorage` under `bbs-theme`. Keyboard shortcut: `Cmd/Ctrl + Shift + T`. Copy-paste snippet in `SKILL.md` §4; `ui-kit/splash.html` shows it in a real page.
 
 ### Picking a theme
 
 - **Labradorite** → dev tools, code interfaces, evening/night apps, tech-forward products.
 - **Opalite** → marketing, client presentations, daytime tools, creative/approachable products.
 - **Jadeite** → monochrome single-hue moments — focus modes, brand-forward splash/hero surfaces, anywhere the system turns all the way up.
-- **All three** → every shipping product should support the cycle and let the user choose.
+- **Quartz** → on-the-record / evidence-grade tools, legal/team documentation, screen-reader, e-reader, and print-first surfaces. Opaque paper ground, WCAG AAA primary ink, Poppins `400` body, zero backdrop blur, tabular numerals, and built-in `@media print`.
+- **All four** → general products should support the cycle and let the user choose; evidence/print-first tools should default to `theme-quartz`.
 
 ---
 

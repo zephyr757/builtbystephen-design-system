@@ -139,6 +139,12 @@
         <span class="desc">Nav, tabs, overlays, menus, tables, empty states, accordion.</span>
         <span class="arrow">↗</span>
       </a>
+      <a class="card" href="preview/08-quartz.html">
+        <span class="num">08</span>
+        <span class="name">Quartz · evidence &amp; print</span>
+        <span class="desc">High-contrast, screen-reader, e-reader, and print-ready mode for on-the-record tools.</span>
+        <span class="arrow">↗</span>
+      </a>
       <a class="card" href="preview/mono-heart-study.html">
         <span class="num">study</span>
         <span class="name">Mono heart on screen</span>
@@ -173,9 +179,10 @@
 
 <script>
   const body = document.body, t = document.getElementById('toggle');
+  const cy = ['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz'];
   const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
-  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
-  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  apply(cy.includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
 </script>
 </body>
 </html>

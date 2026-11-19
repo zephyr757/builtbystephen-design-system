@@ -273,6 +273,31 @@
     0 0 20px rgba(4, 255, 178, 0.50),
     0 0 40px rgba(4, 255, 178, 0.28),
     0 0 60px rgba(4, 255, 178, 0.10);
+
+  /* =========================================================
+     QUARTZ (light, high-contrast) — the on-the-record brain.
+     Evidence-grade, screen-reader, e-reader, and print-ready.
+     Zero backdrop blur, zero gradient wash, zero neon bloom.
+     Named palette. See JADEITE-FIELD-NOTES.md for why.
+     ========================================================= */
+  --clear-quartz:        #ffffff;   /* crisp paper/card surface */
+  --quartz-ground:       #f7f9f8;   /* whisper-cool mineral paper ground */
+  --quartz-surface-soft: #eef3f1;   /* table headers, metadata bands, code blocks */
+  --quartz-surface-hover:#e3ece9;   /* subtle hover tint without glow */
+  --quartz-border:       #b8c7c2;   /* 1px hairline border — survives e-ink & B&W print */
+  --quartz-border-soft:  #d6e0dc;   /* row/section dividers */
+  --graphite-quartz:     #111816;   /* primary ink — 17.9:1 on clear-quartz (WCAG AAA) */
+  --smoky-quartz:        #3b4a45;   /* secondary ink — 9.3:1 on clear-quartz (WCAG AAA) */
+  --slate-quartz:        #52635d;   /* muted UI/meta ink — 6.3:1 on clear-quartz (WCAG AA+) */
+  --jadeite-ink:         #0f5949;   /* high-contrast jadeite ink — 8.2:1 on clear-quartz (WCAG AAA) */
+
+  --quartz-bg:           var(--quartz-ground);
+  --quartz-overlay:      none;
+  --quartz-grid-color:   rgba(17, 24, 22, 0.08);
+
+  --quartz-elev-flat:     none;
+  --quartz-elev-raised:   0 1px 2px rgba(17, 24, 22, 0.06);
+  --quartz-elev-floating: 0 2px 6px rgba(17, 24, 22, 0.08);
 }
 
 /* =========================================================
@@ -409,6 +434,79 @@
   --bbs-elev-raised:     var(--jadeite-elev-raised);
   --bbs-elev-floating:   var(--jadeite-elev-floating);
   --bbs-elev-glow:       var(--jadeite-glow-card);
+}
+
+/* Quartz — light, high-contrast, evidence/print/e-reader mode.
+   Opaque paper surfaces, WCAG AAA primary ink, zero backdrop blur,
+   zero neon glow, Poppins 400 body, tabular numerals, and built-in print rules. */
+.theme-quartz {
+  --bbs-bg:              var(--quartz-bg);
+  --bbs-bg-overlay:      var(--quartz-overlay);
+  --bbs-grid-color:      var(--quartz-grid-color);
+
+  --bbs-surface:         var(--clear-quartz);
+  --bbs-surface-soft:    var(--quartz-surface-soft);
+  --bbs-surface-hover:   var(--quartz-surface-hover);
+  --bbs-border:          var(--quartz-border);
+  --bbs-border-soft:     var(--quartz-border-soft);
+
+  --bbs-text:            var(--graphite-quartz);
+  --bbs-text-secondary:  var(--smoky-quartz);
+  --bbs-text-muted:      var(--slate-quartz);
+
+  --bbs-lockup-byline:   var(--smoky-quartz);
+  --bbs-lockup-name:     var(--graphite-quartz);
+
+  --bbs-primary:         var(--jadeite-deep);
+  --bbs-primary-ink:     var(--clear-quartz);
+  --bbs-accent:          var(--jadeite-ink);
+  --bbs-glow:            var(--jadeite-deep);
+  --bbs-heart:           var(--bbs-jadeite);
+  --bbs-voice:           var(--smoky-quartz);
+  --bbs-jadeite-text:    var(--jadeite-ink);
+  --bbs-accent-calm:     var(--lapis-lazuli);
+  --bbs-surface-deep:    var(--quartz-surface-soft);
+
+  /* Evidence-safe status ink on light ground (WCAG AA/AAA) */
+  --bbs-status-warning:  #7a4500;
+  --bbs-status-danger:   #9e1c36;
+  --bbs-status-info:     #174ea6;
+
+  /* Crisp screen-reader, e-ink, and print legibility */
+  --bbs-weight-body:     var(--bbs-weight-regular);
+  --bbs-blur-soft:       0px;
+  --bbs-blur-strong:     0px;
+  --bbs-focus-ring:      0 0 0 2px #ffffff, 0 0 0 4px #0f5949;
+
+  --bbs-shadow-card:     none;
+  --bbs-shadow-cta:      none;
+
+  --bbs-elev-flat:       var(--quartz-elev-flat);
+  --bbs-elev-raised:     var(--quartz-elev-raised);
+  --bbs-elev-floating:   var(--quartz-elev-floating);
+  --bbs-elev-glow:       var(--quartz-elev-raised);
+}
+
+.bbs.theme-quartz {
+  font-weight: var(--bbs-weight-body);
+  font-variant-numeric: tabular-nums;
+  background-attachment: scroll;
+}
+
+.theme-quartz .bbs-heart,
+.theme-quartz .bbs-heart--lg,
+.theme-quartz .bbs-heart--xl,
+.theme-quartz .bbs-heart--hero,
+.theme-quartz .bbs-heart--display,
+.theme-quartz .bbs-signature--jade::before,
+.theme-quartz .bbs-signature--jade::after {
+  filter: none;
+}
+
+.theme-quartz :focus-visible {
+  outline: 2px solid var(--jadeite-ink);
+  outline-offset: 2px;
+  box-shadow: none;
 }
 
 /* =========================================================
@@ -614,6 +712,20 @@
   border-color: var(--bbs-border);
   box-shadow: var(--bbs-elev-raised);
 }
+/* Quartz theme stays opaque and texture-free for e-ink and print legibility. */
+.theme-quartz .bbs-lapis,
+.theme-quartz .bbs-fluorite {
+  background: var(--bbs-surface-deep);
+  color: var(--bbs-text);
+  text-shadow: none;
+  border: 1px solid var(--bbs-border);
+  box-shadow: none;
+}
+.theme-quartz :is(a, button, [tabindex]).bbs-lapis:hover,
+.theme-quartz :is(a, button, [tabindex]).bbs-fluorite:hover {
+  filter: none;
+  transform: none;
+}
 :is(a, button, [tabindex]).bbs-lapis:hover,
 :is(a, button, [tabindex]).bbs-fluorite:hover {
   filter: brightness(1.15) contrast(1.05);
@@ -646,4 +758,60 @@
   transition: transform var(--bbs-transition-fast), border-color var(--bbs-transition-fast), color var(--bbs-transition-fast);
 }
 .bbs-back:hover { transform: translateY(-2px); border-color: var(--bbs-glow); color: var(--bbs-text); }
-@media print { .bbs-back { display: none; } }
+@media print {
+  .bbs-back,
+  .bbs-no-print,
+  .page-nav,
+  .toggle,
+  .toggle-ui,
+  .theme-toggle {
+    display: none !important;
+  }
+
+  .bbs,
+  .bbs body,
+  body.bbs {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-weight: var(--bbs-weight-regular);
+    background-attachment: scroll !important;
+  }
+
+  .bbs::before,
+  body.bbs::before {
+    display: none !important;
+  }
+
+  .bbs * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .bbs .bbs-heart,
+  .bbs .bbs-signature::before,
+  .bbs .bbs-signature::after {
+    filter: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .bbs .bbs-card,
+  .bbs .card,
+  .bbs blockquote,
+  .bbs pre,
+  .bbs tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .bbs thead {
+    display: table-header-group;
+  }
+
+  .bbs a[href^="http"] {
+    color: #000000 !important;
+    text-decoration: underline;
+  }
+}

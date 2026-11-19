@@ -6,7 +6,7 @@
 
 ```html
 <link rel="stylesheet" href="styles.css">  <!-- imports tokens/bbs-tokens.css + fonts -->
-<body class="bbs theme-labradorite">  <!-- or theme-opalite / theme-jadeite -->
+<body class="bbs theme-labradorite">  <!-- or theme-opalite / theme-jadeite / theme-quartz -->
 ```
 
 ## 2 — Three laws (don't break)
@@ -85,8 +85,8 @@ Rules: one stone per view; hero / feature card / deep panel, never wallpaper; la
 ```js
 const KEY = 'bbs-theme';
 const body = document.body;
-// The three themes, in cycle order: Labradorite (dark) → Opalite (light) → Jadeite (monochrome).
-const THEMES = ['theme-labradorite', 'theme-opalite', 'theme-jadeite'];
+// The four themes, in cycle order: Labradorite (dark) → Opalite (light) → Jadeite (monochrome) → Quartz (evidence/print/e-reader).
+const THEMES = ['theme-labradorite', 'theme-opalite', 'theme-jadeite', 'theme-quartz'];
 const apply = (t) => {
   // Strip ANY theme-* class so stale/renamed values can't stick around.
   [...body.classList].forEach((c) => c.startsWith('theme-') && body.classList.remove(c));
@@ -113,7 +113,8 @@ addEventListener('keydown', (e) => {
 ## 5 — Before ship, check
 
 - [ ] Jadeite heart present in signature, links to `builtbystephen.me`
-- [ ] All three themes work (cycle labradorite → opalite → jadeite and scan)
+- [ ] All four themes work (cycle labradorite → opalite → jadeite → quartz and scan)
+- [ ] If evidence/print/e-reader (`theme-quartz`): verify grayscale/print preview, tabular numerals, semantic landmarks, and color+label+border status badges (never color alone)
 - [ ] No hardcoded hex in components — semantic tokens only
 - [ ] Poppins weights all ≥ 300 and ≤ 600, via `--bbs-weight-*` semantic tokens (display/title/heading/subheading/body/emphasis)
 - [ ] Focus rings visible on all interactive elements

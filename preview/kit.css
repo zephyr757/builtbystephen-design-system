@@ -13,6 +13,7 @@ html{background:#04150f}
 html:has(body.theme-labradorite){background:#120227}
 html:has(body.theme-opalite){background:#ffe2ee}
 html:has(body.theme-jadeite){background:#020c09}
+html:has(body.theme-quartz){background:#f7f9f8}
 
 body{padding:clamp(40px,5vw,72px);min-height:100vh}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background:var(--bbs-bg-overlay);mix-blend-mode:screen;opacity:.45}

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Themes" name="08 — Quartz" subtitle="Evidence, print, screen-reader & e-reader mode" viewport="1280x1200" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>08 · Quartz — Built by Stephen Design System</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body {
+    padding: clamp(24px, 4vw, 64px);
+    min-height: 100vh;
+    margin: 0;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 8px;
+    padding: 8px 14px;
+    background: var(--bbs-primary);
+    color: var(--bbs-primary-ink);
+    border-radius: var(--bbs-radius-xs);
+    text-decoration: none;
+    z-index: 100;
+  }
+  .skip-link:focus { left: 16px; }
+
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--bbs-space-6);
+  }
+  .toolbar .bbs-back { margin-bottom: 0; }
+  .toolbar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .ctrl-btn {
+    min-height: 44px;
+    padding: 8px 14px;
+    border-radius: var(--bbs-radius-pill);
+    border: 1px solid var(--bbs-border);
+    background: var(--bbs-surface);
+    color: var(--bbs-text-secondary);
+    font-family: var(--bbs-font-body);
+    font-size: var(--bbs-fs-xs);
+    font-weight: var(--bbs-weight-emphasis);
+    cursor: pointer;
+  }
+  .ctrl-btn[aria-pressed="true"] {
+    background: var(--bbs-primary);
+    color: var(--bbs-primary-ink);
+    border-color: var(--bbs-primary);
+  }
+
+  body.mode-eink {
+    filter: grayscale(100%) contrast(1.08);
+    background: #ffffff;
+  }
+
+  .doc-header {
+    padding-bottom: var(--bbs-space-5);
+    margin-bottom: var(--bbs-space-6);
+    border-bottom: 2px solid var(--bbs-text);
+  }
+  .kicker {
+    font-size: var(--bbs-fs-xs);
+    font-weight: var(--bbs-weight-strong);
+    letter-spacing: var(--bbs-tracking-caps);
+    text-transform: uppercase;
+    color: var(--bbs-jadeite-text);
+    margin: 0 0 6px;
+  }
+  h1 {
+    margin: 0 0 10px;
+    font-size: var(--bbs-fs-2xl);
+    font-weight: var(--bbs-weight-heading);
+    letter-spacing: var(--bbs-tracking-tight);
+    line-height: var(--bbs-lh-tight);
+  }
+  .lede {
+    margin: 0;
+    color: var(--bbs-text-secondary);
+    max-width: 68ch;
+  }
+
+  h2 {
+    font-size: var(--bbs-fs-sm);
+    font-weight: var(--bbs-weight-strong);
+    text-transform: uppercase;
+    letter-spacing: var(--bbs-tracking-wide);
+    color: var(--bbs-text-muted);
+    margin: var(--bbs-space-7) 0 var(--bbs-space-4);
+  }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--bbs-space-4);
+  }
+  .swatch {
+    background: var(--bbs-surface);
+    border: 1px solid var(--bbs-border);
+    border-radius: var(--bbs-radius-md);
+    padding: var(--bbs-space-4);
+  }
+  .chip {
+    height: 36px;
+    border-radius: var(--bbs-radius-xs);
+    border: 1px solid var(--bbs-border);
+    margin-bottom: var(--bbs-space-3);
+  }
+  .swatch-name { font-size: var(--bbs-fs-sm); font-weight: var(--bbs-weight-emphasis); }
+  .swatch-meta { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); color: var(--bbs-text-muted); }
+
+  .bbs-card {
+    background: var(--bbs-surface);
+    border: 1px solid var(--bbs-border);
+    border-radius: var(--bbs-radius-md);
+    padding: var(--bbs-space-6);
+    margin-bottom: var(--bbs-space-5);
+  }
+  .record-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    padding-bottom: var(--bbs-space-4);
+    margin-bottom: var(--bbs-space-4);
+    border-bottom: 1px solid var(--bbs-border-soft);
+  }
+  .record-id {
+    font-family: var(--bbs-font-mono);
+    font-size: var(--bbs-fs-xs);
+    font-weight: var(--bbs-weight-emphasis);
+    color: var(--bbs-jadeite-text);
+    background: var(--bbs-surface-soft);
+    border: 1px solid var(--bbs-border-soft);
+    border-radius: var(--bbs-radius-xs);
+    padding: 3px 8px;
+  }
+  .record-meta {
+    font-size: var(--bbs-fs-xs);
+    color: var(--bbs-text-muted);
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: var(--bbs-space-4);
+  }
+  .q-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: var(--bbs-radius-pill);
+    font-size: var(--bbs-fs-xs);
+    font-weight: var(--bbs-weight-emphasis);
+    border: 1.5px solid;
+  }
+  .q-badge--ok   { color: #0f5949; background: #e8f6f2; border-color: #15705c; }
+  .q-badge--info { color: #174ea6; background: #edf4ff; border-color: #2a66c9; }
+  .q-badge--warn { color: #7a4500; background: #fff4e5; border-color: #b86b00; }
+  .q-badge--flag { color: #9e1c36; background: #fdecef; border-color: #c22947; }
+
+  .verbatim {
+    margin: 0 0 var(--bbs-space-5);
+    padding: var(--bbs-space-4) var(--bbs-space-5);
+    background: var(--bbs-surface-soft);
+    border-left: 3px solid var(--bbs-primary);
+    border-radius: 0 var(--bbs-radius-xs) var(--bbs-radius-xs) 0;
+    font-family: var(--bbs-font-mono);
+    font-size: var(--bbs-fs-sm);
+    color: var(--bbs-text);
+  }
+  .verbatim footer {
+    margin-top: var(--bbs-space-2);
+    font-family: var(--bbs-font-body);
+    font-size: var(--bbs-fs-xs);
+    color: var(--bbs-text-muted);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--bbs-fs-sm);
+  }
+  th {
+    text-align: left;
+    font-size: var(--bbs-fs-xs);
+    font-weight: var(--bbs-weight-strong);
+    text-transform: uppercase;
+    letter-spacing: var(--bbs-tracking-wide);
+    color: var(--bbs-text-secondary);
+    background: var(--bbs-surface-soft);
+    padding: 10px 12px;
+    border-top: 1px solid var(--bbs-border);
+    border-bottom: 1.5px solid var(--bbs-border);
+  }
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--bbs-border-soft);
+    vertical-align: top;
+  }
+  .mono { font-family: var(--bbs-font-mono); font-size: var(--bbs-fs-xs); }
+
+  .page-footer {
+    margin-top: var(--bbs-space-7);
+    padding-top: var(--bbs-space-5);
+    border-top: 1px solid var(--bbs-border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--bbs-fs-xs);
+    color: var(--bbs-text-muted);
+  }
+</style>
+</head>
+<body class="bbs theme-quartz">
+<a class="skip-link bbs-no-print" href="#main-content">Skip to main content</a>
+
+<div class="container">
+  <nav class="toolbar bbs-no-print" aria-label="Page controls">
+    <a class="bbs-back" href="../index.html">← design system</a>
+    <div class="toolbar-actions">
+      <button type="button" class="ctrl-btn" id="eink-toggle" aria-pressed="false">B&amp;W Print / E-Ink preview</button>
+      <button type="button" class="ctrl-btn" id="theme-toggle">◐ switch theme</button>
+      <button type="button" class="ctrl-btn" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </nav>
+
+  <header class="doc-header">
+    <p class="kicker">08 · Quartz Theme</p>
+    <h1>Quartz — Evidence, Print &amp; E-Reader Mode</h1>
+    <p class="lede">
+      High-contrast, opaque-surface theme for on-the-record tools, legal/team exhibits, screen readers, e-readers, and physical printouts. Built on the exact same <code>--bbs-*</code> token contract.
+    </p>
+  </header>
+
+  <main id="main-content">
+    <h2>Mineral Palette (WCAG AA / AAA Verified)</h2>
+    <section class="swatches" aria-label="Quartz color tokens">
+      <div class="swatch">
+        <div class="chip" style="background: var(--clear-quartz)"></div>
+        <div class="swatch-name">--clear-quartz</div>
+        <div class="swatch-meta">#ffffff · surface</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: var(--quartz-ground)"></div>
+        <div class="swatch-name">--quartz-ground</div>
+        <div class="swatch-meta">#f7f9f8 · ground</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: var(--graphite-quartz)"></div>
+        <div class="swatch-name">--graphite-quartz</div>
+        <div class="swatch-meta">#111816 · 17.9:1</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: var(--smoky-quartz)"></div>
+        <div class="swatch-name">--smoky-quartz</div>
+        <div class="swatch-meta">#3b4a45 · 9.3:1</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: var(--jadeite-deep)"></div>
+        <div class="swatch-name">--jadeite-deep</div>
+        <div class="swatch-meta">#15705c · 5.8:1</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: var(--jadeite-ink)"></div>
+        <div class="swatch-name">--jadeite-ink</div>
+        <div class="swatch-meta">#0f5949 · 8.2:1</div>
+      </div>
+    </section>
+
+    <h2>Evidence Record Specimen</h2>
+    <article class="bbs-card">
+      <div class="record-head">
+        <span class="record-id">EXH-2026-11-19-001</span>
+        <span class="record-meta">Captured 2026-11-19 08:12 EST · SHA-256 verified</span>
+      </div>
+
+      <div class="badges" aria-label="Status badges">
+        <span class="q-badge q-badge--ok"><span aria-hidden="true">✓</span> Verified Source</span>
+        <span class="q-badge q-badge--info"><span aria-hidden="true">i</span> Preserved Verbatim</span>
+        <span class="q-badge q-badge--warn"><span aria-hidden="true">!</span> Review Required</span>
+        <span class="q-badge q-badge--flag"><span aria-hidden="true">×</span> Disputed Claim</span>
+      </div>
+
+      <blockquote class="verbatim">
+        "Verbatim text renders in monospace with a solid jadeite rule — no blur, no gradient wash, and zero stylistic distortion when printed or exported to PDF."
+        <footer>Source: Sample Record · Timestamp 2026-11-19T13:12:00Z</footer>
+      </blockquote>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Timestamp (UTC)</th>
+            <th scope="col">Event</th>
+            <th scope="col">Status</th>
+            <th scope="col">Reference ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="mono">2026-11-19 13:04:12</td>
+            <td>Original post archived with full headers</td>
+            <td>Verified</td>
+            <td class="mono">rec_84a1c9</td>
+          </tr>
+          <tr>
+            <td class="mono">2026-11-19 13:09:45</td>
+            <td>Escalation logged for team review</td>
+            <td>Logged</td>
+            <td class="mono">rec_84a20f</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+  </main>
+
+  <footer class="page-footer">
+    <span>Quartz · Poppins 400 body · Tabular numerals · Zero backdrop blur</span>
+    <a class="bbs-signature bbs-signature--sm" href="https://builtbystephen.me" aria-label="built by stephen">
+      <span class="bbs-heart"></span>
+    </a>
+  </footer>
+</div>
+
+<script>
+  const THEMES = ['theme-labradorite', 'theme-opalite', 'theme-jadeite', 'theme-quartz'];
+  const body = document.body;
+  const apply = (t) => {
+    [...body.classList].forEach((c) => c.startsWith('theme-') && body.classList.remove(c));
+    body.classList.add(t);
+    try { localStorage.setItem('bbs-theme', t); } catch {}
+  };
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const cur = THEMES.find((c) => body.classList.contains(c)) || 'theme-quartz';
+    apply(THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length]);
+  });
+  const einkBtn = document.getElementById('eink-toggle');
+  einkBtn?.addEventListener('click', () => {
+    const next = !body.classList.contains('mode-eink');
+    body.classList.toggle('mode-eink', next);
+    einkBtn.setAttribute('aria-pressed', String(next));
+  });
+</script>
+</body>
+</html>

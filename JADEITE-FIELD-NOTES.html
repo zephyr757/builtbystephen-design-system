@@ -133,6 +133,58 @@ html,body{margin:0}body{display:grid;grid-template-rows:auto 1fr auto;min-height
 </tr>
 </tbody></table>
 <p>Opalite also carries full-depth <code>--lapis-lazuli</code> as its calm accent — see the labradorite table above.</p>
+<h3>Quartz — the on-the-record brain</h3>
+<p>For evidence-grade, screen-reader, e-reader, and print-ready tools. Quartz is the calibration mineral: clear, hard, zero color distortion. Opaque paper surfaces, WCAG AAA ink contrast, Poppins <code>400</code> body weight, tabular numerals, zero backdrop blur, and zero neon bloom.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Hex</th>
+<th>Use it when...</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--clear-quartz</code></td>
+<td><code>#ffffff</code></td>
+<td>Crisp card and document surfaces. Zero e-ink dithering, clean print ground.</td>
+</tr>
+<tr>
+<td><code>--quartz-ground</code></td>
+<td><code>#f7f9f8</code></td>
+<td>Whisper-cool mineral paper page ground. Prints pure white.</td>
+</tr>
+<tr>
+<td><code>--quartz-surface-soft</code></td>
+<td><code>#eef3f1</code></td>
+<td>Table headers, metadata strips, verbatim code/quote blocks.</td>
+</tr>
+<tr>
+<td><code>--quartz-border</code></td>
+<td><code>#b8c7c2</code></td>
+<td>1px hairline borders that survive e-ink and B&amp;W photocopies.</td>
+</tr>
+<tr>
+<td><code>--graphite-quartz</code></td>
+<td><code>#111816</code></td>
+<td>Primary text (17.9:1 on <code>--clear-quartz</code>, WCAG AAA).</td>
+</tr>
+<tr>
+<td><code>--smoky-quartz</code></td>
+<td><code>#3b4a45</code></td>
+<td>Secondary text (9.3:1 on <code>--clear-quartz</code>, WCAG AAA).</td>
+</tr>
+<tr>
+<td><code>--slate-quartz</code></td>
+<td><code>#52635d</code></td>
+<td>Muted metadata and captions (6.3:1 on <code>--clear-quartz</code>, WCAG AA+).</td>
+</tr>
+<tr>
+<td><code>--jadeite-ink</code></td>
+<td><code>#0f5949</code></td>
+<td>High-contrast jadeite ink for links, rules, and focus outlines (8.2:1, WCAG AAA).</td>
+</tr>
+</tbody></table>
+<p><strong>Quartz rules.</strong> Never rely on color alone — status badges always pair color with a border, symbol, and explicit text label. Stone textures (<code>.bbs-lapis</code>, <code>.bbs-fluorite</code>) fall back to solid <code>--bbs-surface-deep</code>. Voice stays clear, specific, and honest without playful lowercase phrasing when the output may be read as formal evidence.</p>
 <h3>Neutrals and text</h3>
 <table>
 <thead>
@@ -234,4 +286,4 @@ border: 2px solid var(--bbs-primary-ink);
 </ul>
 <hr>
 <p><em>Built for the aha moment.</em></p>
-</article><footer class="glass-footer"><a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a></footer><script>(() => { const themes=['theme-labradorite','theme-opalite','theme-jadeite']; const body=document.body; const apply=t=>{body.classList.remove(...themes);body.classList.add(t);try{localStorage.setItem('bbs-theme',t)}catch{}};let saved=null;try{saved=localStorage.getItem('bbs-theme')}catch{};apply(themes.includes(saved)?saved:'theme-labradorite');document.getElementById('theme-toggle')?.addEventListener('click',()=>{const i=themes.findIndex(t=>body.classList.contains(t));apply(themes[(i+1)%themes.length])}) })();</script></body></html>
+</article><footer class="glass-footer"><a href="https://builtbystephen.me">built by <span class="bbs-heart"></span> stephen</a></footer><script>(() => { const themes=['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz']; const body=document.body; const apply=t=>{body.classList.remove(...themes);body.classList.add(t);try{localStorage.setItem('bbs-theme',t)}catch{}};let saved=null;try{saved=localStorage.getItem('bbs-theme')}catch{};apply(themes.includes(saved)?saved:'theme-labradorite');document.getElementById('theme-toggle')?.addEventListener('click',()=>{const i=themes.findIndex(t=>body.classList.contains(t));apply(themes[(i+1)%themes.length])}) })();</script></body></html>
