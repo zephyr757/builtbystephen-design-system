@@ -62,6 +62,9 @@
   .pane.opal .swatch { background: rgba(255,255,255,0.6); border-color: rgba(45, 27, 61, 0.08); }
   .pane.jade { --bbs-surface: var(--jadeite-surface); --bbs-border: var(--jadeite-border); --bbs-text: var(--mint-bright); --bbs-text-secondary: var(--jadeite-haze); --bbs-text-muted: var(--jadeite-whisper); --bbs-bg-overlay: var(--jadeite-overlay); color: var(--bbs-text); background: var(--jadeite-bg); grid-column: 1 / -1; }
   .pane.jade .swatch { background: rgba(255,255,255,0.05); border-color: rgba(4,255,178,0.20); }
+  .pane.quartz { --bbs-surface: var(--clear-quartz); --bbs-border: var(--quartz-border); --bbs-text: var(--graphite-quartz); --bbs-text-secondary: var(--smoky-quartz); --bbs-text-muted: var(--slate-quartz); --bbs-bg-overlay: none; color: var(--graphite-quartz); background: var(--quartz-ground); backdrop-filter: none; box-shadow: none; grid-column: 1 / -1; }
+  .pane.quartz .swatch { background: var(--clear-quartz); border-color: var(--quartz-border); backdrop-filter: none; }
+  .pane.quartz .chip { border-bottom: 1px solid var(--quartz-border-soft); }
 
   .jadeite-row {
     display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
@@ -83,7 +86,7 @@
 <body class="bbs theme-opalite">
   <a class="bbs-back" href="../index.html">← design system</a>
   <h1>Color</h1>
-  <p class="lede">Jadeite is the anchor. It shows up in three modes — dark, light, and single-hue. Every color has a name and a reason; use the named token, not the hex. <a href="../JADEITE-FIELD-NOTES.md" style="color: var(--bbs-heart); text-decoration: underline; text-underline-offset: 3px;">Read the field notes →</a></p>
+  <p class="lede">Jadeite is the anchor. It shows up in four modes — dark, light, single-hue, and evidence/print. Every color has a name and a reason; use the named token, not the hex. <a href="../JADEITE-FIELD-NOTES.md" style="color: var(--bbs-heart); text-decoration: underline; text-underline-offset: 3px;">Read the field notes →</a></p>
 
   <section>
     <h2>Jadeite — brand anchor</h2>
@@ -146,6 +149,21 @@
         <div class="swatch"><div class="chip" style="--c:rgba(207,245,235,0.82)"></div><div class="meta"><span class="name">Jadeite Haze</span><span class="hex">cff5eb / 82%</span><span class="use">Secondary text</span></div></div>
         <div class="swatch"><div class="chip" style="--c:#eafff7"></div><div class="meta"><span class="name">Mint Bright</span><span class="hex">#eafff7</span><span class="use">Primary text · lockup names</span></div></div>
         <div class="swatch"><div class="chip" style="--c:rgba(11,30,27,0.82)"></div><div class="meta"><span class="name">Jadeite Glass</span><span class="hex">0b1e1b / 82%</span><span class="use">Surface card</span></div></div>
+      </div>
+    </div>
+
+    <div class="pane quartz">
+      <h3>◻️ Quartz <span style="font-weight: var(--bbs-weight-body); font-size: var(--bbs-fs-xs); color: var(--bbs-text-muted); letter-spacing: var(--bbs-tracking-wide); text-transform: uppercase;">evidence · print · e-reader</span></h3>
+      <p>The on-the-record brain. Crisp opaque paper surfaces, WCAG AAA ink contrast, Poppins 400 body, zero backdrop blur, zero neon bloom, and built-in print styles.</p>
+      <div class="grid">
+        <div class="swatch"><div class="chip" style="--c:#ffffff"></div><div class="meta"><span class="name">Clear Quartz</span><span class="hex">#ffffff</span><span class="use">Card &amp; document surface</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:#f7f9f8"></div><div class="meta"><span class="name">Quartz Ground</span><span class="hex">#f7f9f8</span><span class="use">Mineral paper page ground</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:#eef3f1"></div><div class="meta"><span class="name">Quartz Soft</span><span class="hex">#eef3f1</span><span class="use">Table headers · verbatim blocks</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:#b8c7c2"></div><div class="meta"><span class="name">Quartz Border</span><span class="hex">#b8c7c2</span><span class="use">1px hairline · e-ink &amp; print safe</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:#111816"></div><div class="meta"><span class="name">Graphite Quartz</span><span class="hex">#111816</span><span class="use">Primary ink · 17.9:1 (AAA)</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:#3b4a45"></div><div class="meta"><span class="name">Smoky Quartz</span><span class="hex">#3b4a45</span><span class="use">Secondary ink · 9.3:1 (AAA)</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:#52635d"></div><div class="meta"><span class="name">Slate Quartz</span><span class="hex">#52635d</span><span class="use">Muted meta · 6.3:1 (AA+)</span></div></div>
+        <div class="swatch"><div class="chip" style="--c:#0f5949"></div><div class="meta"><span class="name">Jadeite Ink</span><span class="hex">#0f5949</span><span class="use">Links · rules · focus · 8.2:1 (AAA)</span></div></div>
       </div>
     </div>
   </div>

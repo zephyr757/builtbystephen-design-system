@@ -205,7 +205,7 @@
           </div>
           <span class="badge success">live</span>
         </header>
-        <p>AI-assisted writing tool for friends of Built by Stephen. Shipping in three themes, obviously.</p>
+        <p>AI-assisted writing tool for friends of Built by Stephen. Shipping in four themes, obviously.</p>
         <div class="row" style="margin:0;gap:8px"><span class="chip">labradorite</span><span class="chip">opalite</span><span class="chip">beta</span></div>
         <footer><span style="font-size:var(--bbs-fs-xs);color:var(--bbs-text-muted)">updated 2 days ago</span><button class="btn btn-primary btn-sm">Open</button></footer>
       </div>
@@ -220,8 +220,8 @@
 <script>
   const body = document.body, t = document.getElementById('toggle');
   const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
-  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
-  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  apply(['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
   document.getElementById('sw').addEventListener('click', e => e.currentTarget.classList.toggle('on'));
   const sld = document.getElementById('sld'), sldv = document.getElementById('sldv');
   sld.addEventListener('input', e => { const v = e.target.value; e.target.style.setProperty('--pct', v + '%'); sldv.textContent = v + '%'; });

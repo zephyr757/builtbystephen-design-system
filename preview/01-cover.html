@@ -134,7 +134,7 @@
       <p class="hero-sub">jadeite core. low friction. built with intent.</p>
       <div class="chips">
         <span class="chip"><b>jadeite</b> core</span>
-        <span class="chip">3 themes · 1 identity</span>
+        <span class="chip">4 themes · 1 identity</span>
         <span class="chip">Poppins 300–600</span>
         <span class="chip">8pt grid · soft radii</span>
         <span class="chip">glass over gradient</span>
@@ -150,8 +150,8 @@
 <script>
   const body = document.body, t = document.getElementById('toggle');
   const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
-  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
-  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  apply(['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
 </script>
 </body>
 </html>

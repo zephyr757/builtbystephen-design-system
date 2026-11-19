@@ -59,8 +59,15 @@
       "path": "preview/02-colors.html",
       "group": "Colors",
       "viewport": "1280x1400",
-      "subtitle": "Jadeite + labra/opal palettes",
+      "subtitle": "Jadeite + labra/opal/quartz palettes",
       "name": "Preview — Colors"
+    },
+    {
+      "path": "preview/08-quartz.html",
+      "group": "Themes",
+      "viewport": "1280x1200",
+      "subtitle": "Evidence, print, screen-reader & e-reader mode",
+      "name": "08 — Quartz"
     },
     {
       "path": "components/ProjectJadeitePage/ProjectJadeitePage.card.html",

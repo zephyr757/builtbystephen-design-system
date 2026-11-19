@@ -283,8 +283,8 @@
 <script>
   const body = document.body, t = document.getElementById('toggle');
   const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
-  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
-  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  apply(['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
 </script>
 </body>
 </html>

@@ -286,11 +286,11 @@
   const apply = (t) => {
     [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c));
     body.classList.add(t);
-    ico.className = t === 'theme-labradorite' ? 'fas fa-moon' : t === 'theme-jadeite' ? 'fas fa-gem' : 'fas fa-sun';
+    ico.className = t === 'theme-labradorite' ? 'fas fa-moon' : t === 'theme-jadeite' ? 'fas fa-gem' : t === 'theme-quartz' ? 'fas fa-file-alt' : 'fas fa-sun';
     try { localStorage.setItem('bbs-theme', t); } catch {}
   };
-  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
-  btn.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  apply(['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  btn.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
   addEventListener('keydown', (e) => {
     if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key.toLowerCase() === 't') { e.preventDefault(); btn.click(); }
   });

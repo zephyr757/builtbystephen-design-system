@@ -79,7 +79,7 @@
   <script>
     (() => {
       const key = 'bbs-theme';
-      const themes = ['theme-labradorite', 'theme-opalite', 'theme-jadeite'];
+      const themes = ['theme-labradorite', 'theme-opalite', 'theme-jadeite', 'theme-quartz'];
       const body = document.body;
       const apply = (theme) => { body.classList.remove(...themes); body.classList.add(theme); try { localStorage.setItem(key, theme); } catch {} };
       let saved = null; try { saved = localStorage.getItem(key); } catch {}

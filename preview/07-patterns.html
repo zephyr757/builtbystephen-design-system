@@ -137,7 +137,7 @@
   <section>
     <h2>Accordion</h2>
     <div class="acc">
-      <details open><summary>Why three themes?</summary><div class="acc-body">Because the brand has three moods. Labradorite is the brain when it's running, opalite is the brain at peace, jadeite is the system turned all the way up.</div></details>
+      <details open><summary>Why four themes?</summary><div class="acc-body">Because the brand has four moods. Labradorite is the brain when it's running, opalite is the brain at peace, jadeite is the system turned all the way up, and quartz is the on-the-record brain built for evidence, screen readers, e-readers, and print.</div></details>
       <details><summary>Can I add a color?</summary><div class="acc-body">Only if you can name the mineral. If you can't name it, you don't need it.</div></details>
       <details><summary>Where does the heart go?</summary><div class="acc-body">In the lockup. Always. If the design can't hold it, redesign the container, not the lockup.</div></details>
     </div>
@@ -146,9 +146,9 @@
 <script>
   const body = document.body, t = document.getElementById('toggle');
   const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
-  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
-  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
-  const panels = ["Jadeite is the anchor. It shows up in three modes — dark, light, and monochrome.","181 tokens, all named. Colors, type, spacing, radii, shadows, and the three theme bindings.","Import the token sheet, put a theme class on the body, and reach for semantic names only."];
+  apply(['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  const panels = ["Jadeite is the anchor. It shows up in four modes — dark, light, monochrome, and evidence/print.","All tokens named. Colors, type, spacing, radii, shadows, and the four theme bindings.","Import the token sheet, put a theme class on the body, and reach for semantic names only."];
   document.getElementById('tabs').addEventListener('click', e => { if (e.target.tagName !== 'BUTTON' || e.target.disabled) return; const kids = [...e.currentTarget.children]; kids.forEach(b => b.classList.remove('on')); e.target.classList.add('on'); document.getElementById('tabpanel').textContent = panels[kids.indexOf(e.target)] || panels[0]; });
   const pick = (id) => document.getElementById(id).addEventListener('click', e => { if (e.target.tagName !== 'BUTTON' || e.target.disabled) return; [...e.currentTarget.children].forEach(b => b.classList && b.classList.remove('on')); e.target.classList.add('on'); });
   pick('tabs2'); pick('pager');

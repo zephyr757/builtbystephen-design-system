@@ -11,6 +11,7 @@
   html:has(body.theme-labradorite){background:#120227}
   html:has(body.theme-opalite){background:#ffe2ee}
   html:has(body.theme-jadeite){background:#020c09}
+  html:has(body.theme-quartz){background:#f7f9f8}
   body { padding: clamp(40px, 5vw, 72px); min-height: 100vh; }
   h1 { font-size: var(--bbs-fs-2xl); font-weight: var(--bbs-weight-title); letter-spacing: var(--bbs-tracking-tight); margin: 0 0 8px; }
   .lede { color: var(--bbs-text-secondary); max-width: 60ch; margin-bottom: 48px; }
@@ -304,8 +305,8 @@
 <script>
   const body = document.body, t = document.getElementById('toggle');
   const apply = (th) => { [...body.classList].forEach(c => c.startsWith('theme-') && body.classList.remove(c)); body.classList.add(th); try { localStorage.setItem('bbs-theme', th); } catch {} };
-  apply(['theme-labradorite','theme-opalite','theme-jadeite'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
-  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
+  apply(['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz'].includes(localStorage.getItem('bbs-theme')) ? localStorage.getItem('bbs-theme') : 'theme-labradorite');
+  t.addEventListener('click', () => { const cy = ['theme-labradorite','theme-opalite','theme-jadeite','theme-quartz']; const cur = cy.find(c => body.classList.contains(c)) || cy[0]; apply(cy[(cy.indexOf(cur) + 1) % cy.length]); });
   const m = document.getElementById('motion');
   const run = () => { m.classList.remove('go'); void m.offsetWidth; m.classList.add('go'); setTimeout(() => m.classList.remove('go'), 1600); };
   document.getElementById('play').addEventListener('click', run);
